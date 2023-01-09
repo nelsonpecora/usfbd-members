@@ -19,6 +19,9 @@ module.exports = (config) => {
   config.addWatchTarget('./src/styles/');
   config.addWatchTarget('./src/scripts/');
 
+  // Add svg embedding
+  config.addPassthroughCopy({ 'src/img': 'assets/img' });
+
   // Hydrate hashes on the client
   config.addFilter('json', (val) => JSON.stringify(val));
 

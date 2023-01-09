@@ -1,0 +1,46 @@
+.home {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.home .logo {
+  max-width: 300px;
+  margin: 0 0 20px;
+}
+
+.home h1 {
+  margin: 0 0 20px;
+}
+
+.home .logged-in {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.home .logged-in button {
+  margin: 20px 0 0;
+}
+
+#login-form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#login-form label {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+#login-form label input {
+  max-width: 50%;
+}
+
+#login-form button {
+  cursor: pointer;
+  margin: 15px 0 0;
+}

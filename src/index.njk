@@ -3,7 +3,9 @@ layout: layout.njk
 ---
 
 <main class="home">
-  <h1>US Federation of Battodo</h1>
+  {% include 'logo.njk' %}
+
+  <h1>Membership Booklet</h1>
 
   <form id="login-form" class="logged-out">
     <label>
@@ -20,7 +22,7 @@ layout: layout.njk
   </form>
 
   <section class="logged-in">
-    <h2>Go to your <a href="/404.html">member page</a></h2>
+    <span>Go to your <a href="/404.html">member page</a></span>
 
     <button type="button" class="logout-btn">Log Out</button>
   </section>

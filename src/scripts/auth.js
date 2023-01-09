@@ -49,8 +49,14 @@ function login (e) {
   } else {
     window.sessionStorage.setItem('auth', hashed);
     // Redirect member to their page
-    window.location.href = '/520.html';
+    window.location.href = `/${id}.html`;
   }
+}
+
+function getIdFromAuth (auth) {
+  return Object.keys(window.hashes).find((key) => {
+    return hashes[key] === parseInt(auth);
+  })
 }
 
 function checkAuthIndexPage () {
@@ -61,10 +67,11 @@ function checkAuthIndexPage () {
   const logoutBtn = document.querySelector('.logout-btn');
 
   const auth = window.sessionStorage.getItem('auth');
+  const memberId = auth && getIdFromAuth(auth);
 
-  if (auth) {
+  if (memberId) {
     loggedOut.classList.remove('show');
-    memberLink.href = `/${auth}.html`;
+    memberLink.href = `/${memberId}.html`;
     logoutBtn.addEventListener('click', logout);
     loggedIn.classList.add('show');
   } else {
