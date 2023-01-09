@@ -1,4 +1,5 @@
 const esbuild = require('esbuild');
+const { parseFuzzyDate, formatFuzzyDate } = require('./utils/date');
 
 module.exports = (config) => {
   // Compile CSS and JS
@@ -24,6 +25,27 @@ module.exports = (config) => {
 
   // Hydrate hashes on the client
   config.addFilter('json', (val) => JSON.stringify(val));
+
+  // Parse and format fuzzy dates
+  config.addFilter('fuzzydate', (val) => {
+    const date = parseFuzzyDate(val);
+
+    return formatFuzzyDate(date);
+  });
+
+  config.addFilter('formatTaikai', (val) => {
+    return val.map((t) => {
+      let place;
+
+      switch (t.place) {
+        case 1: place = 'First place'; break;
+        case 2: place = 'Second place'; break;
+        case 3: place = 'Third place'; break;
+        default: place = '';
+      }
+      return `<strong>${t.name}:</strong> ${place}`;
+    }).join('<br />');
+  })
 
   return {
     dir: {

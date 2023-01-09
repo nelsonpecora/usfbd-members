@@ -21,12 +21,12 @@ function checkAuthMemberPage () {
   const auth = window.sessionStorage.getItem('auth');
   const pageId = window.location.pathname.replace(/\/(.*)\.html/, '$1');
 
-  if (!auth || auth !== window.hashes[pageId]) {
-    loading.classList.remove('show');
-    loggedIn.classList.add('show');
-  } else {
+  if (!auth || parseInt(auth) !== window.hashes[pageId]) {
     loading.classList.remove('show');
     loggedOut.classList.add('show');
+  } else {
+    loading.classList.remove('show');
+    loggedIn.classList.add('show');
   }
 }
 

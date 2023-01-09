@@ -10,6 +10,9 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
 ---
 
 <main class="member-page">
+
+  {% include 'logo.njk' %}
+
   <section class="loading show">Loading...</section>
 
   <section class="logged-out">
@@ -17,6 +20,80 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
   </section>
 
   <section class="logged-in">
-    <h1>Name: {{ member.firstName }} {{ member.lastName }}</h1>
+    <h1 class="member-name">{{ member.firstName }} {{ member.lastName }}</h1>
+
+    <section class="member-section">
+      <h2>Your Info</h2>
+      <table class="table-2 no-header">
+        <tr>
+          <td>Member ID</td>
+          <td>{{ member.id }}</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>{{ member.firstName }} {{ member.lastName }}</td>
+        </tr>
+        <tr>
+          <td>Joined</td>
+          <td>{{ member.joined | fuzzydate }}</td>
+        </tr>
+        <tr>
+          <td>Dojo</td>
+          <td>{{ member.dojo }}</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="member-section">
+      <h2>Rank History</h2>
+      <table class="table-2">
+        <tr>
+          <th>Rank</th>
+          <th>Date</th>
+        </tr>
+        {% for rank in member.ranks %}
+          <tr>
+            <td>{{ rank.name }}</td>
+            <td>{{ rank.date | fuzzydate }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </section>
+
+    <section class="member-section">
+      <h2>Seminar History</h2>
+      <table class="table-3">
+        <tr>
+          <th>Seminar</th>
+          <th>Date</th>
+          <th>Instructor</th>
+        </tr>
+        {% for seminar in member.seminars %}
+          <tr>
+            <td>{{ seminar.name }}</td>
+            <td>{{ seminar.date | fuzzydate }}</td>
+            <td>{{ seminar.instructor }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </section>
+
+    <section class="member-section">
+      <h2>Taikai History</h2>
+      <table class="table-3">
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Wins</th>
+        </tr>
+        {% for t in member.taikai %}
+          <tr>
+            <td>{{ t.name }}</td>
+            <td>{{ t.date | fuzzydate }}</td>
+            <td>{{ t.wins | formatTaikai | safe }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </section>
   </section>
 </main>

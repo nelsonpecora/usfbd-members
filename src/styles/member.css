@@ -1,0 +1,56 @@
+.member-page {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.member-page .logo {
+  max-width: 200px;
+  margin: 0 0 20px;
+}
+
+.member-page .logged-in {
+  width: 100%;
+}
+
+.member-name {
+  text-align: center;
+}
+
+.member-section,
+.member-section table {
+  width: 100%;
+}
+
+.member-section {
+  margin: 30px 0;
+}
+
+th {
+  text-align: left;
+}
+
+.table-2 {
+  max-width: 400px;
+}
+
+.table-2 th,
+.table-2 td {
+  width: 50%;
+}
+
+.table-3 {
+  max-width: 600px;
+}
+
+.table-3 th,
+.table-3 td {
+  width: 33%;
+}
+
+.table-2.no-header tr td:first-of-type {
+  font-weight: 700;
+}
