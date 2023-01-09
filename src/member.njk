@@ -20,7 +20,7 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
   </section>
 
   <section class="logged-in">
-    <h1 class="member-name">{{ member.firstName }} {{ member.lastName }}</h1>
+    <h1 class="member-name">{{ member.name }}</h1>
 
     <section class="member-section">
       <h2>Your Info</h2>
@@ -31,7 +31,11 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
         </tr>
         <tr>
           <td>Name</td>
-          <td>{{ member.firstName }} {{ member.lastName }}</td>
+          <td>{{ member.name }}</td>
+        </tr>
+        <tr>
+          <td>Current Rank</td>
+          <td>{{ member.currentRank }}</td>
         </tr>
         <tr>
           <td>Joined</td>

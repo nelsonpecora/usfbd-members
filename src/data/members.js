@@ -22,6 +22,8 @@ module.exports = () => {
       throw new Error(`Cannot fetch member data for ${id}.yml! Member ID in the data is ${data.id}`);
     }
 
+    const sortedRanks = data.ranks.sort(sortDate);
+
     acc.push({
       // Basic data
       id: data.id,
@@ -29,8 +31,11 @@ module.exports = () => {
       lastName: data.lastName,
       joined: data.joined,
       dojo: data.dojo,
+      // Computed fields
+      name: `${data.firstName} ${data.lastName}`,
+      currentRank: sortedRanks.length ? sortedRanks[0].name : 'Mudan',
       // Reverse ranks, seminars, taikai
-      ranks: data.ranks.sort(sortDate),
+      ranks: sortedRanks,
       seminars: data.seminars.sort(sortDate),
       taikai: data.taikai.sort(sortDate)
     });
