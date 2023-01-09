@@ -1,0 +1,27 @@
+---
+layout: layout.njk
+---
+
+<main class="home">
+  <h1>US Federation of Battodo</h1>
+
+  <form id="login-form" class="logged-out">
+    <label>
+      Member Number
+      <input name="id" type="number" />
+    </label>
+
+    <label>
+      Last Name
+      <input name="name" type="text" />
+    </label>
+
+    <button type="submit" class="login-btn">Log In</button>
+  </form>
+
+  <section class="logged-in">
+    <h2>Go to your <a href="/404.html">member page</a></h2>
+
+    <button type="button" class="logout-btn">Log Out</button>
+  </section>
+</main>

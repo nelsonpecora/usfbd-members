@@ -1,0 +1,31 @@
+{
+  "name": "usfbd-members",
+  "version": "0.0.1",
+  "description": "Member pages for USFBD",
+  "main": "index.js",
+  "repository": "https://github.com/nelsonpecora/usfbd-members.git",
+  "author": "Nelson Pecora <nelson@keats.me>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "yarn clean && eleventy",
+    "dev": "yarn clean && eleventy --serve",
+    "lint": "semistandard --verbose --fix | snazzy"
+  },
+  "semistandard": {
+    "ignore": [
+      "build/",
+      "node_modules/"
+    ]
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "esbuild": "^0.16.16",
+    "js-yaml": "^4.1.0",
+    "rimraf": "^3.0.2",
+    "semistandard": "^16.0.1",
+    "snazzy": "^9.0.0"
+  },
+  "dependencies": {}
+}

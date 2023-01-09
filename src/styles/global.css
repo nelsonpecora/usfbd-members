@@ -1,0 +1,27 @@
+body {
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.loading {
+  display: none;
+}
+
+.loading.show {
+  display: block;
+}
+
+.logged-in {
+  display: none;
+}
+
+.logged-in.show {
+  display: block;
+}
+
+.logged-out {
+  display: none;
+}
+
+.logged-out.show {
+  display: block;
+}

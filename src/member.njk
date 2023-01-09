@@ -1,0 +1,22 @@
+---
+pagination:
+  data: members
+  size: 1
+  alias: member
+permalink: "{{ member.id }}.html"
+layout: layout.njk
+title: "{{ member.firstName }} {{ member.lastName }} | USFBD"
+description: "Member details for {{ member.firstName }} {{ member.lastName }}"
+---
+
+<main class="member-page">
+  <section class="loading show">Loading...</section>
+
+  <section class="logged-out">
+    <h1>Please <a href="/">log in</a></h1>
+  </section>
+
+  <section class="logged-in">
+    <h1>Name: {{ member.firstName }} {{ member.lastName }}</h1>
+  </section>
+</main>
