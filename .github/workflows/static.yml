@@ -31,7 +31,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Eleventy Action
-        uses: TartanLlama/actions-eleventy@v1.2
+        uses: TartanLlama/actions-eleventy@v1.3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
