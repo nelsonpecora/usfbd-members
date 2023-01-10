@@ -15,7 +15,8 @@ module.exports = (config) => {
       minify: true,
       sourcemap: true,
       format: 'iife',
-      target: ['es6']
+      target: ['es6'],
+      loader: { '.png': 'file' }
     });
   });
   config.addWatchTarget('./src/styles/');

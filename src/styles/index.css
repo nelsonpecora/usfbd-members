@@ -1,3 +1,7 @@
+body:has(.home) {
+  background-image: url("./../img/yellow-paper.png");
+}
+
 .home {
   align-items: center;
   display: flex;
