@@ -35,9 +35,9 @@ module.exports = () => {
       name: `${data.firstName} ${data.lastName}`,
       currentRank: sortedRanks.length ? sortedRanks[0].name : 'Mudan',
       // Reverse ranks, seminars, taikai
-      ranks: sortedRanks,
-      seminars: data.seminars.sort(sortDate),
-      taikai: data.taikai.sort(sortDate)
+      ranks: sortedRanks || [],
+      seminars: data.seminars.sort(sortDate) || [],
+      taikai: data.taikai.sort(sortDate).map((t) => ({ ...t, wins: t.wins || [] })) || []
     });
     return acc;
   }, []);

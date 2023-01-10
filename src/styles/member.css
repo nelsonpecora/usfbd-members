@@ -54,3 +54,27 @@ th {
 .table-2.no-header tr td:first-of-type {
   font-weight: 700;
 }
+
+.current-rank:has(.eligible) {
+  color: #04a50c;
+  font-weight: 700;
+  position: relative;
+  text-decoration: underline;
+}
+
+.eligible {
+  background: #fff;
+  border: 1px solid #04a50c;
+  border-radius: 3px;
+  left: -8px;
+  position: absolute;
+  padding: 6px 8px;
+  top: -18px;
+  width: 200px;
+  opacity: 0;
+  transition: 200ms opacity ease-out;
+}
+
+.current-rank:hover .eligible {
+  opacity: 1;
+}

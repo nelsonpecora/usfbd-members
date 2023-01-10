@@ -35,7 +35,12 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
         </tr>
         <tr>
           <td>Current Rank</td>
-          <td>{{ member.currentRank }}</td>
+          <td class="current-rank">
+            {{ member.currentRank }}
+            {% if member | isEligibleToTest %}
+              <span class="eligible">Eligible for next rank! Talk to your sensei</span>
+            {% endif %}
+          </td>
         </tr>
         <tr>
           <td>Joined</td>

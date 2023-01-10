@@ -1,5 +1,6 @@
 const esbuild = require('esbuild');
 const { parseFuzzyDate, formatFuzzyDate } = require('./utils/date');
+const { isEligibleToTest } = require('./utils/testing');
 
 module.exports = (config) => {
   // Compile CSS and JS
@@ -45,7 +46,9 @@ module.exports = (config) => {
       }
       return `<strong>${t.name}:</strong> ${place}`;
     }).join('<br />');
-  })
+  });
+
+  config.addFilter('isEligibleToTest', isEligibleToTest);
 
   return {
     dir: {
