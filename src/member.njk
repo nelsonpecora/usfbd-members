@@ -23,18 +23,18 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
     <h1 class="member-name">{{ member.name }}</h1>
 
     <section class="member-section">
-      <h2>Your Info</h2>
+      <h2>Your Info <span class="jp">自己情報</span></h2>
       <table class="table-2 no-header">
         <tr>
-          <td>Member ID</td>
+          <td>Member Number <span class="jp">発行番号</span></td>
           <td>{{ member.id }}</td>
         </tr>
         <tr>
-          <td>Name</td>
+          <td>Name <span class="jp">氏名</span></td>
           <td>{{ member.name }}</td>
         </tr>
         <tr>
-          <td>Current Rank</td>
+          <td>Current Rank <span class="jp">段位称号</span></td>
           <td class="current-rank">
             {{ member.currentRank }}
             {% if member | isEligibleToTest %}
@@ -43,22 +43,22 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
           </td>
         </tr>
         <tr>
-          <td>Joined</td>
+          <td>Joined <span class="jp">発行年月日</span></td>
           <td>{{ member.joined | fuzzydate }}</td>
         </tr>
         <tr>
-          <td>Dojo</td>
+          <td>Dojo <span class="jp">所属</span></td>
           <td>{{ member.dojo }}</td>
         </tr>
       </table>
     </section>
 
     <section class="member-section">
-      <h2>Rank History</h2>
+      <h2>Rank History <span class="jp">審査合格記録</span></h2>
       <table class="table-2">
         <tr>
-          <th>Rank</th>
-          <th>Date</th>
+          <th>Rank <span class="jp">段位</span></th>
+          <th>Date <span class="jp">年月日</span></th>
         </tr>
         {% for rank in member.ranks %}
           <tr>
@@ -70,12 +70,12 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
     </section>
 
     <section class="member-section">
-      <h2>Seminar History</h2>
+      <h2>Seminar History <span class="jp">講習会受講記録</span></h2>
       <table class="table-3">
         <tr>
-          <th>Seminar</th>
-          <th>Date</th>
-          <th>Instructor</th>
+          <th>Seminar <span class="jp">講習</span></th>
+          <th>Date <span class="jp">年月日</span></th>
+          <th>Instructor <span class="jp">先生</span></th>
         </tr>
         {% for seminar in member.seminars %}
           <tr>
@@ -88,12 +88,12 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
     </section>
 
     <section class="member-section">
-      <h2>Taikai History</h2>
+      <h2>Taikai History <span class="jp">大会会受講記録</span></h2>
       <table class="table-3">
         <tr>
-          <th>Name</th>
-          <th>Date</th>
-          <th>Wins</th>
+          <th>Name <span class="jp">大会</span></th>
+          <th>Date <span class="jp">年月日</span></th>
+          <th>Wins <span class="jp">勝利</span></th>
         </tr>
         {% for t in member.taikai %}
           <tr>
@@ -103,6 +103,11 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
           </tr>
         {% endfor %}
       </table>
+    </section>
+
+    <section class="feedback">
+      See anything missing? <a href="mailto:hi@nelson.codes?subject=Member {{ member.id }} missing info" target="_blank">Email us!</a>
+      <span class="jp jp-regular">間違えたものを見れば、<a href="mailto:hi@nelson.codes?subject=Member {{ member.id }} missing info" target="_blank">メールくれていただけませんか。</a></span>
     </section>
   </section>
 </main>

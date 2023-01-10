@@ -78,3 +78,20 @@ th {
 .current-rank:hover .eligible {
   opacity: 1;
 }
+
+.jp {
+  color: #aaa;
+  font-family: 'M PLUS 1', cursive;
+  font-size: 0.8em;
+  font-weight: 300;
+  display: inline-block;
+}
+
+.jp-regular {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.jp-regular a {
+  color: #655eac;
+}

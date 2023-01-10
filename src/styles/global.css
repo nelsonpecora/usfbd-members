@@ -23,6 +23,12 @@ h4 {
   font-size: 1.25rem;
 }
 
+a,
+a:visited {
+  color: #11038b;
+  text-decoration: none;
+}
+
 .loading {
   visibility: hidden;
   height: 0;
