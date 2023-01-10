@@ -59,7 +59,7 @@ th {
 }
 
 .current-rank:has(.eligible) {
-  color: #04a50c;
+  color: var(--success-color);
   font-weight: 700;
   position: relative;
   text-decoration: underline;
@@ -67,7 +67,7 @@ th {
 
 .eligible {
   background: #fff;
-  border: 1px solid #04a50c;
+  border: 1px solid var(--success-color);
   border-radius: 3px;
   left: -8px;
   position: absolute;
@@ -82,25 +82,18 @@ th {
   opacity: 1;
 }
 
-.jp {
-  color: #aaa;
-  font-family: 'M PLUS 1', cursive;
-  font-size: 0.8em;
-  font-weight: 300;
-  display: inline-block;
-}
-
 .jp-regular {
   font-size: 1em;
   font-weight: 400;
 }
 
 .jp-regular a {
-  color: #655eac;
+  color: var(--jp-link-color);
 }
 
 h2 .jp {
   display: block;
+  font-weight: 200;
   margin-top: -18px;
 }
 

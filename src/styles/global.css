@@ -1,5 +1,16 @@
+:root {
+  --en-font: 'Nunito Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  --jp-font: 'M PLUS 1', cursive;
+  --bg-color: rgba(239, 239, 239, 0.5);
+  --text-color: #111;
+  --jp-text-color: #aaa;
+  --link-color: #11038b;
+  --jp-link-color: #655eac;
+  --success-color: #04a50c;
+}
+
 body {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: var(--en-font);
 }
 
 h1 {
@@ -8,7 +19,7 @@ h1 {
 }
 
 h2, h3, h4 {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h2 {
@@ -25,23 +36,23 @@ h4 {
 
 a,
 a:visited {
-  color: #11038b;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 input {
-  background-color: rgba(239, 239, 239, 0.5);
-  border: 2px solid #111;
+  background-color: var(--bg-color);
+  border: 2px solid var(--text-color);
   border-radius: 2px;
   padding: 5px 10px;
 }
 
 .large-button {
   background-color: transparent;
-  border: 2px solid #111;
+  border: 2px solid var(--text-color);
   border-radius: 2px;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 2px;
   padding: 20px 30px;
   text-transform: uppercase;
@@ -49,7 +60,7 @@ input {
 }
 
 .large-button:hover {
-  background-color: #111;
+  background-color: var(--text-color);
   color: #fff;
 }
 
@@ -59,6 +70,14 @@ input {
 
 .large-button:focus {
   outline: thin dotted;
+}
+
+.jp {
+  color: var(--jp-text-color);
+  font-family: var(--jp-font);
+  font-size: 0.8em;
+  font-weight: 400;
+  display: inline-block;
 }
 
 .loading {
