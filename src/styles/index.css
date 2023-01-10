@@ -45,6 +45,5 @@ body:has(.home) {
 }
 
 #login-form button {
-  cursor: pointer;
   margin: 15px 0 0;
 }

@@ -29,6 +29,38 @@ a:visited {
   text-decoration: none;
 }
 
+input {
+  background-color: rgba(239, 239, 239, 0.5);
+  border: 2px solid #111;
+  border-radius: 2px;
+  padding: 5px 10px;
+}
+
+.large-button {
+  background-color: transparent;
+  border: 2px solid #111;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  transition: 100ms background-color linear, 100ms color linear;
+}
+
+.large-button:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+.large-button:active {
+  outline: none;
+}
+
+.large-button:focus {
+  outline: thin dotted;
+}
+
 .loading {
   visibility: hidden;
   height: 0;
