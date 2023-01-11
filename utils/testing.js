@@ -41,12 +41,16 @@ const eligibility = {
 
 function isEligibleToTest (member, today = new Date()) {
   const memberRank = member.currentRank.toUpperCase();
-  const lastDate = parseFuzzyDate(member.ranks?.[0]?.date || member.joined);
+  const rawLastDate = member.ranks?.[0]?.date || member.joined;
+
+  // If we don't know any date info, we can't tell folks they're eligible to test
+  if (!rawLastDate) return false;
+
+  const lastDate = parseFuzzyDate(rawLastDate);
   const nextRank = eligibility[memberRank].next;
 
-  if (!nextRank) {
-    return false; // Member is already yondan, they'll know when they're ready
-  }
+  // Member is already yondan, they'll know when they're ready
+  if (!nextRank) return false;
 
   const { years, seminars, taikai } = eligibility[nextRank];
 

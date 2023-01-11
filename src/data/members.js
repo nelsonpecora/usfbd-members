@@ -22,7 +22,7 @@ module.exports = () => {
       throw new Error(`Cannot fetch member data for ${id}.yml! Member ID in the data is ${data.id}`);
     }
 
-    const sortedRanks = data.ranks.sort(sortDate);
+    const sortedRanks = data.ranks?.sort(sortDate) || [];
 
     acc.push({
       // Basic data
@@ -32,8 +32,8 @@ module.exports = () => {
       currentRank: sortedRanks.length ? sortedRanks[0].name : 'Mudan',
       // Reverse ranks, seminars, taikai
       ranks: sortedRanks || [],
-      seminars: data.seminars.sort(sortDate) || [],
-      taikai: data.taikai.sort(sortDate).map((t) => ({ ...t, wins: t.wins || [] })) || []
+      seminars: data.seminars?.sort(sortDate) || [],
+      taikai: data.taikai?.sort(sortDate).map((t) => ({ ...t, wins: t.wins || [] })) || []
     });
     return acc;
   }, []);
