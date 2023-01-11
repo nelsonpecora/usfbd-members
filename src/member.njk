@@ -23,31 +23,31 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
     <h1 class="member-name">{{ member.name }}</h1>
 
     <section class="member-section">
-      <h2>Your Info <span class="jp">自己情報</span></h2>
+      <h2>Your Info <span class="jp" lang="jp">自己情報</span></h2>
       <table class="table-2 no-header">
         <tr>
-          <td>Member Number <span class="jp">発行番号</span></td>
+          <td>Member Number <span class="jp" lang="jp">発行番号</span></td>
           <td>{{ member.id }}</td>
         </tr>
         <tr>
-          <td>Name <span class="jp">氏名</span></td>
+          <td>Name <span class="jp" lang="jp">氏名</span></td>
           <td>{{ member.name }}</td>
         </tr>
         <tr>
-          <td>Current Rank <span class="jp">段位称号</span></td>
+          <td>Current Rank <span class="jp" lang="jp">段位称号</span></td>
           <td class="current-rank">
-            {{ member.currentRank }} <span class="jp">{{ member.currentRank | jpRank }}</span>
+            {{ member.currentRank }} <span class="jp" lang="jp">{{ member.currentRank | jpRank }}</span>
             {% if member | isEligibleToTest %}
               <span class="eligible">Eligible for next rank! Talk to your sensei</span>
             {% endif %}
           </td>
         </tr>
         <tr>
-          <td>Joined <span class="jp">発行年月日</span></td>
+          <td>Joined <span class="jp" lang="jp">発行年月日</span></td>
           <td>{{ member.joined | fuzzydate }}</td>
         </tr>
         <tr>
-          <td>Dojo <span class="jp">所属</span></td>
+          <td>Dojo <span class="jp" lang="jp">所属</span></td>
           <td>
             {% if dojos[member.dojo] %}
               <a href="{{ dojos[member.dojo] }}" target="_blank">{{ member.dojo }}</a>
@@ -60,15 +60,15 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
     </section>
 
     <section class="member-section">
-      <h2>Rank History <span class="jp">審査合格記録</span></h2>
+      <h2>Rank History <span class="jp" lang="jp">審査合格記録</span></h2>
       <table class="table-2">
         <tr>
-          <th>Rank <span class="jp">段位</span></th>
-          <th>Date <span class="jp">年月日</span></th>
+          <th>Rank <span class="jp" lang="jp">段位</span></th>
+          <th>Date <span class="jp" lang="jp">年月日</span></th>
         </tr>
         {% for rank in member.ranks %}
           <tr>
-            <td>{{ rank.name }} <span class="jp">{{ rank.name | jpRank }}</span></td>
+            <td>{{ rank.name }} <span class="jp" lang="jp">{{ rank.name | jpRank }}</span></td>
             <td>{{ rank.date | fuzzydate }}</td>
           </tr>
         {% endfor %}
@@ -76,13 +76,13 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
     </section>
 
     <section class="member-section">
-      <h2>Seminar History <span class="jp">講習会受講記録</span></h2>
+      <h2>Seminar History <span class="jp" lang="jp">講習会受講記録</span></h2>
       <table class="table-4">
         <tr>
-          <th>Seminar <span class="jp">講習</span></th>
-          <th>Date <span class="jp">年月日</span></th>
-          <th>Location <span class="jp">場所</span></th>
-          <th>Instructor <span class="jp">先生</span></th>
+          <th>Seminar <span class="jp" lang="jp">講習</span></th>
+          <th>Date <span class="jp" lang="jp">年月日</span></th>
+          <th>Location <span class="jp" lang="jp">場所</span></th>
+          <th>Instructor <span class="jp" lang="jp">先生</span></th>
         </tr>
         {% for seminar in member.seminars %}
           <tr>
@@ -92,14 +92,14 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
               {% if seminar.location %}
                 {{ seminar.location }}
               {% else %}
-                <span class="no-data">無名の所</span>
+                <span class="no-data" lang="jp">無名の所</span>
               {% endif %}
             </td>
             <td>
               {% if seminar.instructor %}
                 {{ seminar.instructor }}
               {% else %}
-                <span class="no-data">無名の先生</span>
+                <span class="no-data" lang="jp">無名の先生</span>
               {% endif %}
             </td>
           </tr>
@@ -108,13 +108,13 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
     </section>
 
     <section class="member-section">
-      <h2>Taikai History <span class="jp">大会会受講記録</span></h2>
+      <h2>Taikai History <span class="jp" lang="jp">大会会受講記録</span></h2>
       <table class="table-4">
         <tr>
-          <th>Name <span class="jp">大会</span></th>
-          <th>Date <span class="jp">年月日</span></th>
-          <th>Location <span class="jp">場所</span></th>
-          <th>Wins <span class="jp">勝利</span></th>
+          <th>Name <span class="jp" lang="jp">大会</span></th>
+          <th>Date <span class="jp" lang="jp">年月日</span></th>
+          <th>Location <span class="jp" lang="jp">場所</span></th>
+          <th>Wins <span class="jp" lang="jp">勝利</span></th>
         </tr>
         {% for t in member.taikai %}
           <tr>
@@ -124,14 +124,14 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
               {% if t.location %}
                 {{ t.location }}
               {% else %}
-                <span class="no-data">無名の所</span>
+                <span class="no-data" lang="jp">無名の所</span>
               {% endif %}
             </td>
             <td>
               {% if t.wins?.length %}
                 {{ t.wins | formatTaikai | safe }}
               {% else %}
-                <span class="no-data">全敗</span>
+                <span class="no-data" lang="jp">全敗</span>
               {% endif %}
             </td>
           </tr>
