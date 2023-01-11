@@ -47,7 +47,6 @@ function login (e) {
   const error2 = document.querySelector('.error2');
 
   attempts.value++;
-  console.log(attempts.value)
 
   // Check to see if this is a real member
   if (!window.hashes[id] || window.hashes[id] !== hashed) {
