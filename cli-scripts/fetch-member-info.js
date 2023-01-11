@@ -206,7 +206,7 @@ async function main () {
     const memberYaml = yaml.dump(member);
 
     try {
-      fs.writeFileSync(path.join(__dirname, '..', 'src', 'data', `${id}.yml`), memberYaml);
+      fs.writeFileSync(path.join(__dirname, '..', 'src', 'data', 'members', `${id}.yml`), memberYaml);
     } catch (e) {
       console.error(`Error writing yaml for member ${id}: ${e.message}`);
       process.exit(1);

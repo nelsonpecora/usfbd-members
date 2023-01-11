@@ -12,14 +12,11 @@ function sortDate (a, b) {
 }
 
 module.exports = () => {
-  const members = fs.readdirSync(__dirname).filter((filepath) => {
-    // Ignore non-member files
-    return path.extname(filepath) === '.yml' && !['dojos.yml'].includes(filepath);
-  });
+  const members = fs.readdirSync(path.join(__dirname, 'members'));
 
   return members.reduce((acc, filepath) => {
     const id = path.basename(filepath, path.extname(filepath));
-    const data = yaml.load(fs.readFileSync(path.join(__dirname, filepath)));
+    const data = yaml.load(fs.readFileSync(path.join(__dirname, 'members', filepath)));
 
     if (id !== `${data.id}`) {
       throw new Error(`Cannot fetch member data for ${id}.yml! Member ID in the data is ${data.id}`);
