@@ -91,9 +91,6 @@ async function getBasicInfo (doc) {
     try {
       const joined = getCell(row, 'Activation Date');
       const dojo = getCell(row, 'School Name');
-      // We do NOT save member emails to yaml, but we use them to match against
-      // the payment history.
-      const email = getCell(row, 'Email Address');
       // When figuring out member rank, we first look in their rank history,
       // which is generated from these columns.
       const shodan = getCell(row, 'Shodan');
@@ -127,7 +124,6 @@ async function getBasicInfo (doc) {
         lastName,
         joined: parseDate(joined),
         dojo,
-        email,
         ...currentRank && { manualCurrentRank: currentRank },
         isExemptFromDues: exemption === 'TRUE',
         ranks: getRanks({ shodan, nidan, sandan, yondan, godan, rokudan })
@@ -142,21 +138,21 @@ async function getBasicInfo (doc) {
   // Once we have the basic info, we can parse the payments sheet to determine
   // if they're active members.
   const activeMembers = paymentRows.reduce((acc, row) => {
-    const email = getCell(row, 'Email');
+    const id = getCell(row, 'Member Number');
 
     try {
       const currentYear = (new Date()).getFullYear();
       const year = getCell(row, currentYear);
 
-      if (!email) {
-        // Ignore empty rows and the Totals row.
+      if (!id) {
+        // Ignore empty rows, the Totals row, and rows without any member number
         return acc;
       }
 
-      acc[email] = !!year;
+      acc[id] = !!year;
       return acc;
     } catch (e) {
-      console.error(`Error parsing activity for member "${email}": ${e.message}`);
+      console.error(`Error parsing activity for member "${id}": ${e.message}`);
       process.exit(1);
     }
   }, {});
@@ -169,11 +165,10 @@ async function getBasicInfo (doc) {
     if (member.isExemptFromDues) {
       isActive = true;
     } else {
-      isActive = !!activeMembers[member.email];
+      isActive = !!activeMembers[id];
     }
 
     // Don't include this data in the generated yaml.
-    delete member.email;
     delete member.isExemptFromDues;
 
     acc[id] = {
