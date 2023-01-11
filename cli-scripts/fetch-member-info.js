@@ -163,7 +163,7 @@ async function getBasicInfo (doc) {
 
   // Set isActive on each member, based on the payment history
   // (and if they're exempt).
-  return Object.entries(basicInfo).reduce((acc, [id, member]) => {
+  const returnedInfo = Object.entries(basicInfo).reduce((acc, [id, member]) => {
     let isActive = false;
 
     if (member.isExemptFromDues) {
@@ -183,6 +183,11 @@ async function getBasicInfo (doc) {
 
     return acc;
   }, {});
+
+  return {
+    basicInfo: returnedInfo,
+    missingIds
+  }
 }
 
 async function main () {
@@ -204,7 +209,7 @@ async function main () {
   }
 
   // Get basic info from the 'USFBD Member List.xlsx' spreadsheet.
-  const basicInfo = await getBasicInfo(memberSpreadsheet);
+  const { basicInfo, missingIds } = await getBasicInfo(memberSpreadsheet);
 
   // TODO: Get seminar and taikai info from the 'Seminar/Testing History' spreadsheet.
 
@@ -220,9 +225,23 @@ async function main () {
     }
   });
 
+  // Output missing ids into csv file.
+  let missingFile = 'id,firstName,lastName,dojo\n';
+
+  missingIds.forEach(({ id, firstName, lastName, dojo }) => {
+    missingFile += `${id || ''},${firstName || ''},${lastName || ''},${dojo || ''}\n`;
+  })
+
+  fs.writeFileSync(
+    path.join(__dirname, '..', 'missing_ids.csv'),
+    missingFile
+  );
+
   const memberCount = Object.keys(basicInfo).length;
+  const missingIdsCount = Object.keys(missingIds).length;
 
   console.log(`Generated yaml for ${memberCount} ${pluralize('member', memberCount)}`);
+  console.log(`Generated missing_ids.csv for ${missingIdsCount} ${pluralize('member', missingIdsCount)}`);
 }
 
 main();
