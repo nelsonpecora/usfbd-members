@@ -36,6 +36,10 @@ const eligibility = {
   GODAN: {
     years: 4,
     seminars: 16
+    // No next rank
+  },
+  ROKUDAN: {
+    // No info here
   }
 };
 

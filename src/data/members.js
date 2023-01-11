@@ -23,13 +23,24 @@ module.exports = () => {
     }
 
     const sortedRanks = data.ranks?.sort(sortDate) || [];
+    const latestRank = sortedRanks?.[0]?.name;
+    const manualCurrentRank = data.manualCurrentRank;
+    let currentRank;
+
+    if (latestRank) {
+      currentRank = latestRank;
+    } else if (manualCurrentRank) {
+      currentRank = manualCurrentRank;
+    } else {
+      currentRank = 'Mudan';
+    }
 
     acc.push({
       // Basic data
       ...data,
       // Computed fields
       name: `${data.firstName} ${data.lastName}`,
-      currentRank: sortedRanks.length ? sortedRanks[0].name : 'Mudan',
+      currentRank,
       // Reverse ranks, seminars, taikai
       ranks: sortedRanks || [],
       seminars: data.seminars?.sort(sortDate) || [],

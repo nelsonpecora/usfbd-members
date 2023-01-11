@@ -43,7 +43,7 @@ function getCurrentRank (rankNo) {
   }
 }
 
-function getRanks({ shodan, nidan, sandan, yondan, godan, rokudan }) {
+function getRanks ({ shodan, nidan, sandan, yondan, godan, rokudan }) {
   const ranks = [];
 
   if (shodan) {
@@ -74,7 +74,7 @@ function getRanks({ shodan, nidan, sandan, yondan, godan, rokudan }) {
 }
 
 async function getBasicInfo (doc) {
-  const mainSheet = doc.sheetsByTitle['Root'];
+  const mainSheet = doc.sheetsByTitle.Root;
   const paymentSheet = doc.sheetsByTitle['Member Payment History'];
 
   const mainRows = await mainSheet.getRows();
@@ -83,7 +83,7 @@ async function getBasicInfo (doc) {
   // We generate a CSV of members with missing member numbers.
   const missingIds = [];
   // We get basic info for each member, keyed by their member number (id).
-  let basicInfo = mainRows.reduce((acc, row) => {
+  const basicInfo = mainRows.reduce((acc, row) => {
     const id = getCell(row, 'Member ID');
     const firstName = getCell(row, 'First Name');
     const lastName = getCell(row, 'Last Name');
@@ -131,7 +131,7 @@ async function getBasicInfo (doc) {
         ...currentRank && { manualCurrentRank: currentRank },
         isExemptFromDues: exemption === 'TRUE',
         ranks: getRanks({ shodan, nidan, sandan, yondan, godan, rokudan })
-      }
+      };
       return acc;
     } catch (e) {
       console.error(`Error parsing data for member "${firstName} ${lastName}" (${id}): ${e.message}`);
@@ -142,8 +142,9 @@ async function getBasicInfo (doc) {
   // Once we have the basic info, we can parse the payments sheet to determine
   // if they're active members.
   const activeMembers = paymentRows.reduce((acc, row) => {
+    const email = getCell(row, 'Email');
+
     try {
-      const email = getCell(row, 'Email');
       const currentYear = (new Date()).getFullYear();
       const year = getCell(row, currentYear);
 
@@ -185,7 +186,7 @@ async function getBasicInfo (doc) {
 }
 
 async function main () {
-  console.log('Fetching member data...')
+  console.log('Fetching member data...');
   let memberSpreadsheet;
 
   try {

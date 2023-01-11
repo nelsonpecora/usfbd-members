@@ -18,6 +18,19 @@ describe('isEligibleToTest', () => {
     })).toBe(false);
   });
 
+  it('returns false for rokudan', () => {
+    expect(isEligibleToTest({
+      currentRank: 'Rokudan',
+      ranks: [{ date: currentDate }]
+    })).toBe(false);
+  });
+
+  it('returns false for if no dates', () => {
+    expect(isEligibleToTest({
+      currentRank: 'Mudan'
+    })).toBe(false);
+  });
+
   it('returns false for shodan if not enough years', () => {
     expect(isEligibleToTest({
       currentRank: 'Mudan',
