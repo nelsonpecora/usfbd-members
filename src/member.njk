@@ -36,7 +36,7 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
         <tr>
           <td>Current Rank <span class="jp">段位称号</span></td>
           <td class="current-rank">
-            {{ member.currentRank }}
+            {{ member.currentRank }} <span class="jp">{{ member.currentRank | jpRank }}</span>
             {% if member | isEligibleToTest %}
               <span class="eligible">Eligible for next rank! Talk to your sensei</span>
             {% endif %}
@@ -48,7 +48,13 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
         </tr>
         <tr>
           <td>Dojo <span class="jp">所属</span></td>
-          <td>{{ member.dojo }}</td>
+          <td>
+            {% if dojos[member.dojo] %}
+              <a href="{{ dojos[member.dojo] }}" target="_blank">{{ member.dojo }}</a>
+            {% else %}
+              {{ member.dojo }}
+            {% endif %}
+            </td>
         </tr>
       </table>
     </section>
@@ -62,7 +68,7 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
         </tr>
         {% for rank in member.ranks %}
           <tr>
-            <td>{{ rank.name }}</td>
+            <td>{{ rank.name }} <span class="jp">{{ rank.name | jpRank }}</span></td>
             <td>{{ rank.date | fuzzydate }}</td>
           </tr>
         {% endfor %}

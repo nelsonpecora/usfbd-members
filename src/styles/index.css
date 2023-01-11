@@ -48,8 +48,17 @@ body:has(.home) {
   margin: 15px 0;
 }
 
+#login-form .left-label {
+  flex: 0 1 40%;
+}
+
+#login-form .jp {
+  display: block;
+}
+
 #login-form label input {
-  flex: 1 0 50%;
+  flex: 0 1 45%;
+  width: 45%;
 }
 
 #login-form button {

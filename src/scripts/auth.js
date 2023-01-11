@@ -55,8 +55,8 @@ function login (e) {
 
 function getIdFromAuth (auth) {
   return Object.keys(window.hashes).find((key) => {
-    return hashes[key] === parseInt(auth);
-  })
+    return window.hashes[key] === parseInt(auth);
+  });
 }
 
 function checkAuthIndexPage () {

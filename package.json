@@ -18,6 +18,11 @@
     "ignore": [
       "build/",
       "node_modules/"
+    ],
+    "globals": [
+      "describe",
+      "it",
+      "expect"
     ]
   },
   "devDependencies": {

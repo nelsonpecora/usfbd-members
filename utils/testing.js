@@ -1,7 +1,6 @@
 const { addYears, isAfter } = require('date-fns');
 const { parseFuzzyDate } = require('./date');
 
-const MUDAN = 'MUDAN';
 const SHODAN = 'SHODAN';
 const NIDAN = 'NIDAN';
 const SANDAN = 'SANDAN';
@@ -38,14 +37,11 @@ const eligibility = {
     years: 4,
     seminars: 16
   }
-}
-
+};
 
 function isEligibleToTest (member, today = new Date()) {
   const memberRank = member.currentRank.toUpperCase();
   const lastDate = parseFuzzyDate(member.ranks?.[0]?.date || member.joined);
-  const lastSeminars = member.seminars?.length || 0;
-  const lastTaikai = member.taikai?.length || 0;
   const nextRank = eligibility[memberRank].next;
 
   if (!nextRank) {
@@ -56,7 +52,7 @@ function isEligibleToTest (member, today = new Date()) {
 
   let yearsOk = false;
   let seminarsOk = false;
-  let taikaiOk = taikai ? false : true;
+  let taikaiOk = !taikai;
 
   if (isAfter(today, addYears(lastDate.val, years))) {
     yearsOk = true;

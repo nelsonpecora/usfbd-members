@@ -12,7 +12,10 @@ function sortDate (a, b) {
 }
 
 module.exports = () => {
-  const members = fs.readdirSync(__dirname).filter((filepath) => path.extname(filepath) === '.yml');
+  const members = fs.readdirSync(__dirname).filter((filepath) => {
+    // Ignore non-member files
+    return path.extname(filepath) === '.yml' && !['dojos.yml'].includes(filepath);
+  });
 
   return members.reduce((acc, filepath) => {
     const id = path.basename(filepath, path.extname(filepath));
