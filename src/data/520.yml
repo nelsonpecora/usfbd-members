@@ -4,6 +4,7 @@ firstName: Nelson
 lastName: Pecora
 joined: 2016-06-30
 dojo: Zentokan
+isActive: true
 # Rank info
 ranks:
   - name: Shodan

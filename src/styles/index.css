@@ -68,7 +68,7 @@ body:has(.home) {
 .error1,
 .error2 {
   background-color: #f8c5c5;
-  border: 2px solid #b80404;
+  border: 2px solid var(--error-color);
   border-radius: 2px;
   margin: 20px 0 0;
   padding: 10px 20px;

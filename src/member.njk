@@ -56,6 +56,16 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
             {% endif %}
             </td>
         </tr>
+        <tr>
+          <td>Active <span class="jp" lang="jp">成員</span></td>
+          <td>
+            {% if member.isActive %}
+              <span class="active-member">Yes</span>
+            {% else %}
+              <span class="inactive-member">No</span>
+            {% endif %}
+            </td>
+        </tr>
       </table>
     </section>
 

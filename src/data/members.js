@@ -29,11 +29,7 @@ module.exports = () => {
 
     acc.push({
       // Basic data
-      id: data.id,
-      firstName: data.firstName,
-      lastName: data.lastName,
-      joined: data.joined,
-      dojo: data.dojo,
+      ...data,
       // Computed fields
       name: `${data.firstName} ${data.lastName}`,
       currentRank: sortedRanks.length ? sortedRanks[0].name : 'Mudan',

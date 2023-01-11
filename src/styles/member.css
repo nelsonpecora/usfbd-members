@@ -79,6 +79,16 @@ th {
   opacity: 1;
 }
 
+.active-member {
+  color: var(--success-color);
+  font-weight: 700;
+}
+
+.inactive-member {
+  color: var(--error-color);
+  font-weight: 700;
+}
+
 .jp-regular {
   display: block;
   font-size: 1em;
