@@ -1,0 +1,10 @@
+id: '173'
+firstName: Henry
+lastName: Kim
+joined: '2006-02-17'
+dojo: Byakkokan
+manualCurrentRank: Sandan
+ranks:
+  - name: Sandan
+    date: '2012-06-02'
+isActive: true

@@ -1,0 +1,12 @@
+id: '7'
+firstName: Ivan
+lastName: Guerra
+joined: '2011-02-01'
+dojo: Genbukan
+manualCurrentRank: Shodan
+ranks:
+  - name: Nidan
+    date: '2014-11-15'
+  - name: Sandan
+    date: '2021-01-10'
+isActive: false

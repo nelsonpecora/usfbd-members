@@ -30,7 +30,11 @@ describe('date utils', () => {
       expect(parseFuzzyDate(date)).toEqual(withDay);
     });
 
-    it('parses yaml string', () => {
+    it('parses yaml string with day', () => {
+      expect(parseFuzzyDate('1970-01-01')).toEqual(withDay);
+    });
+
+    it('parses yaml string with month', () => {
       expect(parseFuzzyDate('1970-01')).toEqual(withMonth);
     });
 

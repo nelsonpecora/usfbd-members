@@ -1,0 +1,11 @@
+id: '526'
+firstName: Michael
+lastName: Shane
+joined: '2016-12-20'
+dojo: Zentokan
+ranks:
+  - name: Shodan
+    date: '2018-02-24'
+  - name: Nidan
+    date: '2021-11-18'
+isActive: true

@@ -4,7 +4,7 @@ const { format, utcToZonedTime } = require('date-fns-tz');
 function parseFuzzyDate (val) {
   if (isDate(val)) {
     // Real date object from yaml. This happens when it's specified
-    // as 'YYYY-MM-DD'
+    // as 'YYYY-MM-DD' (without quotes)
     return {
       hasYear: true,
       hasMonth: true,
@@ -18,7 +18,15 @@ function parseFuzzyDate (val) {
   // In both cases, convert to string
   const strVal = `${val}`;
 
-  if (strVal.match(/\d{4}-\d{2}/)) {
+  if (strVal.match(/\d{4}-\d{2}-\d{2}/)) {
+    // YYYY-MM-DD (quoted in yaml)
+    return {
+      hasYear: true,
+      hasMonth: true,
+      hasDay: true,
+      val: parseISO(strVal + 'Z')
+    };
+  } else if (strVal.match(/\d{4}-\d{2}/)) {
     // YYYY-MM only
     return {
       hasYear: true,

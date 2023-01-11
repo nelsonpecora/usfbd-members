@@ -1,0 +1,10 @@
+id: '161'
+firstName: Linda
+lastName: Hatfield
+joined: null
+dojo: Seiryukan
+manualCurrentRank: Sandan
+ranks:
+  - name: Sandan
+    date: '2017-11-19'
+isActive: false

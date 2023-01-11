@@ -1,0 +1,9 @@
+id: '575'
+firstName: Robert
+lastName: Baron
+joined: '2018-02-01'
+dojo: Zentokan
+ranks:
+  - name: Shodan
+    date: '2021-01-10'
+isActive: false

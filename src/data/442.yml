@@ -1,0 +1,10 @@
+id: '442'
+firstName: Charles
+lastName: Choi
+joined: '2012-06-18'
+dojo: Byakkokan
+manualCurrentRank: Shodan
+ranks:
+  - name: Sandan
+    date: '2021-01-10'
+isActive: true

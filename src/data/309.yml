@@ -1,0 +1,10 @@
+id: '309'
+firstName: Jason
+lastName: Hatcher
+joined: '2009-04-17'
+dojo: Virginia Kenshinkai
+manualCurrentRank: Yondan
+ranks:
+  - name: Nidan
+    date: '2012-06-02'
+isActive: false

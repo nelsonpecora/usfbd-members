@@ -1,0 +1,10 @@
+id: '441'
+firstName: Kevin
+lastName: Raz
+joined: '2012-06-30'
+dojo: Byakkokan
+manualCurrentRank: Sandan
+ranks:
+  - name: Sandan
+    date: '2016-10-09'
+isActive: false

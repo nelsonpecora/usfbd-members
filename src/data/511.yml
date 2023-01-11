@@ -1,0 +1,9 @@
+id: '511'
+firstName: Mike
+lastName: Casmey
+joined: '2016-01-22'
+dojo: Seiryukan
+ranks:
+  - name: Shodan
+    date: '2017-11-19'
+isActive: false

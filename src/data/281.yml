@@ -1,0 +1,10 @@
+id: '281'
+firstName: Seth
+lastName: Cotner
+joined: '2008-01-01'
+dojo: Seiryukan
+manualCurrentRank: Shodan
+ranks:
+  - name: Nidan
+    date: '2017-11-19'
+isActive: false

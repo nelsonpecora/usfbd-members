@@ -1,0 +1,9 @@
+id: '513'
+firstName: Lian
+lastName: Yu
+joined: '2016-10-10'
+dojo: Byakkokan
+ranks:
+  - name: Shodan
+    date: '2016-10-09'
+isActive: false

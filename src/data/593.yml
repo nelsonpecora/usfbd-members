@@ -1,0 +1,9 @@
+id: '593'
+firstName: John
+lastName: Ganis
+joined: '2018-10-18'
+dojo: Mountain Stream Budo
+ranks:
+  - name: Shodan
+    date: '2021-11-18'
+isActive: true

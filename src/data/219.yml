@@ -1,0 +1,12 @@
+id: '219'
+firstName: Masaki
+lastName: Kurihara
+joined: '2006-08-10'
+dojo: Genbukan
+manualCurrentRank: Nidan
+ranks:
+  - name: Sandan
+    date: '2017-11-19'
+  - name: Yondan
+    date: '2020-01-01'
+isActive: false

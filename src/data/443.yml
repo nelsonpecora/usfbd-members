@@ -1,0 +1,10 @@
+id: '443'
+firstName: Glen
+lastName: Yancey
+joined: '2012-09-29'
+dojo: Konjaku Kioi
+manualCurrentRank: Shodan
+ranks:
+  - name: Nidan
+    date: '2014-11-15'
+isActive: false

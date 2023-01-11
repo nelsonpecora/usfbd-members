@@ -1,0 +1,10 @@
+id: '152'
+firstName: Vincent
+lastName: Capers
+joined: '2011-02-01'
+dojo: Byakkokan
+manualCurrentRank: Shodan
+ranks:
+  - name: Shodan
+    date: '2012-06-02'
+isActive: false

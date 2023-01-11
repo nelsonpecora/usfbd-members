@@ -1,0 +1,12 @@
+id: '20'
+firstName: Noah
+lastName: Mitchell
+joined: '2011-02-01'
+dojo: Genbukan
+manualCurrentRank: Nidan
+ranks:
+  - name: Sandan
+    date: '2018-07-23'
+  - name: Yondan
+    date: '2021-01-10'
+isActive: false

@@ -1,0 +1,9 @@
+id: '620'
+firstName: Dylan
+lastName: Myers
+joined: '2020-04-01'
+dojo: Seitokan
+ranks:
+  - name: Shodan
+    date: '2021-11-18'
+isActive: true

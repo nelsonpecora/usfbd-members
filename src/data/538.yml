@@ -1,0 +1,9 @@
+id: '538'
+firstName: Christopher
+lastName: Kim
+joined: '2017-08-30'
+dojo: Byakkokan
+ranks:
+  - name: Shodan
+    date: '2018-07-23'
+isActive: true

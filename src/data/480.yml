@@ -1,0 +1,9 @@
+id: '480'
+firstName: David
+lastName: Ahn
+joined: '2014-06-06'
+dojo: Byakkokan
+ranks:
+  - name: Shodan
+    date: '2018-02-24'
+isActive: false

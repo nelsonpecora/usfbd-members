@@ -1,0 +1,10 @@
+id: '116'
+firstName: Michael
+lastName: Edelson
+joined: '2011-02-01'
+dojo: Byakkokan
+manualCurrentRank: Shodan
+ranks:
+  - name: Shodan
+    date: '2012-06-02'
+isActive: true

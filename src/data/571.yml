@@ -1,0 +1,9 @@
+id: '571'
+firstName: Daniela
+lastName: Brunner
+joined: '2018-02-04'
+dojo: Mountain Stream Budo
+ranks:
+  - name: Shodan
+    date: '2021-01-10'
+isActive: false

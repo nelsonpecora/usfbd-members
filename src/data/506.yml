@@ -1,0 +1,9 @@
+id: '506'
+firstName: Bryan
+lastName: Weed
+joined: '2015-11-17'
+dojo: Mountain Stream Budo
+ranks:
+  - name: Shodan
+    date: '2018-07-23'
+isActive: false

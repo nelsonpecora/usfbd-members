@@ -1,0 +1,10 @@
+id: '120'
+firstName: Stephen
+lastName: Peck
+joined: '2005-07-16'
+dojo: Konjaku Kioi
+manualCurrentRank: Nidan
+ranks:
+  - name: Sandan
+    date: '2014-11-15'
+isActive: false

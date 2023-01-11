@@ -1,0 +1,9 @@
+id: '489'
+firstName: Ian
+lastName: Swies
+joined: '2014-12-07'
+dojo: Bamboo Dojo
+ranks:
+  - name: Shodan
+    date: '2019-04-03'
+isActive: false

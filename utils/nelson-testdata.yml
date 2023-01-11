@@ -1,0 +1,62 @@
+# Basic info
+id: 520
+firstName: Nelson
+lastName: Pecora
+joined: 2016-06-30
+dojo: Zentokan
+isActive: true
+# Rank info
+ranks:
+  - name: Shodan
+    date: 2018-02-25
+  - name: Nidan
+    date: 2021-11-06
+# Seminar info
+seminars:
+  - name: Shoden kata
+    date: 2016-10-08
+    location: Genbukan
+    instructor: Sang Kim
+  - name: Chuden kata
+    date: 2016-10-08
+    location: Genbukan
+    instructor: Sang Kim
+  - name: Cutting
+    date: 2016-10-08
+    location: Genbukan
+    instructor: Sang Kim
+  - name: Shoden kata
+    date: 2018-02-24
+    location: Zentokan
+    instructor: John Matthews
+  - name: Chuden kata
+    date: 2018-02-24
+    location: Zentokan
+    instructor: John Matthews
+  - name: Cutting
+    date: 2018-02-24
+    location: Zentokan
+    instructor: John Matthews
+  - name: Tameshigiri
+    date: 2018-04
+    location: Mountain Stream Budo
+    instructor: Mike Femal
+  - name: Chuden kata
+    date: 2018-07-27
+    location: Mountain Stream Budo
+    instructor: Mike Femal
+  - name: Maintenance
+    date: 2018-08
+    location: Mountain Stream Budo
+    instructor: Mike Femal
+  - name: Chuden kata
+    date: 2021-11-06
+    location: Zentokan
+  - name: Advanced Tameshigiri
+    date: 2021-11-06
+    location: Zentokan
+# Taikai info
+taikai:
+  - name: East Coast Tai Kai
+    date: 2018
+    location: Orlando, FL

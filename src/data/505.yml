@@ -1,0 +1,11 @@
+id: '505'
+firstName: Mark
+lastName: Gagliardi
+joined: '2015-11-17'
+dojo: Mountain Stream Budo
+ranks:
+  - name: Shodan
+    date: '2018-07-23'
+  - name: Nidan
+    date: '2021-01-10'
+isActive: true
