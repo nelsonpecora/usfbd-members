@@ -6,4 +6,4 @@ dojo: Zentokan
 ranks:
   - name: Shodan
     date: '2021-01-10'
-isActive: false
+isActive: true
