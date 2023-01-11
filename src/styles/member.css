@@ -29,28 +29,25 @@ body:has(.member-page) {
   width: 90%;
 }
 
-.member-section table {
-  width: 100%;
-}
-
 th {
   text-align: left;
 }
 
 .table-2,
-.table-3 {
-  max-width: 500px;
+.table-4 {
+  width: 100%;
+  max-width: 600px;
 }
 
 .table-2 th,
 .table-2 td,
-.table-3 th,
-.table-3 td {
+.table-4 th,
+.table-4 td {
   width: 50%;
 }
 
-.table-3 th:last-of-type,
-.table-3 td:last-of-type {
+.table-4 th:nth-of-type(n+3),
+.table-4 td:nth-of-type(n+3) {
   display: none;
 }
 
@@ -103,7 +100,7 @@ h2 .jp {
   width: 90%;
 }
 
-.no-instructor {
+.no-data {
   color: var(--jp-text-color);
   font-family: var(--jp-font);
   font-weight: 400;
@@ -115,18 +112,50 @@ h2 .jp {
     margin: 0;
   }
 
-  .table-3 {
-    max-width: 750px;
+  .table-2 {
+    width: 50%;
   }
 
-  .table-3 th,
-  .table-3 td {
-    width: 34%;
+  .table-4 {
+    width: 100%;
   }
 
-  .table-3 th:last-of-type,
-  .table-3 td:last-of-type {
+  .table-4 {
+    max-width: 800px;
+  }
+
+  .table-4 th,
+  .table-4 td {
+    width: 25%;
+  }
+
+  .table-4 th:nth-of-type(n+3),
+  .table-4 td:nth-of-type(n+3) {
     display: table-cell;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .member-page .logged-in {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+
+  .member-page h1,
+  .member-section,
+  .feedback {
+    width: 100%;
+  }
+
+  .table-2 {
+    width: 100%;
+  }
+
+  .member-section:has(.table-2) {
+    margin: 30px 0;
+    width: 400px;
   }
 }
 

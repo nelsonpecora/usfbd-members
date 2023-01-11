@@ -77,10 +77,11 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
 
     <section class="member-section">
       <h2>Seminar History <span class="jp">講習会受講記録</span></h2>
-      <table class="table-3">
+      <table class="table-4">
         <tr>
           <th>Seminar <span class="jp">講習</span></th>
           <th>Date <span class="jp">年月日</span></th>
+          <th>Location <span class="jp">場所</span></th>
           <th>Instructor <span class="jp">先生</span></th>
         </tr>
         {% for seminar in member.seminars %}
@@ -88,10 +89,17 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
             <td>{{ seminar.name }}</td>
             <td>{{ seminar.date | fuzzydate }}</td>
             <td>
+              {% if seminar.location %}
+                {{ seminar.location }}
+              {% else %}
+                <span class="no-data">無名の所</span>
+              {% endif %}
+            </td>
+            <td>
               {% if seminar.instructor %}
                 {{ seminar.instructor }}
               {% else %}
-                <span class="no-instructor">無名先生</span>
+                <span class="no-data">無名の先生</span>
               {% endif %}
             </td>
           </tr>
@@ -101,16 +109,24 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
 
     <section class="member-section">
       <h2>Taikai History <span class="jp">大会会受講記録</span></h2>
-      <table class="table-3">
+      <table class="table-4">
         <tr>
           <th>Name <span class="jp">大会</span></th>
           <th>Date <span class="jp">年月日</span></th>
+          <th>Location <span class="jp">場所</span></th>
           <th>Wins <span class="jp">勝利</span></th>
         </tr>
         {% for t in member.taikai %}
           <tr>
             <td>{{ t.name }}</td>
             <td>{{ t.date | fuzzydate }}</td>
+            <td>
+              {% if taikai.location %}
+                {{ taikai.location }}
+              {% else %}
+                <span class="no-data">無名の所</span>
+              {% endif %}
+            </td>
             <td>{{ t.wins | formatTaikai | safe }}</td>
           </tr>
         {% endfor %}
