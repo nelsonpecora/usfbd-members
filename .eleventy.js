@@ -71,7 +71,9 @@ module.exports = (config) => {
     return `<a class="logo" href="${url}">
   <img src="/assets/img/usfbd_logo.svg" />
 </a>`;
-  })
+  });
+
+  config.addGlobalData('email', 'hi@nelson.codes');
 
   return {
     dir: {

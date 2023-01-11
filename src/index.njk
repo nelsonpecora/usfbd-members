@@ -28,7 +28,7 @@ layout: layout.njk
     <button type="submit" class="large-button login-btn">Log In</button>
 
     <aside class="error1">Sorry, we can't find you! Please enter your member number and last name and try again.</aside>
-    <aside class="error2">Sorry, we still can't find you! Please <a href="mailto:hi@nelson.codes?subject=Error logging in&body=Member number: $1 Last name: $2" target="_blank">email us</a> for assistance.</aside>
+    <aside class="error2">Sorry, we still can't find you! Please <a href="mailto:{{ email }}?subject=Error logging in&body=Member number: $1 Last name: $2" target="_blank">email us</a> for assistance.</aside>
   </form>
 
   <section class="logged-in">

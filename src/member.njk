@@ -150,8 +150,8 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
     </section>
 
     <section class="feedback">
-      See anything missing? <a href="mailto:hi@nelson.codes?subject=Member {{ member.id }} missing info" target="_blank">Email us!</a>
-      <span class="jp jp-regular">間違えたものを見れば、<a href="mailto:hi@nelson.codes?subject=Member {{ member.id }} missing info" target="_blank">メールくれていただけませんか。</a></span>
+      See anything missing? <a href="mailto:{{ email }}?subject=Member {{ member.id }} missing info" target="_blank">Email us!</a>
+      <span class="jp jp-regular">間違えたものを見れば、<a href="mailto:{{ email }}?subject=Member {{ member.id }} missing info" target="_blank">メールくれていただけませんか。</a></span>
     </section>
   </section>
 </main>
