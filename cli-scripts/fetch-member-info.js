@@ -189,11 +189,6 @@ async function main () {
   console.log('Fetching member data...');
   let memberSpreadsheet;
 
-  console.log({
-      client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY
-    })
-
   try {
     memberSpreadsheet = new GoogleSpreadsheet('1adUo2bdlwqEGoPT3zGYxkD7HsHTRPGTITFRLGkJlVoo');
 
