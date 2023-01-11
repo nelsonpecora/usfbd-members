@@ -1,0 +1,28 @@
+body:has(.not-found-page) {
+  background-image: url("./../img/yellow-paper.png");
+}
+
+.not-found-page {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.not-found-page .seven-samurai {
+  max-width: 736px;
+  margin: 0;
+  width: 100%;
+}
+
+.not-found-page .seven-samurai img {
+  margin: 0;
+  max-width: 100%;
+}
+
+.not-found-page h1 {
+  margin: 0 0 20px;
+}
