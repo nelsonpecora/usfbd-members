@@ -57,8 +57,10 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
           <td>
             {% if dojos[member.dojo] %}
               <a href="{{ dojos[member.dojo] }}" target="_blank">{{ member.dojo }}</a>
-            {% else %}
+            {% elif member.dojo %}
               {{ member.dojo }}
+            {% else %}
+              <span class="no-data" lang="jp">無名の所</span>
             {% endif %}
             </td>
         </tr>
