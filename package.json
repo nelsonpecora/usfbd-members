@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "rimraf build",
     "clean:members": "rimraf src/data/members/*",
-    "build": "yarn clean && eleventy",
+    "build": "eleventy",
     "dev": "yarn clean && eleventy --serve",
     "lint": "semistandard --verbose --fix | snazzy",
     "test": "jest",
