@@ -9,6 +9,7 @@
   "private": true,
   "scripts": {
     "clean": "rimraf build",
+    "clean:members": "rimraf src/data/members/*",
     "build": "yarn clean && eleventy",
     "dev": "yarn clean && eleventy --serve",
     "lint": "semistandard --verbose --fix | snazzy",

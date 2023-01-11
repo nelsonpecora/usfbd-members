@@ -115,6 +115,12 @@ async function getBasicInfo (doc) {
         return acc;
       }
 
+      if (!lastName) {
+        console.error(`No last name for: ${firstName} (${id})`);
+        missingIds.push({ firstName, id, dojo });
+        return acc;
+      }
+
       acc[id] = {
         id,
         firstName,
