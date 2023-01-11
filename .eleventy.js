@@ -67,6 +67,12 @@ module.exports = (config) => {
     }
   });
 
+  config.addShortcode('logo', (url) => {
+    return `<a class="logo" href="${url}">
+  <img src="/assets/img/usfbd_logo.svg" />
+</a>`;
+  })
+
   return {
     dir: {
       input: 'src',
