@@ -19,7 +19,7 @@ h1 {
 }
 
 h2, h3, h4 {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h2 {
@@ -30,7 +30,8 @@ h3 {
   font-size: 1.8rem;
 }
 
-h4 {
+h4,
+th {
   font-size: 1.25rem;
 }
 

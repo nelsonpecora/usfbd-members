@@ -43,7 +43,7 @@ body:has(.home) {
 #login-form label {
   align-items: center;
   display: flex;
-  font-weight: 600;
+  font-weight: 700;
   justify-content: space-between;
   margin: 15px 0;
 }
