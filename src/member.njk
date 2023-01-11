@@ -87,7 +87,13 @@ description: "Member details for {{ member.firstName }} {{ member.lastName }}"
           <tr>
             <td>{{ seminar.name }}</td>
             <td>{{ seminar.date | fuzzydate }}</td>
-            <td>{{ seminar.instructor }}</td>
+            <td>
+              {% if seminar.instructor %}
+                {{ seminar.instructor }}
+              {% else %}
+                <span class="no-instructor">無名先生</span>
+              {% endif %}
+            </td>
           </tr>
         {% endfor %}
       </table>

@@ -83,6 +83,7 @@ th {
 }
 
 .jp-regular {
+  display: block;
   font-size: 1em;
   font-weight: 400;
 }
@@ -100,6 +101,12 @@ h2 .jp {
 .feedback {
   margin: 0 auto 20px;
   width: 90%;
+}
+
+.no-instructor {
+  color: var(--jp-text-color);
+  font-family: var(--jp-font);
+  font-weight: 400;
 }
 
 @media screen and (min-width: 768px) {
