@@ -122,3 +122,27 @@ h2 .jp {
     display: table-cell;
   }
 }
+
+@media print {
+
+  /* Two column layout for printing */
+  .member-page .logged-in {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  .member-page h1 {
+    width: 100%;
+  }
+
+  .member-section {
+    max-width: 40%;
+    margin: 0;
+  }
+
+  .feedback {
+    display: none;
+  }
+}

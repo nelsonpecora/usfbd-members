@@ -109,3 +109,9 @@ input {
   visibility: visible;
   height: auto;
 }
+
+@media print {
+  .jp {
+    display: none !important;
+  }
+}
