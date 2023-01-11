@@ -19,7 +19,7 @@ function checkAuthMemberPage () {
   const loggedIn = document.querySelector('.logged-in');
 
   const auth = window.sessionStorage.getItem('auth');
-  const pageId = window.location.pathname.replace(/\/(.*)\.html/, '$1');
+  const pageId = window.location.pathname.replace(/\/member\/(.*)\.html/, '$1');
 
   if (!auth || parseInt(auth) !== window.hashes[pageId]) {
     loading.classList.remove('show');
@@ -63,7 +63,7 @@ function login (e) {
     error2.classList.remove('show');
     window.sessionStorage.setItem('auth', hashed);
     // Redirect member to their page
-    window.location.href = `/${id}.html`;
+    window.location.href = `/member/${id}.html`;
   }
 }
 
@@ -85,7 +85,7 @@ function checkAuthIndexPage () {
 
   if (memberId) {
     loggedOut.classList.remove('show');
-    memberLink.href = `/${memberId}.html`;
+    memberLink.href = `/member/${memberId}.html`;
     logoutBtn.addEventListener('click', logout);
     loggedIn.classList.add('show');
   } else {

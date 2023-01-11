@@ -3,7 +3,7 @@ pagination:
   data: members
   size: 1
   alias: member
-permalink: "{{ member.id }}.html"
+permalink: "member/{{ member.id }}.html"
 layout: layout.njk
 title: "{{ member.firstName }} {{ member.lastName }} | USFBD"
 description: "Member details for {{ member.firstName }} {{ member.lastName }}"
