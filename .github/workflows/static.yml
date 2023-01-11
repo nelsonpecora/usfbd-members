@@ -30,10 +30,23 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v2
-      - name: Eleventy Action
-        uses: TartanLlama/actions-eleventy@v1.3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+      - name: Install Dependencies
+        run: yarn install
+      - name: Lint Code
+        run: yarn lint
+      - name: Test Code
+        run: yarn test
+      - name: Generate Member YAML
+        run: 'yarn generate:info'
+      - name: Commit Changes # This commits linter fixes and generated yaml
+        uses: EndBug/add-and-commit@v9
         with:
-          install_dependencies: true
+          default_author: github_actions
+          message: 'Add files from CI'
+      - name: Build Eleventy Site
+        uses: TartanLlama/actions-eleventy@v1.3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
