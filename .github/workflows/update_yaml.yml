@@ -41,7 +41,7 @@ jobs:
         with:
           branch: main
           add: '-A .'
-          message: 'Update member yaml'
+          message: '[skip ci] Update member yaml'
           push: 'origin main'
           default_author: github_actions
           author_name: github-actions[bot]
