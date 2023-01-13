@@ -7,3 +7,20 @@ ranks:
   - name: Shodan
     date: '2021-11-18'
 isActive: true
+seminars:
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Basic tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Basics and Shoden
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-10-30'
+    location: Fort Lee, NJ

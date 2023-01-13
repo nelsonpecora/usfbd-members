@@ -1,0 +1,23 @@
+id: '605'
+firstName: Jason
+lastName: Yoon
+joined: '2020-01-05'
+dojo: Byakkokan
+ranks:
+  - name: Shodan
+    date: '2021-11-18'
+isActive: true
+seminars:
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Advanced tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Advanced Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-04'
+    location: Fort Lee, NJ

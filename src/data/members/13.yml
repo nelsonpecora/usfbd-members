@@ -1,8 +1,24 @@
 id: '13'
-firstName: Sherry
+firstName: Michael
 lastName: Femal
 joined: null
 dojo: Konjaku Kioi
 manualCurrentRank: Yondan
-ranks: []
+ranks:
+  - name: Godan
+    date: '2017-11-19'
 isActive: false
+seminars:
+  - name: Shoden kata
+    date: '2018-07-28'
+    location: Mountain Stream Budo
+  - name: Chuden kata
+    date: '2018-07-29'
+    location: Mountain Stream Budo
+  - name: Tameshigiri
+    date: '2018-07-30'
+    location: Mountain Stream Budo
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-21'
+    location: Fort Lee, NJ

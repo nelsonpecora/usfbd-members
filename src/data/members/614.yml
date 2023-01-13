@@ -1,0 +1,15 @@
+id: '614'
+firstName: Larry
+lastName: Rotolo
+joined: '2020-01-23'
+dojo: Konjaku Kioi
+ranks: []
+isActive: false
+seminars:
+  - name: Basics and Shoden
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-09'
+    location: Fort Lee, NJ

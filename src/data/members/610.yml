@@ -1,0 +1,18 @@
+id: '610'
+firstName: Katherine
+lastName: Hamilton
+joined: '2020-01-08'
+dojo: Byakkokan
+ranks: []
+isActive: true
+seminars:
+  - name: Shoden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Basic tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-10-23'
+    location: Fort Lee, NJ

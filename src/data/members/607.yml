@@ -1,0 +1,18 @@
+id: '607'
+firstName: Peter
+lastName: Haas
+joined: '2020-01-05'
+dojo: Byakkokan
+ranks: []
+isActive: true
+seminars:
+  - name: Shoden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Basic tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-10-26'
+    location: Fort Lee, NJ

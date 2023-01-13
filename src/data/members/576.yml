@@ -5,3 +5,14 @@ joined: '2018-02-23'
 dojo: Byakkokan
 ranks: []
 isActive: false
+seminars:
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Advanced tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-05'
+    location: Fort Lee, NJ

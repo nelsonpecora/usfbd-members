@@ -8,3 +8,29 @@ ranks:
   - name: Nidan
     date: '2018-02-24'
 isActive: false
+seminars:
+  - name: Shoden kata
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Chuden kata
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Tameshigiri
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Shoden kata
+    date: '2018-07-31'
+    location: Mountain Stream Budo
+  - name: Chuden kata
+    date: '2018-08-01'
+    location: Mountain Stream Budo
+  - name: Tameshigiri
+    date: '2018-08-02'
+    location: Mountain Stream Budo
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-06'
+    location: Fort Lee, NJ

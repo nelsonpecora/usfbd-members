@@ -6,3 +6,8 @@ dojo: Seibukan
 manualCurrentRank: Shodan
 ranks: []
 isActive: false
+seminars: []
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-23'
+    location: Fort Lee, NJ

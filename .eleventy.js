@@ -40,12 +40,12 @@ module.exports = (config) => {
       let place;
 
       switch (t.place) {
-        case 1: place = 'First place'; break;
-        case 2: place = 'Second place'; break;
-        case 3: place = 'Third place'; break;
-        default: place = '';
+        case 1: place = '1st Place'; break;
+        case 2: place = '2nd Place'; break;
+        case 3: place = '3rd Place'; break;
+        default: place = 'Won';
       }
-      return `<strong>${t.name}:</strong> ${place}`;
+      return `<strong>${place}:</strong> ${t.name}`;
     }).join('<br />');
   });
 

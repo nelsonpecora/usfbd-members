@@ -1,0 +1,12 @@
+id: '602'
+firstName: Greg
+lastName: Yakich
+joined: '2019-08-09'
+dojo: null
+ranks: []
+isActive: false
+seminars:
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai: []

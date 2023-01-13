@@ -7,3 +7,8 @@ ranks:
   - name: Shodan
     date: '2021-01-10'
 isActive: false
+seminars:
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai: []

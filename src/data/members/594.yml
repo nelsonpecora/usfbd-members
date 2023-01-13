@@ -1,0 +1,12 @@
+id: '594'
+firstName: Gregory
+lastName: Middleton
+joined: '2019-01-05'
+dojo: Byakkokan
+ranks: []
+isActive: false
+seminars: []
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-10-28'
+    location: Fort Lee, NJ

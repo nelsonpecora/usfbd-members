@@ -1,0 +1,18 @@
+id: '597'
+firstName: James
+lastName: Palicelli
+joined: '2019-05-18'
+dojo: Mountain Stream Budo
+ranks: []
+isActive: false
+seminars:
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-10-31'
+    location: Fort Lee, NJ

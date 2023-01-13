@@ -1,0 +1,12 @@
+id: '649'
+firstName: Yuhao
+lastName: Liu
+joined: '2022-03-31'
+dojo: Byakkokan
+ranks: []
+isActive: true
+seminars:
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai: []

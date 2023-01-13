@@ -3,15 +3,20 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
-const { parse } = require('date-fns');
+const { parse, parseISO, isAfter } = require('date-fns');
 const { format, utcToZonedTime } = require('date-fns-tz');
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 const pluralize = require('pluralize');
 
-function getCell (row, cellName) {
+const GOOGLE_AUTH = {
+  client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+  private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
+};
+
+function getCell (row, cellName, fallback = null) {
   const rawCell = row[cellName];
 
-  return rawCell ? rawCell.trim() : null;
+  return rawCell ? rawCell.trim() : fallback;
 }
 
 function parseDate (date) {
@@ -106,7 +111,7 @@ async function getBasicInfo (doc) {
       // Certain members are exempt from dues. They are considered always active.
       const exemption = getCell(row, 'Exemption');
 
-      if (!id) {
+      if (!id || Number.isNaN(parseInt(id))) {
         console.error(`No id for: ${firstName} ${lastName}`);
         missingIds.push({ firstName, lastName, dojo });
         return acc;
@@ -115,6 +120,13 @@ async function getBasicInfo (doc) {
       if (!lastName) {
         console.error(`No last name for: ${firstName} (${id})`);
         missingIds.push({ firstName, id, dojo });
+        return acc;
+      }
+
+      if (acc[id]) {
+        // If the id already exists, we don't add the second person
+        console.error(`Duplicate id for: ${firstName}  ${lastName} (${id}), is already ${acc[id].firstName} ${acc[id].lastName}`);
+        missingIds.push({ firstName, lastName, id, dojo });
         return acc;
       }
 
@@ -185,32 +197,225 @@ async function getBasicInfo (doc) {
   }
 }
 
-async function main () {
-  console.log('Fetching member data...');
+function parseSeminar({
+  event,
+  date,
+  note,
+  instructor
+}) {
+  return {
+    name: note,
+    date,
+    ...event && { location: event},
+    ...instructor && { instructor }
+  };
+}
+
+function parseTaikaiWin (win) {
+  const [place, name] = win.split(':');
+
+  return {
+    place: parseInt(place.trim()),
+    name: name.trim()
+  }
+}
+
+function parseAndMergeTaikai (acc, {
+  event,
+  date,
+  taikaiLocation,
+  taikaiYear,
+  win1,
+  win2,
+  win3,
+  win4
+}) {
+  const existingTaikai = acc.find((t) => t.name === event && t.date.getFullYear() === taikaiYear);
+  const wins = [];
+
+  if (win1) wins.push(parseTaikaiWin(win1));
+  if (win2) wins.push(parseTaikaiWin(win2));
+  if (win3) wins.push(parseTaikaiWin(win3));
+  if (win4) wins.push(parseTaikaiWin(win4));
+
+  if (existingTaikai) {
+    // If we've already added this taikai, just add wins
+    existingTaikai.wins = existingTaikai.wins.concat(wins);
+  } else {
+    // Otherwise, add a new taikai
+    acc.push({
+      name: event,
+      date,
+      ...taikaiLocation && { location: taikaiLocation },
+      ...wins.length && { wins }
+    })
+  }
+
+  return acc;
+}
+
+function parseTest ({ date, note }) {
+  return {
+    name: note,
+    date
+  }
+}
+
+async function getSeminarInfo (doc) {
+  const sheet = doc.sheetsByTitle.Sheet1;
+  const rows = await sheet.getRows();
+
+  // We get seminar and taikai history for each member. Additonally,
+  // we get testing history (which we can merge with their ranks in case
+  // that data is missing from the member spreadsheet).
+  const info = rows.reduce((acc, row) => {
+    const id = getCell(row, 'Member Number');
+
+    if (!id || id === '#N/A') {
+      // Return early if the ID can't be parsed
+      return acc;
+    }
+
+    try {
+      const event = getCell(row, 'Event'); // Either seminar location or taikai name
+      const rawDate = getCell(row, 'Date');
+      const type = getCell(row, 'Action');
+      // Contains info on seminar name, rank for test
+      const note = getCell(row, 'Notes');
+      const instructor = getCell(row, 'Instructors');
+      const isPassingTest = getCell(row, 'Testing Pass/Fail', '').toLowerCase() === 'yes';
+      // Taikai specific fields
+      const taikaiLocation = getCell(row, 'Taikai Location');
+      const taikaiYear = getCell(row, 'Year'); // Used to disambiguate taikai
+      const win1 = getCell(row, 'Taikai Win1');
+      const win2 = getCell(row, 'Taikai Win2');
+      const win3 = getCell(row, 'Taikai Win3');
+      const win4 = getCell(row, 'Taikai Win4');
+      const date = parseDate(rawDate);
+
+      // Set up accumulator for a member
+      acc[id] = acc[id] || {
+        seminars: [],
+        taikai: [],
+        testing: []
+      };
+
+      if (type === 'Seminar Class') {
+        acc[id].seminars.push(parseSeminar({
+          event,
+          date,
+          note,
+          instructor
+        }));
+      } else if (type === 'Tournament') {
+        acc[id].taikai = parseAndMergeTaikai(acc[id].taikai, {
+          event,
+          date,
+          taikaiLocation,
+          taikaiYear,
+          win1,
+          win2,
+          win3,
+          win4
+        });
+      } else if (type === 'Testing' && isPassingTest) {
+        acc[id].testing.push(parseTest({
+          date,
+          note
+        }));
+      }
+
+      return acc;
+    } catch (e) {
+      console.error(`Error parsing seminar data for member ${id}: ${e.message}`);
+      process.exit(1);
+    }
+  }, {});
+
+  return info;
+}
+
+// https://docs.google.com/spreadsheets/d/1adUo2bdlwqEGoPT3zGYxkD7HsHTRPGTITFRLGkJlVoo/edit#gid=218421591
+async function loadMemberSpreadsheet () {
   let memberSpreadsheet;
 
   try {
     memberSpreadsheet = new GoogleSpreadsheet('1adUo2bdlwqEGoPT3zGYxkD7HsHTRPGTITFRLGkJlVoo');
-
-    await memberSpreadsheet.useServiceAccountAuth({
-      client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
-    });
-
+    await memberSpreadsheet.useServiceAccountAuth(GOOGLE_AUTH);
     await memberSpreadsheet.loadInfo();
   } catch (e) {
     console.error(`Error accessing member spreadsheet: ${e.message}`);
     process.exit(1);
   }
 
+  return memberSpreadsheet;
+}
+
+// https://docs.google.com/spreadsheets/d/1WCKWlFMDnDGkq2ir4JBHKfP3Ufr3bhK-z67vDqWSzHA/edit#gid=0
+async function loadSeminarSpreadsheet () {
+  let seminarSpreadsheet;
+
+  try {
+    seminarSpreadsheet = new GoogleSpreadsheet('1WCKWlFMDnDGkq2ir4JBHKfP3Ufr3bhK-z67vDqWSzHA');
+    await seminarSpreadsheet.useServiceAccountAuth(GOOGLE_AUTH);
+    await seminarSpreadsheet.loadInfo();
+  } catch (e) {
+    console.error(`Error accessing seminar spreadsheet: ${e.message}`);
+    process.exit(1);
+  }
+
+  return seminarSpreadsheet;
+}
+
+function mergeInfo (id, member, seminarInfo) {
+  const memberSeminarInfo = seminarInfo[id];
+
+  if (!memberSeminarInfo) {
+    return member;
+  }
+
+  const { seminars, taikai, testing } = memberSeminarInfo;
+
+  // Add seminars and taikai
+  member.seminars = seminars;
+  member.taikai = taikai;
+
+  // Find any rank tests that are missing from the member data and add them
+  testing.forEach((test) => {
+    const existingRank = member.ranks.find((r) => r.name === test.name);
+
+    if (!existingRank) {
+      // If the rank isn't there, add it
+      member.ranks.push(test);
+    } else {
+      // If the rank is already there, compare the dates and assume the OLDER
+      // date is correct.
+      const rankDate = parseISO(existingRank.date);
+      const testDate = parseISO(test.date);
+
+      existingRank.date = isAfter(rankDate, testDate) ? test.date : existingRank.date;
+    }
+  });
+
+  return member;
+}
+
+async function main () {
+  console.log('Fetching member data...');
+  const memberSpreadsheet = await loadMemberSpreadsheet();
+  const seminarSpreadsheet = await loadSeminarSpreadsheet();
+
   // Get basic info from the 'USFBD Member List.xlsx' spreadsheet.
   const { basicInfo, missingIds } = await getBasicInfo(memberSpreadsheet);
 
-  // TODO: Get seminar and taikai info from the 'Seminar/Testing History' spreadsheet.
+  // Get seminar and taikai info from the 'Seminar/Testing History' spreadsheet.
+  const seminarInfo = await getSeminarInfo(seminarSpreadsheet);
 
   // Combine the info and write to yaml files.
   Object.entries(basicInfo).forEach(([id, member]) => {
-    const memberYaml = yaml.dump(member);
+    const combinedInfo = mergeInfo(id, member, seminarInfo);
+
+    const memberYaml = yaml.dump(combinedInfo);
 
     try {
       fs.writeFileSync(path.join(__dirname, '..', 'src', 'data', 'members', `${id}.yml`), memberYaml);

@@ -6,3 +6,8 @@ dojo: Konjaku Kioi
 manualCurrentRank: Nidan
 ranks: []
 isActive: false
+seminars: []
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-20'
+    location: Fort Lee, NJ

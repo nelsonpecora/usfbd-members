@@ -10,3 +10,18 @@ ranks:
   - name: Yondan
     date: '2021-11-18'
 isActive: false
+seminars:
+  - name: Chuden kata
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Shoden kata
+    date: '2018-07-23'
+    location: Mountain Stream Budo
+  - name: Chuden kata
+    date: '2018-07-23'
+    location: Mountain Stream Budo
+  - name: Tameshigiri
+    date: '2018-07-23'
+    location: Mountain Stream Budo
+taikai: []

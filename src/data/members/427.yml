@@ -6,3 +6,17 @@ dojo: Byakkokan
 manualCurrentRank: Shodan
 ranks: []
 isActive: false
+seminars:
+  - name: Shoden kata
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Chuden kata
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Tameshigiri
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+taikai: []

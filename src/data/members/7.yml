@@ -10,3 +10,19 @@ ranks:
   - name: Sandan
     date: '2021-01-10'
 isActive: false
+seminars:
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+  - name: Advanced Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-08'
+    location: Fort Lee, NJ
+    wins:
+      - place: 1
+        name: Shodan & Nidan Tameshigiri
+      - place: 3
+        name: Shodan & Nidan kata

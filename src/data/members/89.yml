@@ -6,3 +6,26 @@ dojo: Genbukan
 manualCurrentRank: Nidan
 ranks: []
 isActive: false
+seminars:
+  - name: Shoden kata
+    date: '2018-07-24'
+    location: Mountain Stream Budo
+  - name: Chuden kata
+    date: '2018-07-25'
+    location: Mountain Stream Budo
+  - name: Tameshigiri
+    date: '2018-07-26'
+    location: Mountain Stream Budo
+  - name: Advanced Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+  - name: Advanced Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-19'
+    location: Fort Lee, NJ
+    wins:
+      - place: 1
+        name: Team cutting

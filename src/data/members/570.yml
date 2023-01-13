@@ -5,3 +5,17 @@ joined: '2018-01-20'
 dojo: Zentokan
 ranks: []
 isActive: true
+seminars:
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Basic tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-10-20'
+    location: Fort Lee, NJ

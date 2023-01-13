@@ -10,3 +10,14 @@ ranks:
   - name: Sandan
     date: '2017-11-19'
 isActive: false
+seminars:
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Advanced tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-15'
+    location: Fort Lee, NJ

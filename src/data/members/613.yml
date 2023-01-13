@@ -1,0 +1,12 @@
+id: '613'
+firstName: Andre
+lastName: Nakkab
+joined: '2020-01-23'
+dojo: Byakkokan
+ranks: []
+isActive: false
+seminars:
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai: []

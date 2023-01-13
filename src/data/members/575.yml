@@ -7,3 +7,31 @@ ranks:
   - name: Shodan
     date: '2021-01-10'
 isActive: true
+seminars:
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Advanced tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Shoden kata
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Tameshigiri
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Shoden kata
+    date: '2018-07-24'
+    location: Mountain Stream Budo
+  - name: Chuden kata
+    date: '2018-07-25'
+    location: Mountain Stream Budo
+  - name: Tameshigiri
+    date: '2018-07-26'
+    location: Mountain Stream Budo
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-03'
+    location: Fort Lee, NJ

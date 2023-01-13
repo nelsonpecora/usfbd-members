@@ -10,3 +10,32 @@ ranks:
   - name: Yondan
     date: '2020-01-01'
 isActive: false
+seminars:
+  - name: Shoden kata
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Chuden kata
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Tameshigiri
+    date: '2018-02-24'
+    location: Zentokan
+    instructor: John Matthews
+  - name: Shoden kata
+    date: '2018-07-23'
+    location: Mountain Stream Budo
+  - name: Chuden kata
+    date: '2018-07-23'
+    location: Mountain Stream Budo
+  - name: Tameshigiri
+    date: '2018-07-23'
+    location: Mountain Stream Budo
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-18'
+    location: Fort Lee, NJ
+    wins:
+      - place: 1
+        name: Team cutting

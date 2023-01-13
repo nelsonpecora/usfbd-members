@@ -10,3 +10,31 @@ ranks:
   - name: Yondan
     date: '2021-01-10'
 isActive: true
+seminars:
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Advanced tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Shoden kata
+    date: '2018-07-24'
+    location: Mountain Stream Budo
+  - name: Chuden kata
+    date: '2018-07-25'
+    location: Mountain Stream Budo
+  - name: Tameshigiri
+    date: '2018-07-26'
+    location: Mountain Stream Budo
+  - name: Advanced Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-22'
+    location: Fort Lee, NJ
+    wins:
+      - place: 2
+        name: Sandan+ kata
+      - place: 1
+        name: Team cutting

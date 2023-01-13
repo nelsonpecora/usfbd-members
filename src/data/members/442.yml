@@ -8,3 +8,20 @@ ranks:
   - name: Sandan
     date: '2021-01-10'
 isActive: true
+seminars:
+  - name: Shoden kata
+    date: '2018-07-31'
+    location: Mountain Stream Budo
+  - name: Chuden kata
+    date: '2018-08-01'
+    location: Mountain Stream Budo
+  - name: Tameshigiri
+    date: '2018-08-02'
+    location: Mountain Stream Budo
+  - name: Advanced Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+taikai:
+  - name: Tri State Tai Kai
+    date: '2019-11-16'
+    location: Fort Lee, NJ
