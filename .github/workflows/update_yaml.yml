@@ -40,6 +40,7 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: 'Update member yaml'
+          default_author: github_actor
   deploy:
     needs: update_yaml
     environment:
