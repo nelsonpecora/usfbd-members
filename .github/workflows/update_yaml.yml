@@ -16,7 +16,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  update_yaml:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     env:
       GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL}}
@@ -36,29 +39,6 @@ jobs:
         run: yarn --frozen-lockfile
       - name: Generate Member YAML
         run: 'yarn generate:info'
-      - name: Commit Member YAML
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: '[skip ci] Update member yaml'
-  deploy:
-    needs: update_yaml
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          ref: main
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          cache: 'yarn'
-      - name: Install Dependencies
-        run: yarn --frozen-lockfile
       - name: Build Eleventy Site
         run: yarn build
       - name: Upload artifact
