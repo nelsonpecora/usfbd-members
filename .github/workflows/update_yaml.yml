@@ -41,6 +41,7 @@ jobs:
         with:
           message: 'Update member yaml'
   deploy:
+    needs: update_yaml
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
