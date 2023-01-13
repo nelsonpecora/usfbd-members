@@ -14,8 +14,7 @@
     "dev": "yarn clean && eleventy --serve",
     "lint": "semistandard --verbose --fix | snazzy",
     "test": "jest",
-    "generate:info": "node cli-scripts/fetch-member-info.js",
-    "update": "yarn generate:info && git add -A && git commit -m \"Update member info\" && git push"
+    "generate:info": "node cli-scripts/fetch-member-info.js"
   },
   "semistandard": {
     "ignore": [
