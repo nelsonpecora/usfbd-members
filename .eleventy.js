@@ -73,7 +73,7 @@ module.exports = (config) => {
 </a>`;
   });
 
-  config.addGlobalData('email', 'hi@nelson.codes');
+  config.addGlobalData('email', 'usbattofed@gmail.com');
 
   return {
     dir: {

@@ -9,9 +9,11 @@ seminars:
   - name: Basic Tameshigiri
     date: '2019-10-19'
     location: Tri State Tai Kai
+    instructor: Bob Elder
   - name: Basic Tameshigiri
     date: '2019-10-19'
     location: Tri State Tai Kai
+    instructor: Mike Femal
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-31'

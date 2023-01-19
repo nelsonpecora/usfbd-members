@@ -81,3 +81,7 @@ body:has(.home) {
 .error2.show {
   opacity: 1;
 }
+
+.home-feedback {
+  margin: 20px 0 0;
+}

@@ -9,4 +9,4 @@ ranks:
     date: '2014-07-19'
   - name: Nidan
     date: '2019-04-03'
-isActive: false
+isActive: true

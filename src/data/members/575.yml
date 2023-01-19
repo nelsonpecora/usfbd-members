@@ -25,12 +25,15 @@ seminars:
   - name: Shoden kata
     date: '2018-07-24'
     location: Mountain Stream Budo
+    instructor: Mike Femal
   - name: Chuden kata
     date: '2018-07-25'
     location: Mountain Stream Budo
+    instructor: Mike Femal
   - name: Tameshigiri
     date: '2018-07-26'
     location: Mountain Stream Budo
+    instructor: Mike Femal
 taikai:
   - name: Tri State Tai Kai
     date: '2019-11-03'

@@ -53,9 +53,6 @@ function login (e) {
     error1.classList.add('show');
 
     if (attempts.value > 1) {
-      const link = error2.querySelector('a');
-
-      link.href = link.href.replace('$1', id).replace('$2', lastName);
       error2.classList.add('show');
     }
   } else {

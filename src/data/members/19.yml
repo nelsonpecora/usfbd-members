@@ -7,4 +7,6 @@ manualCurrentRank: Sandan
 ranks:
   - name: Yondan
     date: '2017-11-19'
-isActive: false
+isActive: true
+seminars: []
+taikai: []

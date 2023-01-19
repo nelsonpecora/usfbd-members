@@ -1,7 +1,7 @@
 id: '605'
 firstName: Jason
 lastName: Yoon
-joined: '2020-01-05'
+joined: '2019-01-05'
 dojo: Byakkokan
 ranks:
   - name: Shodan
@@ -17,7 +17,23 @@ seminars:
   - name: Advanced Tameshigiri
     date: '2019-10-19'
     location: Tri State Tai Kai
+    instructor: Bob Elder
 taikai:
   - name: Tri State Tai Kai
     date: '2019-11-04'
     location: Fort Lee, NJ
+    wins:
+      - place: 2
+        name: Gekken
+      - place: 3
+        name: Dotan cutting
+  - name: Florida Regional Tai Kai
+    date: '2021-10-09'
+    location: Orlando, FL
+    wins:
+      - place: 1
+        name: Nidan & Sandan kata
+      - place: 2
+        name: Team cutting
+      - place: 3
+        name: Nidan & Sandan cutting

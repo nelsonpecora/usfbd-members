@@ -1,23 +1,24 @@
 id: '13'
-firstName: Michael
+firstName: Sherry
 lastName: Femal
 joined: null
 dojo: Konjaku Kioi
 manualCurrentRank: Yondan
-ranks:
-  - name: Godan
-    date: '2017-11-19'
+ranks: []
 isActive: false
 seminars:
   - name: Shoden kata
     date: '2018-07-28'
     location: Mountain Stream Budo
+    instructor: Mike Femal
   - name: Chuden kata
     date: '2018-07-29'
     location: Mountain Stream Budo
+    instructor: Mike Femal
   - name: Tameshigiri
     date: '2018-07-30'
     location: Mountain Stream Budo
+    instructor: Mike Femal
 taikai:
   - name: Tri State Tai Kai
     date: '2019-11-21'
