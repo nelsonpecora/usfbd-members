@@ -3,5 +3,15 @@ firstName: Dylan
 lastName: Vaughan
 joined: '2022-12-21'
 dojo: Byakkokan
-ranks: []
+ranks:
+  - name: Shodan
+    date: '2023-01-28'
 isActive: true
+seminars:
+  - name: Shoden Kata
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Basic Tameshigiri
+    date: '2023-01-28'
+    location: Brooklyn 2023
+taikai: []

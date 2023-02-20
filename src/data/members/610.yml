@@ -12,6 +12,12 @@ seminars:
   - name: Basic tameshigiri
     date: '2021-11-19'
     location: Zentokan
+  - name: Shoden Kata
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Basic Tameshigiri
+    date: '2023-01-28'
+    location: Brooklyn 2023
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-23'

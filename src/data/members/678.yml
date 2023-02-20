@@ -1,19 +1,11 @@
-id: '604'
-firstName: Kevin
-lastName: Seney
-joined: '2020-01-01'
-dojo: Zentokan
-ranks:
-  - name: Shodan
-    date: '2023-01-28'
+id: '678'
+firstName: Rayot
+lastName: DiFate
+joined: '2023-02-07'
+dojo: Genbukan
+ranks: []
 isActive: true
 seminars:
-  - name: Chuden Kata
-    date: '2023-01-28'
-    location: Brooklyn 2023
-  - name: Basic Tameshigiri
-    date: '2023-01-28'
-    location: Brooklyn 2023
   - name: Shoden Kata
     date: '2023-02-19'
     location: Genbukan 2023

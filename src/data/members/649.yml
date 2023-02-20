@@ -3,11 +3,19 @@ firstName: Yuhao
 lastName: Liu
 joined: '2022-03-31'
 dojo: Byakkokan
-ranks: []
+ranks:
+  - name: Shodan
+    date: '2023-01-28'
 isActive: true
 seminars:
   - name: Basic Tameshigiri
     date: '2019-10-19'
     location: Tri State Tai Kai
     instructor: Mike Femal
+  - name: Shoden Kata
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Basic Tameshigiri
+    date: '2023-01-28'
+    location: Brooklyn 2023
 taikai: []

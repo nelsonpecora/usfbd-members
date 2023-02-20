@@ -33,6 +33,14 @@ seminars:
     date: '2019-10-19'
     location: Tri State Tai Kai
     instructor: Bob Elder
+  - name: Chuden Kata
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Sang Kim
+  - name: Advanced Tameshigiri
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Sang Kim
 taikai:
   - name: Tri State Tai Kai
     date: '2019-11-22'

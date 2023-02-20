@@ -5,3 +5,11 @@ joined: '2021-01-15'
 dojo: Zentokan
 ranks: []
 isActive: false
+seminars:
+  - name: Shoden Kata
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Basic Tameshigiri
+    date: '2023-01-28'
+    location: Brooklyn 2023
+taikai: []

@@ -8,6 +8,8 @@ ranks:
     date: '2018-02-24'
   - name: Nidan
     date: '2021-01-10'
+  - name: Sandan
+    date: '2023-01-28'
 isActive: false
 seminars:
   - name: Shoden kata
@@ -34,6 +36,15 @@ seminars:
     date: '2018-07-26'
     location: Mountain Stream Budo
     instructor: Mike Femal
+  - name: Chuden Kata
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Advanced Tameshigiri
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Judging (sandan and above in USFBD, ZNTIR, etc)
+    date: '2023-01-28'
+    location: Brooklyn 2023
 taikai:
   - name: Tri State Tai Kai
     date: '2019-11-14'

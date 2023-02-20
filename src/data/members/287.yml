@@ -1,10 +1,7 @@
 id: '287'
-firstName: Tracy
-lastName: Snell
-joined: '2007-10-20'
+firstName: Michael
+lastName: Vornhagen
+joined: '2012-08-19'
 dojo: Seibukan
-manualCurrentRank: Sandan
-ranks:
-  - name: Nidan
-    date: '2012-03-01'
+ranks: []
 isActive: false

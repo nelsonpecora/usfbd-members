@@ -7,6 +7,8 @@ manualCurrentRank: Shodan
 ranks:
   - name: Nidan
     date: '2018-07-23'
+  - name: Sandan
+    date: '2023-02-19'
 isActive: true
 seminars:
   - name: Chuden kata
@@ -27,6 +29,14 @@ seminars:
     date: '2018-07-26'
     location: Mountain Stream Budo
     instructor: Mike Femal
+  - name: Chuden Kata
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Sang Kim
+  - name: Advanced Tameshigiri
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Sang Kim
 taikai:
   - name: Tri State Tai Kai
     date: '2019-11-17'

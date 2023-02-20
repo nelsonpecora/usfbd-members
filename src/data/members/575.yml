@@ -6,6 +6,8 @@ dojo: Zentokan
 ranks:
   - name: Shodan
     date: '2021-01-10'
+  - name: Nidan
+    date: '2023-02-19'
 isActive: true
 seminars:
   - name: Chuden kata
@@ -34,6 +36,27 @@ seminars:
     date: '2018-07-26'
     location: Mountain Stream Budo
     instructor: Mike Femal
+  - name: Chuden Kata
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Advanced Tameshigiri
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Judging (sandan and above in USFBD, ZNTIR, etc)
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Shoden Kata
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Russell Gordon
+  - name: Chuden Kata
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Sang Kim
+  - name: Basic Tameshigiri
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Masaki Kurihara
 taikai:
   - name: Tri State Tai Kai
     date: '2019-11-03'

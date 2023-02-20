@@ -5,3 +5,11 @@ joined: '2022-01-25'
 dojo: Byakkokan
 ranks: []
 isActive: true
+seminars:
+  - name: Shoden Kata
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Basic Tameshigiri
+    date: '2023-01-28'
+    location: Brooklyn 2023
+taikai: []

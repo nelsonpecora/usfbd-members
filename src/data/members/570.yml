@@ -3,7 +3,9 @@ firstName: Ravi
 lastName: Rajakumar
 joined: '2018-01-20'
 dojo: Zentokan
-ranks: []
+ranks:
+  - name: Shodan
+    date: '2023-01-28'
 isActive: true
 seminars:
   - name: Chuden kata
@@ -16,6 +18,12 @@ seminars:
     date: '2019-10-19'
     location: Tri State Tai Kai
     instructor: Mike Femal
+  - name: Chuden Kata
+    date: '2023-01-28'
+    location: Brooklyn 2023
+  - name: Basic Tameshigiri
+    date: '2023-01-28'
+    location: Brooklyn 2023
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

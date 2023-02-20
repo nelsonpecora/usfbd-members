@@ -1,8 +1,8 @@
-id: '635'
-firstName: Luke
-lastName: Inoue
-joined: '2021-04-02'
-dojo: Genbukan
+id: '673'
+firstName: Emily
+lastName: Barcliffe
+joined: '2023-01-28'
+dojo: Koshinkai
 ranks: []
 isActive: true
 seminars:
@@ -14,8 +14,4 @@ seminars:
     date: '2023-02-19'
     location: Genbukan 2023
     instructor: Sang Kim
-  - name: Basic Tameshigiri
-    date: '2023-02-19'
-    location: Genbukan 2023
-    instructor: Masaki Kurihara
 taikai: []

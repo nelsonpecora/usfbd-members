@@ -3,5 +3,21 @@ firstName: Gavin
 lastName: Tucker
 joined: '2020-01-23'
 dojo: Mountain Stream Budo
-ranks: []
+ranks:
+  - name: Shodan
+    date: '2023-02-19'
 isActive: true
+seminars:
+  - name: Shoden Kata
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Russell Gordon
+  - name: Chuden Kata
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Sang Kim
+  - name: Basic Tameshigiri
+    date: '2023-02-19'
+    location: Genbukan 2023
+    instructor: Masaki Kurihara
+taikai: []

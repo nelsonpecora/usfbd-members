@@ -2,14 +2,14 @@ id: '298'
 firstName: Matthew
 lastName: Odell
 joined: '2008-10-25'
-dojo: Genbukan
+dojo: Individual
 manualCurrentRank: Nidan
 ranks:
   - name: Sandan
     date: '2017-11-19'
   - name: Yondan
     date: '2021-11-18'
-isActive: false
+isActive: true
 seminars:
   - name: Chuden kata
     date: '2018-02-24'
@@ -27,4 +27,7 @@ seminars:
     date: '2018-07-23'
     location: Mountain Stream Budo
     instructor: Mike Femal
+  - name: Judging (sandan and above in USFBD, ZNTIR, etc)
+    date: '2023-01-28'
+    location: Brooklyn 2023
 taikai: []
