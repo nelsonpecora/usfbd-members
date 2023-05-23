@@ -35,9 +35,9 @@ seminars:
     location: Genbukan 2023
     instructor: Sang Kim
   - name: Basic Cutting
-    date: null
+    date: '2019-10-19'
     location: Tri State Tai Kai
 taikai:
   - name: Tri State Tai Kai
-    date: '2019-10-29'
+    date: '2019-10-20'
     location: Fort Lee, NJ

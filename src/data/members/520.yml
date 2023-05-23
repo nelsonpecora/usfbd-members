@@ -43,13 +43,21 @@ seminars:
   - name: Chuden Kata
     date: '2023-01-28'
     location: Brooklyn 2023
+    instructor: Matt Odell
   - name: Advanced Tameshigiri
     date: '2023-01-28'
     location: Brooklyn 2023
+    instructor: Russell Gordon
 taikai:
   - name: Tri State Tai Kai
-    date: '2019-11-01'
+    date: '2019-10-20'
     location: Fort Lee, NJ
   - name: East Coast Tai Kai
     date: '2018-08-01'
     location: Palm Bay, FL
+  - name: 46th ZNTIR Taikai
+    date: '2023-05-21'
+    location: Machida, Japan
+    wins:
+      - place: 3
+        name: Kumitachi

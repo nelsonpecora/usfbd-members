@@ -25,9 +25,11 @@ seminars:
   - name: Chuden Kata
     date: '2023-01-28'
     location: Brooklyn 2023
+    instructor: Matt Odell
   - name: Advanced Tameshigiri
     date: '2023-01-28'
     location: Brooklyn 2023
+    instructor: Russell Gordon
   - name: Chuden Kata
     date: '2023-02-19'
     location: Genbukan 2023
@@ -38,5 +40,5 @@ seminars:
     instructor: Sang Kim
 taikai:
   - name: Tri State Tai Kai
-    date: '2019-10-30'
+    date: '2019-10-20'
     location: Fort Lee, NJ

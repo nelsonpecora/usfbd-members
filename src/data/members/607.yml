@@ -17,10 +17,12 @@ seminars:
   - name: Shoden Kata
     date: '2023-01-28'
     location: Brooklyn 2023
+    instructor: Masaki Kurihara
   - name: Basic Tameshigiri
     date: '2023-01-28'
     location: Brooklyn 2023
+    instructor: Masaki Kurihara
 taikai:
   - name: Tri State Tai Kai
-    date: '2019-10-26'
+    date: '2019-10-20'
     location: Fort Lee, NJ

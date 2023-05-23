@@ -21,9 +21,11 @@ seminars:
   - name: Chuden Kata
     date: '2023-01-28'
     location: Brooklyn 2023
+    instructor: Matt Odell
   - name: Basic Tameshigiri
     date: '2023-01-28'
     location: Brooklyn 2023
+    instructor: Masaki Kurihara
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'
