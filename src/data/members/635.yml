@@ -4,7 +4,7 @@ lastName: Inoue
 joined: '2021-04-02'
 dojo: Genbukan
 ranks: []
-isActive: true
+isActive: false
 seminars:
   - name: Shoden Kata
     date: '2023-02-19'

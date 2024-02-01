@@ -9,7 +9,7 @@ ranks:
     date: '2017-11-19'
   - name: Yondan
     date: '2021-11-18'
-isActive: true
+isActive: false
 seminars:
   - name: Chuden kata
     date: '2018-02-24'

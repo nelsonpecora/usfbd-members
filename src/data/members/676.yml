@@ -6,7 +6,7 @@ dojo: Battodo of Monmouth County (NJ)
 ranks:
   - name: Shodan
     date: '2023-01-28'
-isActive: true
+isActive: false
 seminars:
   - name: Shoden Kata
     date: '2023-01-28'

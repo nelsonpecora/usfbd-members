@@ -9,7 +9,7 @@ ranks:
     date: '2014-11-15'
   - name: Sandan
     date: '2021-01-10'
-isActive: false
+isActive: true
 seminars:
   - name: Basic Tameshigiri
     date: '2019-10-19'

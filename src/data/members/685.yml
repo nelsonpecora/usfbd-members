@@ -6,7 +6,7 @@ dojo: Genbukan
 ranks:
   - name: Shodan
     date: '2023-02-19'
-isActive: true
+isActive: false
 seminars:
   - name: Shoden Kata
     date: '2023-02-19'

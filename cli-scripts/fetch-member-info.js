@@ -29,6 +29,10 @@ function parseDate (date) {
 
   if (date.match(/^\d{4}$/)) {
     parsed = parse(date, 'yyyy', new Date());
+  } else if (date.match(/\s/)) {
+    // Dates that are copy-pasted directly from the signup form look like
+    // '12/2/2023 23:39:30'
+    parsed = parse(date.split(' ')[0], 'M/d/yyyy', new Date());
   } else {
     parsed = parse(date, 'M/d/yyyy', new Date());
   }
@@ -142,7 +146,7 @@ async function getBasicInfo (doc) {
       };
       return acc;
     } catch (e) {
-      console.error(`Error parsing data for member "${firstName} ${lastName}" (${id}): ${e.message}`);
+      console.error(`Error parsing basic info for member "${firstName} ${lastName}" (${id}): ${e.message}`);
       process.exit(1);
     }
   }, {});

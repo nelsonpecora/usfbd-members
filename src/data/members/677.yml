@@ -4,7 +4,7 @@ lastName: Range
 joined: '2023-02-05'
 dojo: Genbukan
 ranks: []
-isActive: true
+isActive: false
 seminars:
   - name: Chuden Kata
     date: '2023-02-19'

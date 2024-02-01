@@ -1,5 +1,13 @@
 {
   "workbench.colorCustomizations": {
+    "[One Dark Pro Darker]": {
+      "editorBracketHighlight.foreground1": "#E5C07B",
+      "editorBracketHighlight.foreground2": "#87cefa",
+      "editorBracketHighlight.foreground3": "#abb2bf",
+      "editorBracketHighlight.foreground4": "#f08080",
+      "editorBracketHighlight.foreground5": "#abb2bf",
+      "editorBracketHighlight.foreground6": "#00d18f"
+    },
     "[Palenight Theme]": {
       "sideBar.background": "#1e212e",
       "activityBar.background": "#1e212e",

@@ -4,7 +4,7 @@ lastName: Barcliffe
 joined: '2023-01-28'
 dojo: Koshinkai
 ranks: []
-isActive: true
+isActive: false
 seminars:
   - name: Shoden Kata
     date: '2023-02-19'

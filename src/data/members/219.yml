@@ -9,7 +9,7 @@ ranks:
     date: '2017-11-19'
   - name: Yondan
     date: '2020-01-01'
-isActive: true
+isActive: false
 seminars:
   - name: Judging (sandan and above in USFBD, ZNTIR, etc)
     date: '2023-01-28'
