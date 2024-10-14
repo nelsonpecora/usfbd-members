@@ -8,10 +8,25 @@ isActive: true
 seminars:
   - name: Shoden Kata
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Masaki Kurihara
   - name: Basic Tameshigiri
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Masaki Kurihara
+  - name: Intro to Cutting / Basics
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+  - name: Toyama-ryu Kata
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Noah Mitchell
+  - name: Nakamura-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Muso Jikiden Eishin-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Erik Johnstone
 taikai: []

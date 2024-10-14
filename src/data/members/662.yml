@@ -5,3 +5,20 @@ joined: '2023-01-07'
 dojo: Byakkokan
 ranks: []
 isActive: false
+seminars:
+  - name: Intro to Cutting / Basics
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+  - name: Advanced Cutting
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Adam Taylor
+  - name: Daito-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Rodrigo King
+  - name: Gekken / Bokken Techniques
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Sang Kim
+taikai: []

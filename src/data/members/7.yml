@@ -9,6 +9,8 @@ ranks:
     date: '2014-11-15'
   - name: Sandan
     date: '2021-01-10'
+  - name: Yondan
+    date: '2024-06-02'
 isActive: true
 seminars:
   - name: Basic Tameshigiri
@@ -19,6 +21,26 @@ seminars:
     date: '2019-10-19'
     location: Tri State Tai Kai
     instructor: Bob Elder
+  - name: Ryushin Shouchi Ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Valient Yeung
+  - name: Edo Yagyu Shinkage-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Paul Manogue
+  - name: Daito-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Rodrigo King
+  - name: Gekken / Bokken Techniques
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Sang Kim
+  - name: USFBD Seitei Kata
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Matt Odell
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

@@ -5,3 +5,21 @@ joined: '2013-11-05'
 dojo: Florida Karate Academy, Boca Raton Dojo
 ranks: []
 isActive: false
+seminars:
+  - name: Ryushin Shouchi Ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Valient Yeung
+  - name: Edo Yagyu Shinkage-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Paul Manogue
+  - name: Intro to Cutting / Basics
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Russ Gordon
+  - name: Muso Jikiden Eishin-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Erik Johnstone
+taikai: []

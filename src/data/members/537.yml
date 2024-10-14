@@ -3,5 +3,15 @@ firstName: Issac
 lastName: Lee
 joined: '2017-02-26'
 dojo: Byakkokan
-ranks: []
+ranks:
+  - name: Shodan
+    date: '2024-02-25'
 isActive: true
+seminars:
+  - name: Shoden Kata
+    date: '2024-02-25'
+    location: Genbukan
+  - name: Chuden Kata
+    date: '2024-02-25'
+    location: Genbukan
+taikai: []

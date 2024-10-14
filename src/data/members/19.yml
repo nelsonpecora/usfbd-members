@@ -8,5 +8,21 @@ ranks:
   - name: Yondan
     date: '2017-11-19'
 isActive: true
-seminars: []
+seminars:
+  - name: Toyama-ryu Kata
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Noah Mitchell
+  - name: Nakamura-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Advanced Cutting
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Adam Taylor
+  - name: USFBD Seitei Kata
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Matt Odell
 taikai: []

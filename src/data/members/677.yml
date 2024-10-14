@@ -3,15 +3,23 @@ firstName: Roman
 lastName: Range
 joined: '2023-02-05'
 dojo: Genbukan
-ranks: []
+ranks:
+  - name: Shodan
+    date: '2024-02-25'
 isActive: false
 seminars:
   - name: Chuden Kata
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Sang Kim
   - name: Basic Tameshigiri
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Masaki Kurihara
+  - name: Shoden Kata
+    date: '2024-02-25'
+    location: Genbukan
+  - name: Chuden Kata
+    date: '2024-02-25'
+    location: Genbukan
 taikai: []

@@ -11,12 +11,6 @@ ranks:
     date: '2023-02-19'
 isActive: true
 seminars:
-  - name: Chuden kata
-    date: '2021-11-19'
-    location: Zentokan
-  - name: Advanced tameshigiri
-    date: '2021-11-19'
-    location: Zentokan
   - name: Shoden kata
     date: '2018-07-24'
     location: Mountain Stream Budo
@@ -29,13 +23,31 @@ seminars:
     date: '2018-07-26'
     location: Mountain Stream Budo
     instructor: Mike Femal
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Advanced tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
   - name: Chuden Kata
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Sang Kim
   - name: Advanced Tameshigiri
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
+    instructor: Sang Kim
+  - name: Nakamura-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Advanced Cutting
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Adam Taylor
+  - name: Judging
+    date: '2023-06-10'
+    location: Tri State Tai Kai
     instructor: Sang Kim
 taikai:
   - name: Tri State Tai Kai

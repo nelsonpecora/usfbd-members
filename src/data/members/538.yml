@@ -28,6 +28,22 @@ seminars:
     date: '2018-07-26'
     location: Mountain Stream Budo
     instructor: Mike Femal
+  - name: Kendo
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Masaki Kurihara
+  - name: Advanced Cutting
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Adam Taylor
+  - name: Daito-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Rodrigo King
+  - name: Muso Jikiden Eishin-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Erik Johnstone
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

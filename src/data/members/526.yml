@@ -10,12 +10,6 @@ ranks:
     date: '2021-11-18'
 isActive: true
 seminars:
-  - name: Chuden kata
-    date: '2021-11-19'
-    location: Zentokan
-  - name: Advanced tameshigiri
-    date: '2021-11-19'
-    location: Zentokan
   - name: Shoden kata
     date: '2018-02-24'
     location: Zentokan
@@ -44,19 +38,53 @@ seminars:
     date: '2019-10-19'
     location: Tri State Tai Kai
     instructor: Mike Femal
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Advanced tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
   - name: Chuden Kata
     date: '2023-01-28'
-    location: Brooklyn 2023
-    instructor: Matt Odell
+    location: Zentokan
+    instructor: Matthew Odell
   - name: Advanced Tameshigiri
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Russell Gordon
   - name: Judging (sandan and above in USFBD, ZNTIR, etc)
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Sang Kim
+  - name: Ryushin Shouchi Ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Valient Yeung
+  - name: Advanced Cutting
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Adam Taylor
+  - name: Nakamura-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Muso Jikiden Eishin-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Erik Johnstone
+  - name: Shoden Kata
+    date: '2024-02-25'
+    location: Genbukan
+  - name: Chuden Kata
+    date: '2024-02-25'
+    location: Genbukan
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'
     location: Fort Lee, NJ
+  - name: 47th ZNTIR Taikai
+    date: '2024-05-19'
+    location: Machida, Japan
+    wins:
+      - place: 2
+        name: Yondan+ Kata

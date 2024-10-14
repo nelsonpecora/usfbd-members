@@ -8,12 +8,6 @@ ranks:
     date: '2021-11-18'
 isActive: false
 seminars:
-  - name: Chuden kata
-    date: '2021-11-19'
-    location: Zentokan
-  - name: Advanced tameshigiri
-    date: '2021-11-19'
-    location: Zentokan
   - name: Shoden kata
     date: '2018-07-31'
     location: Mountain Stream Budo
@@ -26,6 +20,12 @@ seminars:
     date: '2018-08-02'
     location: Mountain Stream Budo
     instructor: Mike Femal
+  - name: Chuden kata
+    date: '2021-11-19'
+    location: Zentokan
+  - name: Advanced tameshigiri
+    date: '2021-11-19'
+    location: Zentokan
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

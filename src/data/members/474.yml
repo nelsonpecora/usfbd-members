@@ -11,6 +11,8 @@ ranks:
     date: '2018-02-24'
   - name: Sandan
     date: '2021-01-10'
+  - name: Yondan
+    date: '2024-02-25'
 isActive: true
 seminars:
   - name: Shoden kata
@@ -39,16 +41,22 @@ seminars:
     instructor: Mike Femal
   - name: Chuden Kata
     date: '2023-01-28'
-    location: Brooklyn 2023
-    instructor: Matt Odell
+    location: Zentokan
+    instructor: Matthew Odell
   - name: Advanced Tameshigiri
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Russell Gordon
   - name: Judging (sandan and above in USFBD, ZNTIR, etc)
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Sang Kim
+  - name: Shoden Kata
+    date: '2024-02-25'
+    location: Genbukan
+  - name: Chuden Kata
+    date: '2024-02-25'
+    location: Genbukan
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'
@@ -56,3 +64,13 @@ taikai:
   - name: 46th ZNTIR Taikai
     date: '2023-05-21'
     location: Machida, Japan
+  - name: 47th ZNTIR Taikai
+    date: '2024-05-19'
+    location: Machida, Japan
+    wins:
+      - place: 1
+        name: Yondan+ Tameshigiri
+      - place: 2
+        name: Kumitachi
+      - place: 3
+        name: Yondan+ Kata

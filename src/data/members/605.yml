@@ -10,28 +10,43 @@ ranks:
     date: '2023-01-28'
 isActive: true
 seminars:
+  - name: Advanced Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+    instructor: Bob Elder
   - name: Chuden kata
     date: '2021-11-19'
     location: Zentokan
   - name: Advanced tameshigiri
     date: '2021-11-19'
     location: Zentokan
-  - name: Advanced Tameshigiri
-    date: '2019-10-19'
-    location: Tri State Tai Kai
-    instructor: Bob Elder
   - name: Chuden Kata
     date: '2023-01-28'
-    location: Brooklyn 2023
-    instructor: Matt Odell
+    location: Zentokan
+    instructor: Matthew Odell
   - name: Advanced Tameshigiri
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Russell Gordon
   - name: Chuden Kata
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Sang Kim
+  - name: Advanced Cutting
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Adam Taylor
+  - name: Intro to Cutting / Basics
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+  - name: Advanced Cutting
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Adam Taylor
+  - name: USFBD Seitei Kata
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Matt Odell
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

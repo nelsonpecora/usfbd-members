@@ -6,6 +6,8 @@ dojo: Byakkokan
 ranks:
   - name: Shodan
     date: '2023-01-28'
+  - name: Nidan
+    date: '2024-02-25'
 isActive: true
 seminars:
   - name: Shoden kata
@@ -16,12 +18,38 @@ seminars:
     location: Zentokan
   - name: Shoden Kata
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Masaki Kurihara
   - name: Basic Tameshigiri
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Masaki Kurihara
+  - name: Ryushin Shouchi Ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Valient Yeung
+  - name: Edo Yagyu Shinkage-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Paul Manogue
+  - name: Daito-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Rodrigo King
+  - name: Advanced Cutting
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Adam Taylor
+  - name: USFBD Seitei Kata
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Matt Odell
+  - name: Shoden Kata
+    date: '2024-02-25'
+    location: Genbukan
+  - name: Chuden Kata
+    date: '2024-02-25'
+    location: Genbukan
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

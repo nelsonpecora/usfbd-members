@@ -3,11 +3,19 @@ firstName: Julian
 lastName: Ghadimi
 joined: '2023-02-19'
 dojo: Genbukan
-ranks: []
+ranks:
+  - name: Shodan
+    date: '2024-02-25'
 isActive: false
 seminars:
   - name: Shoden Kata
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Russell Gordon
+  - name: Shoden Kata
+    date: '2024-02-25'
+    location: Genbukan
+  - name: Chuden Kata
+    date: '2024-02-25'
+    location: Genbukan
 taikai: []

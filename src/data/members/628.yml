@@ -5,3 +5,24 @@ joined: '2021-01-28'
 dojo: Zentokan
 ranks: []
 isActive: true
+seminars:
+  - name: Intro to Cutting / Basics
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+  - name: Edo Yagyu Shinkage-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Paul Manogue
+  - name: Daito-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Rodrigo King
+  - name: Gekken / Bokken Techniques
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Sang Kim
+  - name: USFBD Seitei Kata
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Matt Odell
+taikai: []

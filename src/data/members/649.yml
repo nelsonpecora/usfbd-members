@@ -6,6 +6,8 @@ dojo: Byakkokan
 ranks:
   - name: Shodan
     date: '2023-01-28'
+  - name: Nidan
+    date: '2024-02-25'
 isActive: true
 seminars:
   - name: Basic Tameshigiri
@@ -14,10 +16,16 @@ seminars:
     instructor: Mike Femal
   - name: Shoden Kata
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Masaki Kurihara
   - name: Basic Tameshigiri
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Masaki Kurihara
+  - name: Shoden Kata
+    date: '2024-02-25'
+    location: Genbukan
+  - name: Chuden Kata
+    date: '2024-02-25'
+    location: Genbukan
 taikai: []

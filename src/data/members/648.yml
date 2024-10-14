@@ -5,3 +5,20 @@ joined: '2022-03-07'
 dojo: Mountain Stream Budo
 ranks: []
 isActive: false
+seminars:
+  - name: Intro to Cutting / Basics
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+  - name: Toyama-ryu Kata
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Noah Mitchell
+  - name: Nakamura-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Gekken / Bokken Techniques
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Sang Kim
+taikai: []

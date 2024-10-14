@@ -6,6 +6,8 @@ dojo: Mountain Stream Budo
 ranks:
   - name: Shodan
     date: '2018-07-23'
+  - name: Nidan
+    date: '2021-01-13'
 isActive: false
 seminars:
   - name: Shoden kata
@@ -20,6 +22,10 @@ seminars:
     date: '2018-07-26'
     location: Mountain Stream Budo
     instructor: Mike Femal
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+    instructor: Bob Elder
   - name: Basic Tameshigiri
     date: '2019-10-19'
     location: Tri State Tai Kai

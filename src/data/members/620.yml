@@ -6,38 +6,56 @@ dojo: Koshinkai
 ranks:
   - name: Shodan
     date: '2021-11-18'
+  - name: Nidan
+    date: '2024-06-02'
 isActive: true
 seminars:
+  - name: Basics and Shoden
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+    instructor: Matthew Odell
+  - name: Basic Tameshigiri
+    date: '2019-10-19'
+    location: Tri State Tai Kai
+    instructor: Mike Femal
   - name: Chuden kata
     date: '2021-11-19'
     location: Zentokan
   - name: Basic tameshigiri
     date: '2021-11-19'
     location: Zentokan
-  - name: Basics and Shoden
-    date: '2019-10-19'
-    location: Tri State Tai Kai
-    instructor: Matt Odell
-  - name: Basic Tameshigiri
-    date: '2019-10-19'
-    location: Tri State Tai Kai
-    instructor: Mike Femal
   - name: Chuden Kata
     date: '2023-01-28'
-    location: Brooklyn 2023
-    instructor: Matt Odell
+    location: Zentokan
+    instructor: Matthew Odell
   - name: Advanced Tameshigiri
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Russell Gordon
   - name: Chuden Kata
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Sang Kim
   - name: Advanced Tameshigiri
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Sang Kim
+  - name: Kendo
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Masaki Kurihara
+  - name: Edo Yagyu Shinkage-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Paul Manogue
+  - name: Nakamura-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Advanced Cutting
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Adam Taylor
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

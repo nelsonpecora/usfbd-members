@@ -38,28 +38,50 @@ seminars:
     instructor: Mike Femal
   - name: Chuden Kata
     date: '2023-01-28'
-    location: Brooklyn 2023
-    instructor: Matt Odell
+    location: Zentokan
+    instructor: Matthew Odell
   - name: Advanced Tameshigiri
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Russell Gordon
   - name: Judging (sandan and above in USFBD, ZNTIR, etc)
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
     instructor: Sang Kim
   - name: Chuden Kata
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Sang Kim
   - name: Basic Tameshigiri
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Masaki Kurihara
+  - name: Kendo
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Masaki Kurihara
+  - name: Edo Yagyu Shinkage-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Paul Manogue
+  - name: Nakamura-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Muso Jikiden Eishin-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Erik Johnstone
+  - name: Shoden Kata
+    date: '2024-02-25'
+    location: Genbukan
+  - name: Chuden Kata
+    date: '2024-02-25'
+    location: Genbukan
 taikai:
-  - name: Tri State Tai Kai
-    date: '2019-10-20'
-    location: Fort Lee, NJ
   - name: East Coast Tai Kai
     date: '2018-08-01'
     location: Palm Bay, FL
+  - name: Tri State Tai Kai
+    date: '2019-10-20'
+    location: Fort Lee, NJ

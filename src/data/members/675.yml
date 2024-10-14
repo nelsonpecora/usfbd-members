@@ -8,14 +8,22 @@ isActive: false
 seminars:
   - name: Shoden Kata
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Russell Gordon
   - name: Chuden Kata
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Sang Kim
   - name: Basic Tameshigiri
     date: '2023-02-19'
-    location: Genbukan 2023
+    location: Genbukan
     instructor: Masaki Kurihara
+  - name: Nakamura-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Gekken / Bokken Techniques
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Sang Kim
 taikai: []

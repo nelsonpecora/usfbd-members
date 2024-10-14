@@ -13,7 +13,15 @@ isActive: false
 seminars:
   - name: Judging (sandan and above in USFBD, ZNTIR, etc)
     date: '2023-01-28'
-    location: Brooklyn 2023
+    location: Zentokan
+    instructor: Sang Kim
+  - name: Edo Yagyu Shinkage-ryu
+    date: '2023-06-10'
+    location: Tri State Tai Kai
+    instructor: Paul Manogue
+  - name: Judging
+    date: '2023-06-10'
+    location: Tri State Tai Kai
     instructor: Sang Kim
 taikai:
   - name: Tri State Tai Kai
