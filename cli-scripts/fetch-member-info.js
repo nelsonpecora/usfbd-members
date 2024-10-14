@@ -198,10 +198,10 @@ async function getBasicInfo (doc) {
   return {
     basicInfo: returnedInfo,
     missingIds
-  }
+  };
 }
 
-function parseSeminar({
+function parseSeminar ({
   event,
   date,
   note,
@@ -210,7 +210,7 @@ function parseSeminar({
   return {
     name: note,
     date,
-    ...event && { location: event},
+    ...event && { location: event },
     ...instructor && { instructor }
   };
 }
@@ -221,7 +221,7 @@ function parseTaikaiWin (win) {
   return {
     place: parseInt(place.trim()),
     name: name.trim()
-  }
+  };
 }
 
 function parseAndMergeTaikai (acc, {
@@ -252,7 +252,7 @@ function parseAndMergeTaikai (acc, {
       date,
       ...taikaiLocation && { location: taikaiLocation },
       ...wins.length && { wins }
-    })
+    });
   }
 
   return acc;
@@ -262,7 +262,7 @@ function parseTest ({ date, note }) {
   return {
     name: note,
     date
-  }
+  };
 }
 
 async function getSeminarInfo (doc) {
@@ -434,7 +434,7 @@ async function main () {
 
   missingIds.forEach(({ id, firstName, lastName, dojo }) => {
     missingFile += `${id || ''},${firstName || ''},${lastName || ''},${dojo || ''}\n`;
-  })
+  });
 
   fs.writeFileSync(
     path.join(__dirname, '..', 'missing_ids.csv'),
