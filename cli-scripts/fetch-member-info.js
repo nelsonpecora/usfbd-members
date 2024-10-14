@@ -234,7 +234,15 @@ function parseAndMergeTaikai (acc, {
   win3,
   win4
 }) {
-  const existingTaikai = acc.find((t) => t.name === event && t.date.getFullYear() === taikaiYear);
+  const existingTaikai = acc.find((t) => {
+    if (t.name !== event) return false;
+
+    const tDate = new Date(t.date);
+    const tYear = tDate.getFullYear();
+
+    if (tYear !== taikaiYear) return false;
+    return true;
+  });
   const wins = [];
 
   if (win1) wins.push(parseTaikaiWin(win1));
