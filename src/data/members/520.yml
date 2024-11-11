@@ -80,6 +80,14 @@ seminars:
   - name: Chuden Kata
     date: '2024-02-25'
     location: Genbukan
+  - name: Chuden Kata
+    date: '2024-11-09'
+    location: Zentokan
+    instructor: Tim Clear
+  - name: Gekken / Bokken Drills
+    date: '2024-11-09'
+    location: Zentokan
+    instructor: Zach Biesanz / Rob Raimondi
 taikai:
   - name: East Coast Tai Kai
     date: '2018-08-01'

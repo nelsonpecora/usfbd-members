@@ -8,6 +8,8 @@ ranks:
     date: '2018-02-24'
   - name: Nidan
     date: '2021-11-18'
+  - name: Sandan
+    date: '2024-11-09'
 isActive: true
 seminars:
   - name: Shoden kata
@@ -78,6 +80,14 @@ seminars:
   - name: Chuden Kata
     date: '2024-02-25'
     location: Genbukan
+  - name: Chuden Kata
+    date: '2024-11-09'
+    location: Zentokan
+    instructor: Tim Clear
+  - name: Gekken / Bokken Drills
+    date: '2024-11-09'
+    location: Zentokan
+    instructor: Zach Biesanz / Rob Raimondi
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

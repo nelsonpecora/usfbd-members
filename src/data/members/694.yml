@@ -3,7 +3,9 @@ firstName: Danielle
 lastName: Richards
 joined: '2024-01-09'
 dojo: Byakkokan
-ranks: []
+ranks:
+  - name: Shodan
+    date: '2024-11-09'
 isActive: true
 seminars:
   - name: Intro to Cutting / Basics
@@ -21,6 +23,14 @@ seminars:
     date: '2023-06-10'
     location: Tri State Tai Kai
     instructor: Sang Kim
+  - name: Shoden Kata
+    date: '2024-11-09'
+    location: Zentokan
+    instructor: Zach Biesanz
+  - name: Gekken / Bokken Drills
+    date: '2024-11-09'
+    location: Zentokan
+    instructor: Zach Biesanz / Rob Raimondi
 taikai:
   - name: Tri State Tai Kai
     date: '2023-06-10'

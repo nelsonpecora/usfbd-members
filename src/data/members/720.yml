@@ -1,10 +1,10 @@
-id: '692'
-firstName: Eduardo
-lastName: Monteverde
-joined: '2024-01-09'
-dojo: Zentokan
+id: '720'
+firstName: Jessy (Fangning)
+lastName: Dong
+joined: '2024-10-03'
+dojo: Byakkokan
 ranks: []
-isActive: true
+isActive: false
 seminars:
   - name: Shoden Kata
     date: '2024-11-09'

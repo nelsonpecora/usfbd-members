@@ -1,15 +1,17 @@
-id: '692'
-firstName: Eduardo
-lastName: Monteverde
-joined: '2024-01-09'
-dojo: Zentokan
-ranks: []
+id: '725'
+firstName: Adrian
+lastName: Walter
+joined: '2024-11-05'
+dojo: Seibu Ryu San Jose
+ranks:
+  - name: Shodan
+    date: '2024-11-09'
 isActive: true
 seminars:
-  - name: Shoden Kata
+  - name: Chuden Kata
     date: '2024-11-09'
     location: Zentokan
-    instructor: Zach Biesanz
+    instructor: Tim Clear
   - name: Gekken / Bokken Drills
     date: '2024-11-09'
     location: Zentokan
