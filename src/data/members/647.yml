@@ -6,7 +6,7 @@ dojo: Byakkokan
 ranks:
   - name: Shodan
     date: '2023-01-28'
-isActive: false
+isActive: true
 seminars:
   - name: Shoden Kata
     date: '2023-01-28'

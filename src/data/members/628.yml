@@ -4,7 +4,7 @@ lastName: Harris
 joined: '2021-01-28'
 dojo: Zentokan
 ranks: []
-isActive: true
+isActive: false
 seminars:
   - name: Intro to Cutting / Basics
     date: '2023-06-10'

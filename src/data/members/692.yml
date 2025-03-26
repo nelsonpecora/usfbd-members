@@ -4,7 +4,7 @@ lastName: Monteverde
 joined: '2024-01-09'
 dojo: Zentokan
 ranks: []
-isActive: true
+isActive: false
 seminars:
   - name: Shoden Kata
     date: '2024-11-09'

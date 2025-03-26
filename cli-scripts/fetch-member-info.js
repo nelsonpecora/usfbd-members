@@ -97,6 +97,9 @@ async function getBasicInfo (doc) {
     const firstName = getCell(row, 'First Name');
     const lastName = getCell(row, 'Last Name');
 
+    // If the row is completely empty, disregard it.
+    if (!id && !firstName && !lastName) return acc;
+
     try {
       const joined = getCell(row, 'Activation Date');
       const dojo = getCell(row, 'School Name');
@@ -165,7 +168,9 @@ async function getBasicInfo (doc) {
         return acc;
       }
 
-      acc[id] = !!year;
+      // If there's anything in the cell (even "0" for folks who don't need to pay dues in a given year)
+      // set them as active.
+      acc[id] = year !== null;
       return acc;
     } catch (e) {
       console.error(`Error parsing activity for member "${id}": ${e.message}`);

@@ -7,7 +7,7 @@ manualCurrentRank: Shodan
 ranks:
   - name: Nidan
     date: '2018-02-24'
-isActive: true
+isActive: false
 seminars:
   - name: Shoden kata
     date: '2018-02-24'

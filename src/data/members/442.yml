@@ -7,7 +7,7 @@ manualCurrentRank: Shodan
 ranks:
   - name: Sandan
     date: '2021-01-10'
-isActive: true
+isActive: false
 seminars:
   - name: Shoden kata
     date: '2018-07-31'

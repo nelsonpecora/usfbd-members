@@ -4,7 +4,7 @@ lastName: Dong
 joined: '2024-10-03'
 dojo: Byakkokan
 ranks: []
-isActive: false
+isActive: true
 seminars:
   - name: Shoden Kata
     date: '2024-11-09'

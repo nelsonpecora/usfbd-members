@@ -1,7 +1,7 @@
 id: '725'
 firstName: Adrian
 lastName: Walter
-joined: '2024-11-05'
+joined: '2023-11-05'
 dojo: Seibu Ryu San Jose
 ranks:
   - name: Shodan
@@ -16,4 +16,12 @@ seminars:
     date: '2024-11-09'
     location: Zentokan
     instructor: Zach Biesanz / Rob Raimondi
+  - name: Shoden Kata
+    date: '2024-03-11'
+    location: Seibu Ryu San Jose
+    instructor: Nelson Pecora
+  - name: Tameshigiri
+    date: '2024-03-13'
+    location: Seibu Ryu San Jose
+    instructor: Nelson Pecora
 taikai: []
