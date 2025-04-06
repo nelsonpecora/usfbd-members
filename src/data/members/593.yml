@@ -6,6 +6,8 @@ dojo: Mountain Stream Budo
 ranks:
   - name: Shodan
     date: '2021-11-18'
+  - name: Nidan
+    date: '2025-03-30'
 isActive: true
 seminars:
   - name: Basics and Shoden
@@ -37,6 +39,12 @@ seminars:
     date: '2023-02-19'
     location: Genbukan
     instructor: Sang Kim
+  - name: USFBD Kata
+    date: '2025-03-30'
+    location: Mountain Stream Budo
+  - name: USFBD Tameshigiri
+    date: '2025-03-30'
+    location: Mountain Stream Budo
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

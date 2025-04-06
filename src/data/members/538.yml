@@ -6,6 +6,8 @@ dojo: Byakkokan
 ranks:
   - name: Shodan
     date: '2018-07-23'
+  - name: Nidan
+    date: '2025-03-30'
 isActive: true
 seminars:
   - name: Shoden kata

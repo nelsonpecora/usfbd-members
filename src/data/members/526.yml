@@ -88,6 +88,12 @@ seminars:
     date: '2024-11-09'
     location: Zentokan
     instructor: Zach Biesanz / Rob Raimondi
+  - name: USFBD Kata
+    date: '2025-03-30'
+    location: Mountain Stream Budo
+  - name: USFBD Tameshigiri
+    date: '2025-03-30'
+    location: Mountain Stream Budo
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

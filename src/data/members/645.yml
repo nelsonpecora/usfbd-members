@@ -6,7 +6,9 @@ dojo: Byakkokan
 ranks:
   - name: Shodan
     date: '2024-02-25'
-isActive: false
+  - name: Nidan
+    date: '2025-03-30'
+isActive: true
 seminars:
   - name: Shoden Kata
     date: '2023-01-28'
@@ -50,6 +52,12 @@ seminars:
     date: '2024-11-09'
     location: Zentokan
     instructor: Zach Biesanz / Rob Raimondi
+  - name: USFBD Kata
+    date: '2025-03-30'
+    location: Mountain Stream Budo
+  - name: USFBD Tameshigiri
+    date: '2025-03-30'
+    location: Mountain Stream Budo
 taikai:
   - name: Tri State Tai Kai
     date: '2023-06-10'

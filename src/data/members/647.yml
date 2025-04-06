@@ -6,6 +6,8 @@ dojo: Byakkokan
 ranks:
   - name: Shodan
     date: '2023-01-28'
+  - name: Nidan
+    date: '2025-03-30'
 isActive: true
 seminars:
   - name: Shoden Kata
@@ -16,4 +18,10 @@ seminars:
     date: '2023-01-28'
     location: Zentokan
     instructor: Masaki Kurihara
+  - name: USFBD Kata
+    date: '2025-03-30'
+    location: Mountain Stream Budo
+  - name: USFBD Tameshigiri
+    date: '2025-03-30'
+    location: Mountain Stream Budo
 taikai: []

@@ -73,6 +73,12 @@ seminars:
   - name: Chuden Kata
     date: '2024-02-25'
     location: Genbukan
+  - name: USFBD Kata
+    date: '2025-03-30'
+    location: Mountain Stream Budo
+  - name: USFBD Tameshigiri
+    date: '2025-03-30'
+    location: Mountain Stream Budo
 taikai:
   - name: East Coast Tai Kai
     date: '2018-08-01'

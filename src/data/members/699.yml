@@ -5,3 +5,11 @@ joined: '2024-02-01'
 dojo: Battodo of Monmouth County (NJ)
 ranks: []
 isActive: false
+seminars:
+  - name: USFBD Kata
+    date: '2025-03-30'
+    location: Mountain Stream Budo
+  - name: USFBD Tameshigiri
+    date: '2025-03-30'
+    location: Mountain Stream Budo
+taikai: []
