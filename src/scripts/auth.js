@@ -1,4 +1,5 @@
 const hash = require('./hash');
+const sanitize = require('./sanitize');
 
 function getCurrentPage () {
   const path = window.location.pathname;
@@ -17,6 +18,9 @@ function checkAuthMemberPage () {
   const loading = document.querySelector('.loading');
   const loggedOut = document.querySelector('.logged-out');
   const loggedIn = document.querySelector('.logged-in');
+  const logoutBtn = document.querySelector('#logout-btn');
+
+  logoutBtn.addEventListener('click', logout);
 
   const auth = window.sessionStorage.getItem('auth');
   const pageId = window.location.pathname.replace(/\/member\/(.*)\.html/, '$1');
@@ -32,7 +36,7 @@ function checkAuthMemberPage () {
 
 function logout () {
   window.sessionStorage.removeItem('auth');
-  checkCurrentPage();
+  window.location.href = '/';
 }
 
 function login (e) {
@@ -40,16 +44,41 @@ function login (e) {
 
   const data = new window.FormData(document.querySelector('#login-form'));
   const id = data.get('id');
-  const lastName = data.get('name').toLowerCase().replaceAll(/[^a-z]/g, '');
-  const hashed = hash(`${id}${lastName}`);
+  const firstName = sanitize(data.get('firstName'));
+  const lastName = sanitize(data.get('lastName'));
   const attempts = document.querySelector('.login-attempts');
   const error1 = document.querySelector('.error1');
   const error2 = document.querySelector('.error2');
 
+  const hashed = hash(`${firstName}${lastName}`);
+  const loginType = id ? 'id' : 'name';
+
   attempts.value++;
 
+  // When logging in by ID only, we don't match the hashed name.
+  if (loginType === 'id') {
+    if (!window.hashes[id]) {
+      error1.classList.add('show');
+
+      if (attempts.value > 1) {
+        error2.classList.add('show');
+      }
+      return;
+    } else {
+      error1.classList.remove('show');
+      error2.classList.remove('show');
+      window.sessionStorage.setItem('auth', window.hashes[id]);
+      // Redirect member to their page
+      window.location.href = `/member/${id}.html`;
+      return;
+    }
+  }
+
+  // When logging in by name, we hash it and match against the stored hashes.
+  const foundId = getIdFromAuth(hashed);
+
   // Check to see if this is a real member
-  if (!window.hashes[id] || window.hashes[id] !== hashed) {
+  if (!foundId || !window.hashes[foundId]) {
     error1.classList.add('show');
 
     if (attempts.value > 1) {
@@ -60,7 +89,7 @@ function login (e) {
     error2.classList.remove('show');
     window.sessionStorage.setItem('auth', hashed);
     // Redirect member to their page
-    window.location.href = `/member/${id}.html`;
+    window.location.href = `/member/${foundId}.html`;
   }
 }
 

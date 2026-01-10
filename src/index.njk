@@ -8,7 +8,10 @@ layout: layout.njk
   <h1>Membership Booklet</h1>
 
   <form id="login-form" class="logged-out">
+    <p>Please enter your member number OR first and last name.</p>
+
     <input name="attempts" type="hidden" class="login-attempts" />
+
     <label>
       <span class="left-label">
         Member Number
@@ -19,16 +22,24 @@ layout: layout.njk
 
     <label>
       <span class="left-label">
+        First Name
+        <span class="jp" lang="jp">名前</span>
+      </span>
+      <input name="firstName" type="text" />
+    </label>
+
+    <label>
+      <span class="left-label">
         Last Name
         <span class="jp" lang="jp">苗字</span>
       </span>
-      <input name="name" type="text" />
+      <input name="lastName" type="text" />
     </label>
 
     <button type="submit" class="large-button login-btn">Log In</button>
 
-    <aside class="home-feedback">Forgot your member number? Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1minAwFScrr1KVNcIHxvZ--O0A6jf3fm143tY34t2XPYDYQ/viewform?usp=sf_link" target="_blank">get in touch</a>!</aside>
-    <aside class="error1">Sorry, we can't find you! Please enter your member number and last name and try again.</aside>
+    <aside class="home-feedback">Changed your name? Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1minAwFScrr1KVNcIHxvZ--O0A6jf3fm143tY34t2XPYDYQ/viewform?usp=sf_link" target="_blank">get in touch</a>!</aside>
+    <aside class="error1">Sorry, we can't find you! Please enter your member number OR first and last name and try again.</aside>
     <aside class="error2">Sorry, we still can't find you! Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1minAwFScrr1KVNcIHxvZ--O0A6jf3fm143tY34t2XPYDYQ/viewform?usp=sf_link" target="_blank">fill out this form</a> for assistance.</aside>
 
   </form>
