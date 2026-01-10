@@ -11,7 +11,7 @@ ranks:
     date: '2021-01-10'
   - name: Yondan
     date: '2024-06-02'
-isActive: true
+isActive: false
 seminars:
   - name: Basic Tameshigiri
     date: '2019-10-19'

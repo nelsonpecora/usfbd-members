@@ -4,7 +4,7 @@ lastName: Chen
 joined: '2024-10-17'
 dojo: Zentokan Dojo
 ranks: []
-isActive: true
+isActive: false
 seminars:
   - name: Shoden Kata
     date: '2024-11-09'

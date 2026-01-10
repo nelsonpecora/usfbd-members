@@ -6,7 +6,7 @@ dojo: Seibu Ryu San Jose
 ranks:
   - name: Shodan
     date: '2024-11-09'
-isActive: true
+isActive: false
 seminars:
   - name: Chuden Kata
     date: '2024-11-09'

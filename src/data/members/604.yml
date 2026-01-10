@@ -6,7 +6,7 @@ dojo: Zentokan
 ranks:
   - name: Shodan
     date: '2023-01-28'
-isActive: true
+isActive: false
 seminars:
   - name: Chuden Kata
     date: '2023-01-28'
@@ -56,3 +56,6 @@ taikai:
   - name: Tri State Tai Kai
     date: '2023-06-10'
     location: Fort Lee, NJ
+  - name: 48th ZNTIR Taikai
+    date: '2025-05-18'
+    location: Machida, Japan

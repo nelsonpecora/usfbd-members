@@ -8,7 +8,7 @@ ranks:
     date: '2023-01-28'
   - name: Nidan
     date: '2025-03-30'
-isActive: true
+isActive: false
 seminars:
   - name: Shoden Kata
     date: '2023-01-28'

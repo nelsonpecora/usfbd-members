@@ -4,7 +4,7 @@ lastName: Norden
 joined: '2024-10-04'
 dojo: Zentokan
 ranks: []
-isActive: true
+isActive: false
 seminars:
   - name: Shoden Kata
     date: '2024-11-09'

@@ -6,4 +6,4 @@ dojo: Bamboo Dojo
 ranks:
   - name: Shodan
     date: '2019-04-03'
-isActive: true
+isActive: false

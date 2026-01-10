@@ -10,7 +10,7 @@ ranks:
     date: '2021-01-10'
   - name: Sandan
     date: '2023-01-28'
-isActive: true
+isActive: false
 seminars:
   - name: Shoden kata
     date: '2018-02-24'

@@ -10,7 +10,7 @@ ranks:
     date: '2023-02-19'
   - name: Sandan
     date: '2025-03-30'
-isActive: true
+isActive: false
 seminars:
   - name: Shoden kata
     date: '2018-02-24'
@@ -103,3 +103,11 @@ taikai:
   - name: Tri State Tai Kai
     date: '2023-06-10'
     location: Fort Lee, NJ
+  - name: 48th ZNTIR Taikai
+    date: '2025-05-18'
+    location: Machida, Japan
+    wins:
+      - place: 3
+        name: Gekken
+      - place: 3
+        name: Kumitachi
