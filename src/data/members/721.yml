@@ -4,7 +4,7 @@ lastName: Norden
 joined: '2024-10-04'
 dojo: Zentokan
 ranks: []
-isActive: false
+isActive: true
 seminars:
   - name: Shoden Kata
     date: '2024-11-09'
@@ -14,4 +14,12 @@ seminars:
     date: '2024-11-09'
     location: Zentokan
     instructor: Zach Biesanz / Rob Raimondi
+  - name: Shoden Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Anthony Deen / Nelson Pecora
+  - name: NR Seitei Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Michael Shane
 taikai: []

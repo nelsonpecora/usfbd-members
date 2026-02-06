@@ -6,7 +6,7 @@ dojo: Zentokan
 ranks:
   - name: Shodan
     date: '2023-01-28'
-isActive: false
+isActive: true
 seminars:
   - name: Chuden Kata
     date: '2023-01-28'
@@ -52,6 +52,14 @@ seminars:
     date: '2024-11-09'
     location: Zentokan
     instructor: Zach Biesanz / Rob Raimondi
+  - name: Chuden Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Noah Mitchell / Russell Gordon
+  - name: USFBD Tameshigiri
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Noah Mitchell / Russell Gordon
 taikai:
   - name: Tri State Tai Kai
     date: '2023-06-10'

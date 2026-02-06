@@ -3,8 +3,10 @@ firstName: Samuel
 lastName: Glassett
 joined: '2023-01-05'
 dojo: Zentokan
-ranks: []
-isActive: false
+ranks:
+  - name: Shodan
+    date: '2026-02-01'
+isActive: true
 seminars:
   - name: Shoden Kata
     date: '2023-01-28'
@@ -29,6 +31,14 @@ seminars:
     date: '2023-06-10'
     location: Tri State Tai Kai
     instructor: Erik Johnstone
+  - name: Shoden Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Anthony Deen / Nelson Pecora
+  - name: USFBD Tameshigiri
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Noah Mitchell / Russell Gordon
 taikai:
   - name: Tri State Tai Kai
     date: '2023-06-10'

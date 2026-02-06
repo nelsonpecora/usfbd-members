@@ -1,19 +1,17 @@
-id: '742'
-firstName: Hans
-lastName: Zhang
-joined: '2025-12-26'
+id: '752'
+firstName: Lucien
+lastName: Tsai
+joined: '2026-01-14'
 dojo: Byakkokan Dojo
-ranks:
-  - name: Shodan
-    date: '2026-02-01'
-isActive: false
+ranks: []
+isActive: true
 seminars:
   - name: Shoden Kata
     date: '2026-02-01'
     location: Zentokan
     instructor: Anthony Deen / Nelson Pecora
-  - name: Shoden Kata
+  - name: NR Seitei Kata
     date: '2026-02-01'
     location: Zentokan
-    instructor: Anthony Deen / Nelson Pecora
+    instructor: Michael Shane
 taikai: []

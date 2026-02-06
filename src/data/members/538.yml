@@ -54,6 +54,14 @@ seminars:
     date: '2024-11-09'
     location: Zentokan
     instructor: Zach Biesanz / Rob Raimondi
+  - name: Chuden Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Noah Mitchell / Russell Gordon
+  - name: NR Seitei Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Michael Shane
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

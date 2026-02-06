@@ -4,7 +4,7 @@ lastName: Leung
 joined: '2023-02-07'
 dojo: Genbukan
 ranks: []
-isActive: false
+isActive: true
 seminars:
   - name: Shoden Kata
     date: '2023-02-19'

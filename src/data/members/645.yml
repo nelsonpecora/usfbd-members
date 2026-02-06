@@ -8,7 +8,7 @@ ranks:
     date: '2024-02-25'
   - name: Nidan
     date: '2025-03-30'
-isActive: false
+isActive: true
 seminars:
   - name: Shoden Kata
     date: '2023-01-28'
@@ -58,6 +58,14 @@ seminars:
   - name: USFBD Tameshigiri
     date: '2025-03-30'
     location: Mountain Stream Budo
+  - name: Chuden Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Noah Mitchell / Russell Gordon
+  - name: NR Seitei Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Michael Shane
 taikai:
   - name: Tri State Tai Kai
     date: '2023-06-10'

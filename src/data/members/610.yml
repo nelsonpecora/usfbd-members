@@ -3,7 +3,9 @@ firstName: Katherine
 lastName: Hamilton
 joined: '2020-01-08'
 dojo: Byakkokan
-ranks: []
+ranks:
+  - name: Shodan
+    date: '2026-02-01'
 isActive: true
 seminars:
   - name: Shoden kata
@@ -44,6 +46,14 @@ seminars:
     date: '2024-11-09'
     location: Zentokan
     instructor: Zach Biesanz / Rob Raimondi
+  - name: Shoden Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Anthony Deen / Nelson Pecora
+  - name: USFBD Tameshigiri
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Noah Mitchell / Russell Gordon
 taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'

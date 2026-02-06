@@ -10,7 +10,7 @@ ranks:
     date: '2021-01-10'
   - name: Sandan
     date: '2023-01-28'
-isActive: false
+isActive: true
 seminars:
   - name: Shoden kata
     date: '2018-02-24'
@@ -92,6 +92,10 @@ seminars:
   - name: USFBD Tameshigiri
     date: '2025-03-30'
     location: Mountain Stream Budo
+  - name: NR Seitei Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Michael Shane
 taikai:
   - name: East Coast Tai Kai
     date: '2018-08-01'

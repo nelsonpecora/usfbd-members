@@ -4,4 +4,14 @@ lastName: Khurdan
 joined: '2025-02-01'
 dojo: Russ Gordan
 ranks: []
-isActive: false
+isActive: true
+seminars:
+  - name: Shoden Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Anthony Deen / Nelson Pecora
+  - name: NR Seitei Kata
+    date: '2026-02-01'
+    location: Zentokan
+    instructor: Michael Shane
+taikai: []
