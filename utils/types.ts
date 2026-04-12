@@ -1,44 +1,44 @@
 export type FuzzyDate = {
-	hasYear: boolean;
-	hasMonth: boolean;
-	hasDay: boolean;
-	val: Date;
+  hasYear: boolean;
+  hasMonth: boolean;
+  hasDay: boolean;
+  val: Date;
 };
 
 export type Rank = {
-	name: string;
-	date: string | Date | null;
+  name: string;
+  date: string | Date | null;
 };
 
 export type Seminar = {
-	name: string | null;
-	date: string | null;
-	location?: string;
-	instructor?: string;
+  name: string | null;
+  date: string | null;
+  location?: string;
+  instructor?: string;
 };
 
 export type TaikaiWin = {
-	place: number;
-	name: string;
+  place: number;
+  name: string;
 };
 
 export type Taikai = {
-	name: string;
-	date: string | null;
-	location?: string;
-	wins: TaikaiWin[];
+  name: string;
+  date: string | null;
+  location?: string;
+  wins: TaikaiWin[];
 };
 
 export type Member = {
-	id: string | number;
-	firstName: string;
-	lastName: string;
-	name: string;
-	currentRank: string;
-	joined?: string | Date | null;
-	isActive: boolean;
-	manualCurrentRank?: string;
-	ranks: Rank[];
-	seminars: Seminar[];
-	taikai: Taikai[];
+  id: string | number;
+  firstName: string;
+  lastName: string;
+  name: string;
+  currentRank: string;
+  joined?: string | Date | null;
+  isActive: boolean;
+  manualCurrentRank?: string;
+  ranks: Rank[];
+  seminars: Seminar[];
+  taikai: Taikai[];
 };

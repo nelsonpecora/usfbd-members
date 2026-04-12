@@ -1,202 +1,202 @@
 body:has(.member-page) {
-	background-image: url("./../img/rice-paper.png");
+  background-image: url("./../img/rice-paper.png");
 }
 
 .member-page {
-	align-items: center;
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: flex-start;
-	max-width: 800px;
-	margin: 30px auto;
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  max-width: 800px;
+  margin: 30px auto;
 }
 
 .member-page .logo {
-	max-width: 200px;
-	margin: 0 0 20px;
+  max-width: 200px;
+  margin: 0 0 20px;
 }
 
 .member-page .logged-in {
-	width: 100%;
+  width: 100%;
 }
 
 .member-name {
-	text-align: center;
+  text-align: center;
 }
 
 .member-section {
-	margin: 30px auto;
-	width: 90%;
+  margin: 30px auto;
+  width: 90%;
 }
 
 th {
-	text-align: left;
+  text-align: left;
 }
 
 .table-2,
 .table-4 {
-	width: 100%;
-	max-width: 600px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .table-2 th,
 .table-2 td,
 .table-4 th,
 .table-4 td {
-	width: 50%;
+  width: 50%;
 }
 
 .table-4 th:nth-of-type(n + 3),
 .table-4 td:nth-of-type(n + 3) {
-	display: none;
+  display: none;
 }
 
 .table-2.no-header tr td:first-of-type {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 .current-rank:has(.eligible) {
-	color: var(--success-color);
-	font-weight: 700;
-	position: relative;
-	text-decoration: underline;
+  color: var(--success-color);
+  font-weight: 700;
+  position: relative;
+  text-decoration: underline;
 }
 
 .eligible {
-	background: #fff;
-	border: 1px solid var(--success-color);
-	border-radius: 3px;
-	left: -8px;
-	position: absolute;
-	padding: 6px 8px;
-	top: -18px;
-	width: 200px;
-	opacity: 0;
-	transition: 200ms opacity ease-out;
+  background: #fff;
+  border: 1px solid var(--success-color);
+  border-radius: 3px;
+  left: -8px;
+  position: absolute;
+  padding: 6px 8px;
+  top: -18px;
+  width: 200px;
+  opacity: 0;
+  transition: 200ms opacity ease-out;
 }
 
 .current-rank:hover .eligible {
-	opacity: 1;
+  opacity: 1;
 }
 
 .active-member {
-	color: var(--success-color);
-	font-weight: 700;
+  color: var(--success-color);
+  font-weight: 700;
 }
 
 .inactive-member {
-	color: var(--error-color);
-	font-weight: 700;
+  color: var(--error-color);
+  font-weight: 700;
 }
 
 .dues {
-	font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 .jp-regular {
-	display: block;
-	font-size: 1em;
-	font-weight: 400;
+  display: block;
+  font-size: 1em;
+  font-weight: 400;
 }
 
 .jp-regular a {
-	color: var(--jp-link-color);
+  color: var(--jp-link-color);
 }
 
 h2 .jp {
-	display: block;
-	font-weight: 200;
-	margin-top: -18px;
+  display: block;
+  font-weight: 200;
+  margin-top: -18px;
 }
 
 .feedback {
-	margin: 0 auto 20px;
-	width: 90%;
+  margin: 0 auto 20px;
+  width: 90%;
 }
 
 .no-data {
-	color: var(--jp-text-color);
-	font-family: var(--jp-font);
-	font-weight: 400;
+  color: var(--jp-text-color);
+  font-family: var(--jp-font);
+  font-weight: 400;
 }
 
 #logout-btn {
-	display: block;
-	margin: 20px auto 40px;
+  display: block;
+  margin: 20px auto 40px;
 }
 
 @media screen and (min-width: 768px) {
-	h2 .jp {
-		display: inline-block;
-		margin: 0;
-	}
+  h2 .jp {
+    display: inline-block;
+    margin: 0;
+  }
 
-	.table-2 {
-		width: 50%;
-	}
+  .table-2 {
+    width: 50%;
+  }
 
-	.table-4 {
-		width: 100%;
-	}
+  .table-4 {
+    width: 100%;
+  }
 
-	.table-4 {
-		max-width: 800px;
-	}
+  .table-4 {
+    max-width: 800px;
+  }
 
-	.table-4 th,
-	.table-4 td {
-		width: 25%;
-	}
+  .table-4 th,
+  .table-4 td {
+    width: 25%;
+  }
 
-	.table-4 th:nth-of-type(n + 3),
-	.table-4 td:nth-of-type(n + 3) {
-		display: table-cell;
-	}
+  .table-4 th:nth-of-type(n + 3),
+  .table-4 td:nth-of-type(n + 3) {
+    display: table-cell;
+  }
 }
 
 @media screen and (min-width: 900px) {
-	.member-page .logged-in {
-		align-items: flex-start;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: flex-start;
-	}
+  .member-page .logged-in {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
 
-	.member-page h1,
-	.member-section,
-	.feedback {
-		width: 100%;
-	}
+  .member-page h1,
+  .member-section,
+  .feedback {
+    width: 100%;
+  }
 
-	.table-2 {
-		width: 100%;
-	}
+  .table-2 {
+    width: 100%;
+  }
 
-	.member-section:has(.table-2) {
-		margin: 30px 0;
-		width: 400px;
-	}
+  .member-section:has(.table-2) {
+    margin: 30px 0;
+    width: 400px;
+  }
 }
 
 @media print {
-	/* Two column layout for printing */
-	.member-page .logged-in {
-		align-items: flex-start;
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-	}
+  /* Two column layout for printing */
+  .member-page .logged-in {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 
-	.member-page h1 {
-		width: 100%;
-	}
+  .member-page h1 {
+    width: 100%;
+  }
 
-	.member-section {
-		max-width: 40%;
-		margin: 0;
-	}
+  .member-section {
+    max-width: 40%;
+    margin: 0;
+  }
 
-	.feedback {
-		display: none;
-	}
+  .feedback {
+    display: none;
+  }
 }

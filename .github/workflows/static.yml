@@ -19,18 +19,18 @@ jobs:
   lint_and_test:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        cache: 'yarn'
-    - name: Install Dependencies
-      run: yarn --frozen-lockfile
-    - name: Lint Code
-      run: yarn lint
-    - name: Test Code
-      run: yarn test
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: "yarn"
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+      - name: Lint Code
+        run: yarn lint
+      - name: Test Code
+        run: yarn test
   deploy:
     needs: lint_and_test
     environment:
@@ -45,7 +45,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          cache: 'yarn'
+          cache: "yarn"
       - name: Install Dependencies
         run: yarn --frozen-lockfile
       - name: Build Eleventy Site
@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload exported static site
-          path: './build/'
+          path: "./build/"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

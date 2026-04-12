@@ -1,73 +1,73 @@
-id: '620'
+id: "620"
 firstName: Dylan
 lastName: Myers
-joined: '2020-04-01'
+joined: "2020-04-01"
 dojo: Mikazuki
 ranks:
   - name: Shodan
-    date: '2021-11-18'
+    date: "2021-11-18"
   - name: Nidan
-    date: '2024-06-02'
+    date: "2024-06-02"
 isActive: true
 seminars:
   - name: Basics and Shoden
-    date: '2019-10-19'
+    date: "2019-10-19"
     location: Tri State Tai Kai
     instructor: Matthew Odell
   - name: Basic Tameshigiri
-    date: '2019-10-19'
+    date: "2019-10-19"
     location: Tri State Tai Kai
     instructor: Mike Femal
   - name: Chuden kata
-    date: '2021-11-19'
+    date: "2021-11-19"
     location: Zentokan
   - name: Basic tameshigiri
-    date: '2021-11-19'
+    date: "2021-11-19"
     location: Zentokan
   - name: Chuden Kata
-    date: '2023-01-28'
+    date: "2023-01-28"
     location: Zentokan
     instructor: Matthew Odell
   - name: Advanced Tameshigiri
-    date: '2023-01-28'
+    date: "2023-01-28"
     location: Zentokan
     instructor: Russell Gordon
   - name: Chuden Kata
-    date: '2023-02-19'
+    date: "2023-02-19"
     location: Genbukan
     instructor: Sang Kim
   - name: Advanced Tameshigiri
-    date: '2023-02-19'
+    date: "2023-02-19"
     location: Genbukan
     instructor: Sang Kim
   - name: Kendo
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Masaki Kurihara
   - name: Edo Yagyu Shinkage-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Paul Manogue
   - name: Nakamura-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: David Drawdy
   - name: Advanced Cutting
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Adam Taylor
   - name: USFBD Kata
-    date: '2025-03-30'
+    date: "2025-03-30"
     location: Mountain Stream Budo
   - name: USFBD Tameshigiri
-    date: '2025-03-30'
+    date: "2025-03-30"
     location: Mountain Stream Budo
 taikai:
   - name: Tri State Tai Kai
-    date: '2019-10-20'
+    date: "2019-10-20"
     location: Fort Lee, NJ
     wins: []
   - name: Tri State Tai Kai
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Fort Lee, NJ
     wins: []

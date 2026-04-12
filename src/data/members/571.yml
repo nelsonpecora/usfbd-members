@@ -1,15 +1,15 @@
-id: '571'
+id: "571"
 firstName: Daniela
 lastName: Brunner
-joined: '2018-02-04'
+joined: "2018-02-04"
 dojo: Mountain Stream Budo
 ranks:
   - name: Shodan
-    date: '2021-01-10'
+    date: "2021-01-10"
 isActive: false
 seminars:
   - name: Basic Tameshigiri
-    date: '2019-10-19'
+    date: "2019-10-19"
     location: Tri State Tai Kai
     instructor: Bob Elder
 taikai: []

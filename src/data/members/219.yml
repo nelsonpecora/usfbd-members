@@ -1,30 +1,30 @@
-id: '219'
+id: "219"
 firstName: Masaki
 lastName: Kurihara
-joined: '2006-08-10'
+joined: "2006-08-10"
 dojo: Genbukan
 manualCurrentRank: Nidan
 ranks:
   - name: Sandan
-    date: '2017-11-19'
+    date: "2017-11-19"
   - name: Yondan
-    date: '2020-01-01'
+    date: "2020-01-01"
 isActive: false
 seminars:
   - name: Judging (sandan and above in USFBD, ZNTIR, etc)
-    date: '2023-01-28'
+    date: "2023-01-28"
     location: Zentokan
     instructor: Sang Kim
   - name: Edo Yagyu Shinkage-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Paul Manogue
   - name: Judging
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Sang Kim
 taikai:
   - name: Tri State Tai Kai
-    date: '2019-10-20'
+    date: "2019-10-20"
     location: Fort Lee, NJ
     wins: []

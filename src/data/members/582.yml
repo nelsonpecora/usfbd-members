@@ -1,7 +1,7 @@
-id: '582'
+id: "582"
 firstName: John
 lastName: Martinez
-joined: '2018-02-23'
+joined: "2018-02-23"
 dojo: Byakkokan
 ranks: []
 isActive: false

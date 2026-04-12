@@ -1,65 +1,65 @@
-id: '610'
+id: "610"
 firstName: Katherine
 lastName: Hamilton
-joined: '2020-01-08'
+joined: "2020-01-08"
 dojo: Byakkokan
 ranks:
   - name: Shodan
-    date: '2026-02-01'
+    date: "2026-02-01"
 isActive: true
 seminars:
   - name: Shoden kata
-    date: '2021-11-19'
+    date: "2021-11-19"
     location: Zentokan
   - name: Basic tameshigiri
-    date: '2021-11-19'
+    date: "2021-11-19"
     location: Zentokan
   - name: Shoden Kata
-    date: '2023-01-28'
+    date: "2023-01-28"
     location: Zentokan
     instructor: Masaki Kurihara
   - name: Basic Tameshigiri
-    date: '2023-01-28'
+    date: "2023-01-28"
     location: Zentokan
     instructor: Masaki Kurihara
   - name: Kendo
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Masaki Kurihara
   - name: Edo Yagyu Shinkage-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Paul Manogue
   - name: Daito-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Rodrigo King
   - name: Muso Jikiden Eishin-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Erik Johnstone
   - name: Shoden Kata
-    date: '2024-11-09'
+    date: "2024-11-09"
     location: Zentokan
     instructor: Zach Biesanz
   - name: Gekken / Bokken Drills
-    date: '2024-11-09'
+    date: "2024-11-09"
     location: Zentokan
     instructor: Zach Biesanz / Rob Raimondi
   - name: Shoden Kata
-    date: '2026-02-01'
+    date: "2026-02-01"
     location: Zentokan
     instructor: Anthony Deen / Nelson Pecora
   - name: USFBD Tameshigiri
-    date: '2026-02-01'
+    date: "2026-02-01"
     location: Zentokan
     instructor: Noah Mitchell / Russell Gordon
 taikai:
   - name: Tri State Tai Kai
-    date: '2019-10-20'
+    date: "2019-10-20"
     location: Fort Lee, NJ
     wins: []
   - name: Tri State Tai Kai
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Fort Lee, NJ
     wins: []

@@ -1,9 +1,0 @@
-{
-	"$schema": "https://biomejs.dev/schemas/2.4.11/schema.json",
-	"files": {
-		"includes": ["**", "!.claude/**", "!build/**", "!src/data/members/**"]
-	},
-	"linter": {
-		"enabled": false
-	}
-}

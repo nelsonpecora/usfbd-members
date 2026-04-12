@@ -1,19 +1,19 @@
-id: '742'
+id: "742"
 firstName: Hans
 lastName: Zhang
-joined: '2025-12-26'
+joined: "2025-12-26"
 dojo: Byakkokan Dojo
 ranks:
   - name: Shodan
-    date: '2026-02-01'
+    date: "2026-02-01"
 isActive: false
 seminars:
   - name: Shoden Kata
-    date: '2026-02-01'
+    date: "2026-02-01"
     location: Zentokan
     instructor: Anthony Deen / Nelson Pecora
   - name: Shoden Kata
-    date: '2026-02-01'
+    date: "2026-02-01"
     location: Zentokan
     instructor: Anthony Deen / Nelson Pecora
 taikai: []
