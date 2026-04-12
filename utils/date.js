@@ -1,5 +1,5 @@
-const { isDate, parseISO } = require('date-fns');
-const { format, utcToZonedTime } = require('date-fns-tz');
+const { isDate, parseISO, format } = require('date-fns');
+const { toZonedTime } = require('date-fns-tz');
 
 function parseFuzzyDate (val) {
   if (isDate(val)) {
@@ -48,7 +48,7 @@ function parseFuzzyDate (val) {
 }
 
 function formatFuzzyDate ({ hasMonth, hasDay, val }) {
-  val = utcToZonedTime(val, 'UTC');
+  val = toZonedTime(val, 'UTC');
 
   if (hasDay) {
     return format(val, 'MMM do, yyyy');

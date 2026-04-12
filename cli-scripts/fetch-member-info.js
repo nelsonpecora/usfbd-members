@@ -3,8 +3,8 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
-const { parse, parseISO, isAfter } = require('date-fns');
-const { format, utcToZonedTime } = require('date-fns-tz');
+const { parse, parseISO, isAfter, format } = require('date-fns');
+const { toZonedTime } = require('date-fns-tz');
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 const pluralize = require('pluralize');
 
@@ -37,7 +37,7 @@ function parseDate (date) {
     parsed = parse(date, 'M/d/yyyy', new Date());
   }
 
-  return format(utcToZonedTime(parsed, 'UTC'), 'yyyy-MM-dd');
+  return format(toZonedTime(parsed, 'UTC'), 'yyyy-MM-dd');
 }
 
 function getCurrentRank (rankNo) {
