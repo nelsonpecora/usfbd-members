@@ -16,7 +16,7 @@
     "format:check": "oxfmt --check",
     "lint": "oxlint --fix .",
     "typecheck": "tsc --noEmit",
-    "test": "jest",
+    "test": "vitest",
     "generate:info": "tsx cli-scripts/fetch-member-info.ts"
   },
   "devDependencies": {
@@ -36,14 +36,8 @@
     "pluralize": "^8.0.0",
     "rimraf": "6.1.3",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.2"
-  },
-  "jest": {
-    "testMatch": [
-      "**/utils/*.test.[jt]s"
-    ],
-    "transform": {
-      "^.+\\.[jt]s$": "@swc/jest"
-    }
+    "typescript": "^6.0.2",
+    "vite": "^8.0.8",
+    "vitest": "^4.1.4"
   }
 }
