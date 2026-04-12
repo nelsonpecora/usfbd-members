@@ -2,7 +2,7 @@ import type {
   GoogleSpreadsheetRow,
   GoogleSpreadsheet as GoogleSpreadsheetType,
 } from "google-spreadsheet";
-import type { Rank, TaikaiWin } from "../utils/types";
+import type { Rank, TaikaiWin } from "../src/scripts/types";
 
 require("dotenv").config();
 

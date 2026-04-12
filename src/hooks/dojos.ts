@@ -1,3 +1,5 @@
+import { defineHooks } from "vitto";
+
 // List of dojos we have links to
 const dojos: Record<string, string> = {
   Seishinkan: "http://www.seishinkan.com/index2.html",
@@ -13,4 +15,6 @@ const dojos: Record<string, string> = {
   "Midwest Center for Movement": "https://www.midwestaikido.com/",
 };
 
-export default dojos;
+export default defineHooks("dojos", () => {
+  return dojos;
+});

@@ -1,5 +1,5 @@
 import { parseISO } from "date-fns";
-import { parseFuzzyDate, formatFuzzyDate } from "./date";
+import { parseFuzzyDate, formatFuzzyDate } from "./fuzzy-dates";
 
 describe("date utils", () => {
   const date = parseISO("1970-01-01T00:00:00.000Z");

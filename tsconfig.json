@@ -1,16 +1,27 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "isolatedModules": true,
+    "target": "esnext",
     "module": "commonjs",
     "moduleResolution": "node",
     "ignoreDeprecations": "6.0",
-    "lib": ["ES2022", "DOM"],
+    "lib": ["ESNext", "DOM"],
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "types": ["node", "jest"]
+    "types": ["node", "vitest/globals"]
   },
-  "include": ["utils/**/*", "cli-scripts/**/*", "src/**/*"],
+  "include": [
+    "src/hooks/**/*",
+    "src/scripts/utils/**/*",
+    "cli-scripts/**/*",
+    "src_OLD/**/*",
+    "src/scripts/**/*",
+    "src/hooks/hashes.ts",
+    "src/hooks/members.ts",
+    "src/scripts/fuzzy-dates.ts",
+    "src/filters/testing-eligibility.test.ts"
+  ],
   "exclude": ["node_modules", "build"]
 }

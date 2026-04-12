@@ -7,13 +7,13 @@ declare global {
   }
 }
 
-function getCurrentPage(): "home" | "404" | "member" {
+function getCurrentPage(): "home" | "not-found" | "member" {
   const path = window.location.pathname;
 
   if (path === "/") {
     return "home";
-  } else if (path === "404.html") {
-    return "404";
+  } else if (path.includes("not-found")) {
+    return "not-found";
   } else {
     return "member";
   }

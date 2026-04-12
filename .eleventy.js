@@ -1,6 +1,6 @@
 const esbuild = require("esbuild");
-const { parseFuzzyDate, formatFuzzyDate } = require("./utils/date");
-const { isEligibleToTest } = require("./utils/testing");
+const { parseFuzzyDate, formatFuzzyDate } = require("./src/scripts/fuzzy-dates");
+const { isEligibleToTest } = require("./src/scripts/testing-eligibility");
 
 module.exports = (config) => {
   // Compile CSS and JS

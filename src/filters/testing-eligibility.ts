@@ -1,6 +1,6 @@
 import { addYears, isAfter } from "date-fns";
-import type { FuzzyDate } from "./date";
-import { parseFuzzyDate } from "./date";
+import type { FuzzyDate } from "../scripts/fuzzy-dates";
+import { parseFuzzyDate } from "../scripts/fuzzy-dates";
 
 type RankName = "MUDAN" | "SHODAN" | "NIDAN" | "SANDAN" | "YONDAN" | "GODAN" | "ROKUDAN";
 

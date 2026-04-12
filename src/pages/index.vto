@@ -1,9 +1,9 @@
----
-layout: layout.njk
----
+{{ layout "layouts/base.vto" }}
+
+{{ setMetadata('title', 'Members') }}
 
 <main class="home">
-  {% logo "https://www.usbattodo.com/" %}
+  {{ include "partials/logo.vto" { url: "https://www.usbattodo.com/" } }}
 
   <h1>Membership Booklet</h1>
 

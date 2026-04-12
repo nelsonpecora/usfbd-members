@@ -30,7 +30,7 @@ export type Taikai = {
 };
 
 export type Member = {
-  id: string | number;
+  id: string;
   firstName: string;
   lastName: string;
   name: string;

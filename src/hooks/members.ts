@@ -1,4 +1,4 @@
-import type { Member, Rank, Seminar, Taikai, TaikaiWin } from "../../utils/types";
+import type { Member, Rank, Seminar, Taikai, TaikaiWin } from "../scripts/types";
 
 import fs from "fs";
 import path from "path";
@@ -6,7 +6,7 @@ import yaml from "js-yaml";
 import { isDate } from "date-fns";
 
 type RawMemberData = {
-  id: string | number;
+  id: string;
   firstName: string;
   lastName: string;
   ranks?: Array<{ name: string; date: string | Date | null }>;
@@ -30,13 +30,15 @@ function sortDate(a: DateSortable, b: DateSortable): number {
   return bDate > aDate ? 1 : -1;
 }
 
+const memberDataDir = path.join(__dirname, "../data/members");
+
 export default function getMembers(): Member[] {
-  const members = fs.readdirSync(path.join(__dirname, "members"));
+  const members = fs.readdirSync(memberDataDir);
 
   return members.reduce((acc: Member[], filepath: string) => {
     const id = path.basename(filepath, path.extname(filepath));
     const data = yaml.load(
-      fs.readFileSync(path.join(__dirname, "members", filepath), "utf8"),
+      fs.readFileSync(path.join(memberDataDir, filepath), "utf8"),
     ) as RawMemberData;
 
     if (id !== `${data.id}`) {

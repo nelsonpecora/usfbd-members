@@ -1,5 +1,5 @@
 import { parseISO } from "date-fns";
-import { isEligibleToTest } from "./testing";
+import { isEligibleToTest } from "./testing-eligibility";
 
 describe("isEligibleToTest", () => {
   // Note: In the test data, seminars and taikai use mock values.

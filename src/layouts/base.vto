@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8" />
+    {{ set pageTitle = `${metadata.title} | ${metadata.siteName}` }}
+    <title>{{ pageTitle |> safe }}</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{{ metadata.siteFavicon |> safe }}" />
+    <link rel="canonical" href="{{ metadata.siteUrl |> safe }}" />
+    <meta property="og:site_name" content="USFBD" />
+    <meta property="og:title" content="{{ pageTitle |> safe }}" />
+    <meta property="og:url" content="{{ metadata.siteUrl |> safe }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="{{ metadata.siteDesc |> safe }}" />
+    <meta property="og:image" content="{{ metadata.siteLogo |> safe }}" />
+    <meta property="og:image:width" content="214" />
+    <meta property="og:image:height" content="156" />
+    <meta itemprop="name" content="{{ metadata.siteName |> safe }}" />
+    <meta itemprop="url" content="{{ metadata.siteUrl |> safe }}" />
+    <meta itemprop="description" content="{{ metadata.siteDesc |> safe }}" />
+    <meta itemprop="thumbnailUrl" content="{{ metadata.siteLogo |> safe }}" />
+    <link rel="image_src" href="{{ metadata.siteLogo |> safe }}" />
+    <meta itemprop="image" content="{{ metadata.siteLogo |> safe }}" />
+    <meta name="twitter:title" content="{{ pageTitle |> safe }}" />
+    <meta name="twitter:image" content="{{ metadata.siteLogo |> safe }}" />
+    <meta name="twitter:url" content="https://www.usbattodo.com" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="{{ metadata.siteDesc |> safe }}" />
+    <meta name="description" content="{{ metadata.siteDesc |> safe }}" />
+    <link rel="preconnect" href="https://images.squarespace-cdn.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@200;400&family=Nunito+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/styles/main.css" />
+  </head>
+  <body>
+    {{ content |> safe }}
+
+    <script type="module">
+      window.hashes = {{ hashes |> safe }};
+    </script>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
