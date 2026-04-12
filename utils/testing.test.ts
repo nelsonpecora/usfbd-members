@@ -1,5 +1,5 @@
-const { parseISO } = require("date-fns");
-const { isEligibleToTest } = require("./testing");
+import { parseISO } from "date-fns";
+import { isEligibleToTest } from "./testing";
 
 describe("isEligibleToTest", () => {
 	// Note: In the test data, seminars and taikai use mock values.

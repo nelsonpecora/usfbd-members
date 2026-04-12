@@ -1,5 +1,5 @@
 // List of dojos we have links to
-module.exports = {
+const dojos: Record<string, string> = {
 	Seishinkan: "http://www.seishinkan.com/index2.html",
 	Seiryukan: "https://www.seiryukandojo.com/",
 	Genbukan: "https://www.westchesteraikido.com/",
@@ -13,3 +13,5 @@ module.exports = {
 	Koshinkai: "http://koshinkaidojo.com/",
 	"Midwest Center for Movement": "https://www.midwestaikido.com/",
 };
+
+export default dojos;

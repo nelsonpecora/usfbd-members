@@ -13,7 +13,7 @@ ranks:
     date: '2021-01-10'
   - name: Yondan
     date: '2024-02-25'
-isActive: false
+isActive: true
 seminars:
   - name: Shoden kata
     date: '2018-02-24'
@@ -61,9 +61,11 @@ taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'
     location: Fort Lee, NJ
+    wins: []
   - name: 46th ZNTIR Taikai
     date: '2023-05-21'
     location: Machida, Japan
+    wins: []
   - name: 47th ZNTIR Taikai
     date: '2024-05-19'
     location: Machida, Japan

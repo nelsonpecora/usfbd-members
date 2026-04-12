@@ -1,5 +1,5 @@
-const { parseFuzzyDate, formatFuzzyDate } = require("./date");
-const { parseISO } = require("date-fns");
+import { parseISO } from "date-fns";
+import { parseFuzzyDate, formatFuzzyDate } from "./date";
 
 describe("date utils", () => {
 	const date = parseISO("1970-01-01T00:00:00.000Z");

@@ -1,7 +1,13 @@
-const hash = require("./hash");
-const sanitize = require("./sanitize");
+import hash from "./hash";
+import sanitize from "./sanitize";
 
-function getCurrentPage() {
+declare global {
+	interface Window {
+		hashes: Record<string, number>;
+	}
+}
+
+function getCurrentPage(): "home" | "404" | "member" {
 	const path = window.location.pathname;
 
 	if (path === "/") {
@@ -13,12 +19,12 @@ function getCurrentPage() {
 	}
 }
 
-function checkAuthMemberPage() {
+function checkAuthMemberPage(): void {
 	// Fetch auth from session storage.
-	const loading = document.querySelector(".loading");
-	const loggedOut = document.querySelector(".logged-out");
-	const loggedIn = document.querySelector(".logged-in");
-	const logoutBtn = document.querySelector("#logout-btn");
+	const loading = document.querySelector(".loading")!;
+	const loggedOut = document.querySelector(".logged-out")!;
+	const loggedIn = document.querySelector(".logged-in")!;
+	const logoutBtn = document.querySelector<HTMLElement>("#logout-btn")!;
 
 	logoutBtn.addEventListener("click", logout);
 
@@ -34,40 +40,42 @@ function checkAuthMemberPage() {
 	}
 }
 
-function logout() {
+function logout(): void {
 	window.sessionStorage.removeItem("auth");
 	window.location.href = "/";
 }
 
-function login(e) {
+function login(e: Event): void {
 	e.preventDefault();
 
-	const data = new window.FormData(document.querySelector("#login-form"));
-	const id = data.get("id");
-	const firstName = sanitize(data.get("firstName"));
-	const lastName = sanitize(data.get("lastName"));
-	const attempts = document.querySelector(".login-attempts");
-	const error1 = document.querySelector(".error1");
-	const error2 = document.querySelector(".error2");
+	const data = new window.FormData(
+		document.querySelector<HTMLFormElement>("#login-form")!,
+	);
+	const id = data.get("id") as string;
+	const firstName = sanitize(data.get("firstName") as string);
+	const lastName = sanitize(data.get("lastName") as string);
+	const attempts = document.querySelector<HTMLInputElement>(".login-attempts")!;
+	const error1 = document.querySelector(".error1")!;
+	const error2 = document.querySelector(".error2")!;
 
 	const hashed = hash(`${firstName}${lastName}`);
 	const loginType = id ? "id" : "name";
 
-	attempts.value++;
+	attempts.value = String(Number(attempts.value) + 1);
 
 	// When logging in by ID only, we don't match the hashed name.
 	if (loginType === "id") {
 		if (!window.hashes[id]) {
 			error1.classList.add("show");
 
-			if (attempts.value > 1) {
+			if (Number(attempts.value) > 1) {
 				error2.classList.add("show");
 			}
 			return;
 		} else {
 			error1.classList.remove("show");
 			error2.classList.remove("show");
-			window.sessionStorage.setItem("auth", window.hashes[id]);
+			window.sessionStorage.setItem("auth", String(window.hashes[id]));
 			// Redirect member to their page
 			window.location.href = `/member/${id}.html`;
 			return;
@@ -81,33 +89,33 @@ function login(e) {
 	if (!foundId || !window.hashes[foundId]) {
 		error1.classList.add("show");
 
-		if (attempts.value > 1) {
+		if (Number(attempts.value) > 1) {
 			error2.classList.add("show");
 		}
 	} else {
 		error1.classList.remove("show");
 		error2.classList.remove("show");
-		window.sessionStorage.setItem("auth", hashed);
+		window.sessionStorage.setItem("auth", String(hashed));
 		// Redirect member to their page
 		window.location.href = `/member/${foundId}.html`;
 	}
 }
 
-function getIdFromAuth(auth) {
+function getIdFromAuth(auth: number): string | undefined {
 	return Object.keys(window.hashes).find((key) => {
-		return window.hashes[key] === parseInt(auth);
+		return window.hashes[key] === auth;
 	});
 }
 
-function checkAuthIndexPage() {
+function checkAuthIndexPage(): void {
 	// Fetch auth from session storage.
-	const loggedOut = document.querySelector(".logged-out");
-	const loggedIn = document.querySelector(".logged-in");
-	const memberLink = document.querySelector(".logged-in a");
-	const logoutBtn = document.querySelector(".logout-btn");
+	const loggedOut = document.querySelector(".logged-out")!;
+	const loggedIn = document.querySelector(".logged-in")!;
+	const memberLink = document.querySelector<HTMLAnchorElement>(".logged-in a")!;
+	const logoutBtn = document.querySelector<HTMLElement>(".logout-btn")!;
 
 	const auth = window.sessionStorage.getItem("auth");
-	const memberId = auth && getIdFromAuth(auth);
+	const memberId = auth && getIdFromAuth(parseInt(auth));
 
 	if (memberId) {
 		loggedOut.classList.remove("show");
@@ -121,7 +129,7 @@ function checkAuthIndexPage() {
 	}
 }
 
-function checkCurrentPage() {
+function checkCurrentPage(): void {
 	const page = getCurrentPage();
 
 	if (page === "home") {
@@ -133,4 +141,4 @@ function checkCurrentPage() {
 	}
 }
 
-module.exports.checkCurrentPage = checkCurrentPage;
+export { checkCurrentPage };

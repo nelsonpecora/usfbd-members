@@ -2,9 +2,15 @@
 	"compilerOptions": {
 		"target": "ES2022",
 		"module": "commonjs",
+		"moduleResolution": "node",
+		"ignoreDeprecations": "6.0",
+		"lib": ["ES2022", "DOM"],
 		"strict": true,
 		"noEmit": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"types": ["node", "jest"]
 	},
-	"include": ["utils/**/*", "cli-scripts/**/*", "src/scripts/**/*"]
+	"include": ["utils/**/*", "cli-scripts/**/*", "src/**/*"],
+	"exclude": ["node_modules", "build"]
 }

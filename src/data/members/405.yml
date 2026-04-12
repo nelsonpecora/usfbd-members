@@ -57,6 +57,7 @@ taikai:
   - name: Tri State Tai Kai
     date: '2019-10-20'
     location: Fort Lee, NJ
+    wins: []
   - name: 47th ZNTIR Taikai
     date: '2024-05-19'
     location: Machida, Japan
@@ -68,3 +69,4 @@ taikai:
   - name: Tri State Tai Kai
     date: '2023-06-10'
     location: Fort Lee, NJ
+    wins: []

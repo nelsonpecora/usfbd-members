@@ -1,5 +1,5 @@
 // Fast hashing function.
-module.exports = function cyrb53(str, seed = 0) {
+export default function cyrb53(str: string, seed = 0): number {
 	let h1 = 0xdeadbeef ^ seed;
 	let h2 = 0x41c6ce57 ^ seed;
 	for (let i = 0, ch; i < str.length; i++) {
@@ -16,4 +16,4 @@ module.exports = function cyrb53(str, seed = 0) {
 		Math.imul(h1 ^ (h1 >>> 13), 3266489909);
 
 	return 4294967296 * (2097151 & h2) + (h1 >>> 0);
-};
+}

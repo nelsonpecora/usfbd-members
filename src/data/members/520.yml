@@ -102,9 +102,11 @@ taikai:
   - name: East Coast Tai Kai
     date: '2018-08-01'
     location: Palm Bay, FL
+    wins: []
   - name: Tri State Tai Kai
     date: '2019-10-20'
     location: Fort Lee, NJ
+    wins: []
   - name: 46th ZNTIR Taikai
     date: '2023-05-21'
     location: Machida, Japan
@@ -122,6 +124,8 @@ taikai:
   - name: Tri State Tai Kai
     date: '2023-06-10'
     location: Fort Lee, NJ
+    wins: []
   - name: 48th ZNTIR Taikai
     date: '2025-05-18'
     location: Machida, Japan
+    wins: []

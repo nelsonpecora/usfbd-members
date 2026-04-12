@@ -1,15 +1,20 @@
-const { isDate, parseISO, format } = require("date-fns");
-const { toZonedTime } = require("date-fns-tz");
+import { isDate, parseISO, format } from "date-fns";
+import { toZonedTime } from "date-fns-tz";
 
-function parseFuzzyDate(val) {
+export type FuzzyDate = {
+	hasYear: boolean;
+	hasMonth: boolean;
+	hasDay: boolean;
+	val: Date;
+};
+
+export function parseFuzzyDate(val: Date | string | number): FuzzyDate {
 	if (isDate(val)) {
-		// Real date object from yaml. This happens when it's specified
-		// as 'YYYY-MM-DD' (without quotes)
 		return {
 			hasYear: true,
 			hasMonth: true,
 			hasDay: true,
-			val,
+			val: val as Date,
 		};
 	}
 
@@ -47,18 +52,15 @@ function parseFuzzyDate(val) {
 	}
 }
 
-function formatFuzzyDate({ hasMonth, hasDay, val }) {
-	val = toZonedTime(val, "UTC");
+export function formatFuzzyDate({ hasMonth, hasDay, val }: FuzzyDate): string {
+	const zoned: Date = toZonedTime(val, "UTC");
 
 	if (hasDay) {
-		return format(val, "MMM do, yyyy");
+		return format(zoned, "MMM do, yyyy");
 	} else if (hasMonth) {
-		return format(val, "MMMM yyyy");
+		return format(zoned, "MMMM yyyy");
 	} else {
 		// Year only
-		return format(val, "yyyy");
+		return format(zoned, "yyyy");
 	}
 }
-
-module.exports.parseFuzzyDate = parseFuzzyDate;
-module.exports.formatFuzzyDate = formatFuzzyDate;

@@ -100,9 +100,12 @@ taikai:
   - name: East Coast Tai Kai
     date: '2018-08-01'
     location: Palm Bay, FL
+    wins: []
   - name: Tri State Tai Kai
     date: '2019-10-20'
     location: Fort Lee, NJ
+    wins: []
   - name: Tri State Tai Kai
     date: '2023-06-10'
     location: Fort Lee, NJ
+    wins: []

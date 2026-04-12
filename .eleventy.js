@@ -6,7 +6,7 @@ module.exports = (config) => {
 	// Compile CSS and JS
 	config.on("eleventy.after", () => {
 		return esbuild.build({
-			entryPoints: ["src/styles/main.css", "src/scripts/main.js"],
+			entryPoints: ["src/styles/main.css", "src/scripts/main.ts"],
 			outdir: "build/assets",
 			bundle: true,
 			minify: true,
