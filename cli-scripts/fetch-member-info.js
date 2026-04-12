@@ -155,6 +155,7 @@ async function getBasicInfo (doc) {
     } catch (e) {
       console.error(`Error parsing basic info for member "${firstName} ${lastName}" (${id}): ${e.message}`);
       process.exit(1);
+      return acc;
     }
   }, {});
 
@@ -179,6 +180,7 @@ async function getBasicInfo (doc) {
     } catch (e) {
       console.error(`Error parsing activity for member "${id}": ${e.message}`);
       process.exit(1);
+      return acc;
     }
   }, {});
 
@@ -350,6 +352,7 @@ async function getSeminarInfo (doc) {
     } catch (e) {
       console.error(`Error parsing seminar data for member ${id}: ${e.message}`);
       process.exit(1);
+      return acc;
     }
   }, {});
 
