@@ -4,7 +4,7 @@ const { isEligibleToTest } = require('./utils/testing');
 
 module.exports = (config) => {
   // Compile CSS and JS
-  config.on('afterBuild', () => {
+  config.on('eleventy.after', () => {
     return esbuild.build({
       entryPoints: [
         'src/styles/main.css',
