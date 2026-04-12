@@ -6,15 +6,19 @@ const yaml = require('js-yaml');
 const { parse, parseISO, isAfter, format } = require('date-fns');
 const { toZonedTime } = require('date-fns-tz');
 const { GoogleSpreadsheet } = require('google-spreadsheet');
+const { JWT } = require('google-auth-library');
 const pluralize = require('pluralize');
 
-const GOOGLE_AUTH = {
-  client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-  private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
-};
+function makeAuth () {
+  return new JWT({
+    email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    scopes: ['https://www.googleapis.com/auth/spreadsheets']
+  });
+}
 
 function getCell (row, cellName, fallback = null) {
-  const rawCell = row[cellName];
+  const rawCell = row.get(cellName);
 
   return rawCell ? rawCell.trim() : fallback;
 }
@@ -357,8 +361,7 @@ async function loadMemberSpreadsheet () {
   let memberSpreadsheet;
 
   try {
-    memberSpreadsheet = new GoogleSpreadsheet('1adUo2bdlwqEGoPT3zGYxkD7HsHTRPGTITFRLGkJlVoo');
-    await memberSpreadsheet.useServiceAccountAuth(GOOGLE_AUTH);
+    memberSpreadsheet = new GoogleSpreadsheet('1adUo2bdlwqEGoPT3zGYxkD7HsHTRPGTITFRLGkJlVoo', makeAuth());
     await memberSpreadsheet.loadInfo();
   } catch (e) {
     console.error(`Error accessing member spreadsheet: ${e.message}`);
@@ -373,8 +376,7 @@ async function loadSeminarSpreadsheet () {
   let seminarSpreadsheet;
 
   try {
-    seminarSpreadsheet = new GoogleSpreadsheet('1WCKWlFMDnDGkq2ir4JBHKfP3Ufr3bhK-z67vDqWSzHA');
-    await seminarSpreadsheet.useServiceAccountAuth(GOOGLE_AUTH);
+    seminarSpreadsheet = new GoogleSpreadsheet('1WCKWlFMDnDGkq2ir4JBHKfP3Ufr3bhK-z67vDqWSzHA', makeAuth());
     await seminarSpreadsheet.loadInfo();
   } catch (e) {
     console.error(`Error accessing seminar spreadsheet: ${e.message}`);
