@@ -25,28 +25,33 @@ const desc = `Member details for ${title}`;
 // Member info
 const jpRank = getJPRank(member.currentRank);
 const isEligible = isEligibleToTest(member);
-const joinDate = !!member.joined && parseFuzzyDate(member.joined);
-const fuzzyJoinDate = !!joinDate && formatFuzzyDate(joinDate);
 const dojoLink = dojos[member.dojo];
 const dojoText = !dojoLink && member.dojo;
 const noDojo = !dojoLink && !member.dojo;
+
+const toFuzzyDate = (val: Date | string) => {
+  const d = parseFuzzyDate(val);
+
+  return formatFuzzyDate(d);
+};
 ---
 
 <Layout title={title} desc={desc}>
   <main class="member-page">
     <Logo url="/" />
 
-    <section class="loading show">Loading...</section>
+    <div class="loading show">Loading...</div>
 
-    <section class="logged-out">
+    <div class="logged-out">
       <h1>Please <a href="/">log in</a></h1>
-    </section>
+    </div>
 
-    <section class="logged-in">
+    <div class="logged-in">
       <h1 class="member-name">{member.name}</h1>
 
       <section class="member-section">
         <h2>Your Info <span class="jp" lang="jp">自己情報</span></h2>
+
         <table class="table-2 no-header">
           <tr>
             <td>Member Number <span class="jp" lang="jp">発行番号</span></td>
@@ -74,8 +79,8 @@ const noDojo = !dojoLink && !member.dojo;
             <td>Joined <span class="jp" lang="jp">発行年月日</span></td>
             <td>
               {
-                fuzzyJoinDate ? (
-                  fuzzyJoinDate
+                member.joined ? (
+                  toFuzzyDate(member.joined)
                 ) : (
                   <span class="no-data" lang="jp">
                     不詳の年月日
@@ -112,7 +117,7 @@ const noDojo = !dojoLink && !member.dojo;
                   <span class="active-member">Yes</span>
                 ) : (
                   <span class="inactive-member">
-                    No{" "}
+                    No
                     <a
                       class="dues"
                       href="https://www.usbattodo.com/membership"
@@ -130,6 +135,7 @@ const noDojo = !dojoLink && !member.dojo;
 
       <section class="member-section">
         <h2>Rank History <span class="jp" lang="jp">審査合格記録</span></h2>
+
         <table class="table-2">
           <tr>
             <th>Rank <span class="jp" lang="jp">段位</span></th>
@@ -139,14 +145,14 @@ const noDojo = !dojoLink && !member.dojo;
             member.ranks.map((rank) => (
               <tr>
                 <td>
-                  {rank.name}{" "}
+                  {rank.name}
                   <span class="jp" lang="jp">
                     {getJPRank(rank.name)}
                   </span>
                 </td>
                 <td>
                   {rank.date ? (
-                    formatFuzzyDate(parseFuzzyDate(rank.date))
+                    toFuzzyDate(rank.date)
                   ) : (
                     <span class="no-data" lang="jp">
                       不詳の年月日
@@ -163,6 +169,7 @@ const noDojo = !dojoLink && !member.dojo;
         <h2>
           Seminar History <span class="jp" lang="jp">講習会受講記録</span>
         </h2>
+
         <table class="table-4">
           <tr>
             <th>Seminar <span class="jp" lang="jp">講習</span></th>
@@ -176,7 +183,7 @@ const noDojo = !dojoLink && !member.dojo;
                 <td>{seminar.name}</td>
                 <td>
                   {seminar.date ? (
-                    formatFuzzyDate(parseFuzzyDate(seminar.date))
+                    toFuzzyDate(seminar.date)
                   ) : (
                     <span class="no-data" lang="jp">
                       不詳の年月日
@@ -209,6 +216,7 @@ const noDojo = !dojoLink && !member.dojo;
 
       <section class="member-section">
         <h2>Taikai History <span class="jp" lang="jp">大会会受講記録</span></h2>
+
         <table class="table-4">
           <tr>
             <th>Name <span class="jp" lang="jp">大会</span></th>
@@ -218,11 +226,11 @@ const noDojo = !dojoLink && !member.dojo;
           </tr>
           {
             member.taikai.map((t) => (
-              <tr>
+              <tr class="taikai-wins">
                 <td>{t.name}</td>
                 <td>
                   {t.date ? (
-                    formatFuzzyDate(parseFuzzyDate(t.date))
+                    toFuzzyDate(t.date)
                   ) : (
                     <span class="no-data" lang="jp">
                       不詳の年月日
@@ -240,7 +248,7 @@ const noDojo = !dojoLink && !member.dojo;
                 </td>
                 <td>
                   {t.wins.length ? (
-                    formatTaikaiWin(t.wins)
+                    <Fragment set:html={formatTaikaiWin(t.wins)} />
                   ) : (
                     <span class="no-data" lang="jp">
                       全敗
@@ -268,6 +276,6 @@ const noDojo = !dojoLink && !member.dojo;
 
       <button id="logout-btn" class="large-button" type="button">Log Out</button
       >
-    </section>
+    </div>
   </main>
 </Layout>

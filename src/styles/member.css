@@ -125,6 +125,10 @@ h2 .jp {
   margin: 20px auto 40px;
 }
 
+.taikai-wins td {
+  vertical-align: top;
+}
+
 @media screen and (min-width: 768px) {
   h2 .jp {
     display: inline-block;
