@@ -83,7 +83,7 @@ describe("checkCurrentPage — index page", () => {
     expect(document.querySelector(".logged-in")!.classList.contains("show")).toBe(true);
     expect(document.querySelector(".logged-out")!.classList.contains("show")).toBe(false);
     const link = document.querySelector<HTMLAnchorElement>(".logged-in a")!;
-    expect(link.href).toContain(`/member/${memberId}.html`);
+    expect(link.href).toContain(`/member/${memberId}/`);
   });
 
   it("shows logged-out form when no auth", () => {

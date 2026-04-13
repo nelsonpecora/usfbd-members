@@ -118,7 +118,7 @@ function checkAuthIndexPage(): void {
 
   if (memberId) {
     loggedOut.classList.remove("show");
-    memberLink.href = `/member/${memberId}.html`;
+    memberLink.href = `/member/${memberId}/`;
     logoutBtn.addEventListener("click", logout);
     loggedIn.classList.add("show");
   } else {
