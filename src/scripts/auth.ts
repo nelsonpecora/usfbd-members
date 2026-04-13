@@ -9,10 +9,11 @@ declare global {
 
 function getCurrentPage(): "home" | "404" | "member" {
   const path = window.location.pathname;
+  const mainNotFound = document.querySelector(".not-found-page");
 
   if (path === "/") {
     return "home";
-  } else if (path === "404.html") {
+  } else if (mainNotFound) {
     return "404";
   } else {
     return "member";
@@ -29,7 +30,7 @@ function checkAuthMemberPage(): void {
   logoutBtn.addEventListener("click", logout);
 
   const auth = window.sessionStorage.getItem("auth");
-  const pageId = window.location.pathname.replace(/\/member\/(.*)\.html/, "$1");
+  const pageId = window.location.pathname.replace(/\/member\/(.*)\//, "$1");
 
   if (!auth || parseInt(auth) !== window.hashes[pageId]) {
     loading.classList.remove("show");
@@ -74,8 +75,8 @@ function login(e: Event): void {
       error1.classList.remove("show");
       error2.classList.remove("show");
       window.sessionStorage.setItem("auth", String(window.hashes[id]));
-      // Redirect member to their page
-      window.location.href = `/member/${id}.html`;
+      // Redirect member to their page.
+      window.location.href = `/member/${id}/`;
       return;
     }
   }
@@ -95,7 +96,7 @@ function login(e: Event): void {
     error2.classList.remove("show");
     window.sessionStorage.setItem("auth", String(hashed));
     // Redirect member to their page
-    window.location.href = `/member/${foundId}.html`;
+    window.location.href = `/member/${foundId}/`;
   }
 }
 
