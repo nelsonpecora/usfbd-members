@@ -3,7 +3,7 @@ import { checkCurrentPage } from "./auth";
 
 function setupMemberPage(memberId: string) {
   Object.defineProperty(window, "location", {
-    value: { pathname: `/member/${memberId}.html` },
+    value: { pathname: `/member/${memberId}/` },
     writable: true,
     configurable: true,
   });
