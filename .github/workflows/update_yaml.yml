@@ -19,10 +19,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  fetch_data_and_build:
     runs-on: ubuntu-latest
     env:
       GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL}}
@@ -43,5 +40,15 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Generate Member YAML
         run: "yarn generate:info"
-      - name: Build & Upload Site
+      - name: Install, build, and upload your site
         uses: withastro/action@v6
+  deploy:
+    needs: fetch_data_and_build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
