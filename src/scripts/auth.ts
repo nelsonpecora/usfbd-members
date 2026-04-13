@@ -1,5 +1,5 @@
-import hash from "./hash";
-import sanitize from "./sanitize";
+import hash from "../utils/hash";
+import sanitize from "../utils/sanitize";
 
 declare global {
   interface Window {
@@ -7,13 +7,13 @@ declare global {
   }
 }
 
-function getCurrentPage(): "home" | "not-found" | "member" {
+function getCurrentPage(): "home" | "404" | "member" {
   const path = window.location.pathname;
 
   if (path === "/") {
     return "home";
-  } else if (path.includes("not-found")) {
-    return "not-found";
+  } else if (path === "404.html") {
+    return "404";
   } else {
     return "member";
   }

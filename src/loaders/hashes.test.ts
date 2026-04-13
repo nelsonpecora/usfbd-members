@@ -1,6 +1,6 @@
-import { getHashes } from "../hooks/hashes";
-import hash from "./hash";
-import sanitize from "./sanitize";
+import { getHashes } from "./hashes";
+import hash from "../utils/hash";
+import sanitize from "../utils/sanitize";
 
 vi.mock("./members", () => ({
   default: () => [
@@ -11,12 +11,12 @@ vi.mock("./members", () => ({
 }));
 
 describe("getHashes", () => {
-  it("returns a valid JSON string", () => {
+  it("returns a valid JSON string", async () => {
     expect(() => getHashes()).not.toThrow();
   });
 
-  it("contains an entry for each member", () => {
-    const result = getHashes();
+  it("contains an entry for each member", async () => {
+    const result = await getHashes();
 
     expect(Object.keys(result)).toHaveLength(3);
     expect(result).toHaveProperty("1");
@@ -24,31 +24,31 @@ describe("getHashes", () => {
     expect(result).toHaveProperty("3");
   });
 
-  it("each value is a number", () => {
-    const result = getHashes();
+  it("each value is a number", async () => {
+    const result = await getHashes();
 
     for (const val of Object.values(result)) {
       expect(typeof val).toBe("number");
     }
   });
 
-  it("hash matches cyrb53 of sanitized firstName + lastName", () => {
-    const result = getHashes();
+  it("hash matches cyrb53 of sanitized firstName + lastName", async () => {
+    const result = await getHashes();
 
     expect(result[1]).toBe(hash(`${sanitize("John")}${sanitize("Doe")}`));
     expect(result[2]).toBe(hash(`${sanitize("Jane")}${sanitize("Smith")}`));
   });
 
-  it("strips special characters from names before hashing", () => {
-    const result = getHashes();
+  it("strips special characters from names before hashing", async () => {
+    const result = await getHashes();
 
     // "Mary-Anne" + "O'Brien" sanitizes to "maryanne" + "obrien"
     expect(result[3]).toBe(hash(`${sanitize("Mary-Anne")}${sanitize("O'Brien")}`));
     expect(result[3]).toBe(hash("maryanneobrien"));
   });
 
-  it("produces different hashes for different names", () => {
-    const result = getHashes();
+  it("produces different hashes for different names", async () => {
+    const result = await getHashes();
 
     expect(result[1]).not.toBe(result[2]);
     expect(result[1]).not.toBe(result[3]);

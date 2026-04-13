@@ -1,15 +1,53 @@
-import type { Member, Rank, Seminar, Taikai, TaikaiWin } from "../scripts/types";
-
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 import { isDate } from "date-fns";
+
+import type { TaikaiWin } from "../utils/format-taikai";
+
+type Rank = {
+  name: string;
+  date: string | null;
+};
+
+type Seminar = {
+  name: string;
+  date: string;
+  location?: string;
+  instructor?: string;
+};
+
+type Taikai = {
+  name: string;
+  date: string | null;
+  location?: string;
+  wins: TaikaiWin[];
+};
+
+export type Member = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  name: string;
+  dojo: string;
+  currentRank: string;
+  joined: string | null;
+  isActive: boolean;
+  manualCurrentRank?: string;
+  ranks: Rank[];
+  seminars: Seminar[];
+  taikai: Taikai[];
+};
 
 type RawMemberData = {
   id: string;
   firstName: string;
   lastName: string;
-  ranks?: Array<{ name: string; date: string | Date | null }>;
+  joined: string | null;
+  dojo: string;
+  isActive: boolean;
+  ranks?: Rank[];
   manualCurrentRank?: string;
   seminars?: Seminar[];
   taikai?: Array<{
@@ -30,7 +68,7 @@ function sortDate(a: DateSortable, b: DateSortable): number {
   return bDate > aDate ? 1 : -1;
 }
 
-const memberDataDir = path.join(__dirname, "../data/members");
+const memberDataDir = path.join(fileURLToPath(new URL(".", import.meta.url)), "../members");
 
 export default function getMembers(): Member[] {
   const members = fs.readdirSync(memberDataDir);

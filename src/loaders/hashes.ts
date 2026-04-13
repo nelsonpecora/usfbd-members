@@ -1,16 +1,14 @@
-import { defineHooks } from "vitto";
+import type { Member } from "./members";
 
-import type { Member } from "../scripts/types";
-
-import hash from "../scripts/hash";
-import sanitize from "../scripts/sanitize";
+import hash from "../utils/hash";
+import sanitize from "../utils/sanitize";
 import getMembers from "./members";
 
 const members = getMembers();
 
 type Hashes = Record<string, number>;
 
-export function getHashes() {
+export async function getHashes() {
   return members.reduce((acc: Hashes, member: Member) => {
     const id = member.id;
     const firstName = sanitize(member.firstName);
@@ -20,7 +18,3 @@ export function getHashes() {
     return acc;
   }, {});
 }
-
-export default defineHooks("hashes", () => {
-  return JSON.stringify(getHashes());
-});

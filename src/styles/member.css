@@ -1,5 +1,5 @@
 body:has(.member-page) {
-  background-image: url("/rice-paper.png");
+  background-image: url("../assets/rice-paper.png");
 }
 
 .member-page {

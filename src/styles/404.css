@@ -1,5 +1,5 @@
 body:has(.not-found-page) {
-  background-image: url("/yellow-paper.png");
+  background-image: url("../assets/yellow-paper.png");
 }
 
 .not-found-page {
