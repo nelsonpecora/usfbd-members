@@ -50,19 +50,19 @@ This is a member portal for the US Federation of Battodo (a Japanese sword art).
 
 ### Key files
 
-| Path | Purpose |
-|------|---------|
-| `src/loaders/members.ts` | Reads YAML files, returns typed `Member[]`, computes `currentRank` from rank history |
-| `src/loaders/hashes.ts` | Maps member ID → cyrb53 hash of sanitized name; used by the layout |
-| `src/loaders/dojos.ts` | Static map of dojo names → URLs |
-| `src/utils/fuzzy-dates.ts` | `parseFuzzyDate` / `formatFuzzyDate` — handles dates that may be YYYY, YYYY-MM, or YYYY-MM-DD |
-| `src/utils/hash.ts` | cyrb53 hash function (used both at build time and client-side) |
-| `src/utils/sanitize.ts` | Name normalization for login matching |
-| `src/utils/testing-eligibility.ts` | Determines if a member is eligible to test for next rank |
-| `src/utils/jp-rank.ts` | Maps rank names to Japanese kanji |
-| `src/utils/format-taikai.ts` | Formats taikai win records for display |
-| `src/scripts/main.ts` | Client-side JS: login/logout logic, auth checks |
-| `src/members/*.yml` | One file per member; **do not edit manually** — regenerate with `generate:info` |
+| Path                               | Purpose                                                                                       |
+| ---------------------------------- | --------------------------------------------------------------------------------------------- |
+| `src/loaders/members.ts`           | Reads YAML files, returns typed `Member[]`, computes `currentRank` from rank history          |
+| `src/loaders/hashes.ts`            | Maps member ID → cyrb53 hash of sanitized name; used by the layout                            |
+| `src/loaders/dojos.ts`             | Static map of dojo names → URLs                                                               |
+| `src/utils/fuzzy-dates.ts`         | `parseFuzzyDate` / `formatFuzzyDate` — handles dates that may be YYYY, YYYY-MM, or YYYY-MM-DD |
+| `src/utils/hash.ts`                | cyrb53 hash function (used both at build time and client-side)                                |
+| `src/utils/sanitize.ts`            | Name normalization for login matching                                                         |
+| `src/utils/testing-eligibility.ts` | Determines if a member is eligible to test for next rank                                      |
+| `src/utils/jp-rank.ts`             | Maps rank names to Japanese kanji                                                             |
+| `src/utils/format-taikai.ts`       | Formats taikai win records for display                                                        |
+| `src/scripts/main.ts`              | Client-side JS: login/logout logic, auth checks                                               |
+| `src/members/*.yml`                | One file per member; **do not edit manually** — regenerate with `generate:info`               |
 
 ### Testing
 

@@ -1,7 +1,7 @@
-id: '333'
+id: "333"
 firstName: Raphael
 lastName: Lee
-joined: '2011-04-15'
+joined: "2011-04-15"
 dojo: Byakkokan
 manualCurrentRank: Shodan
 ranks: []

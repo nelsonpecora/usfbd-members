@@ -1,34 +1,34 @@
-id: '648'
+id: "648"
 firstName: Edie
 lastName: Hoffmann
-joined: '2022-03-07'
+joined: "2022-03-07"
 dojo: Mountain Stream Budo
 ranks: []
 isActive: false
 seminars:
   - name: Intro to Cutting / Basics
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
   - name: Toyama-ryu Kata
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Noah Mitchell
   - name: Nakamura-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: David Drawdy
   - name: Gekken / Bokken Techniques
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Sang Kim
   - name: USFBD Kata
-    date: '2025-03-30'
+    date: "2025-03-30"
     location: Mountain Stream Budo
   - name: USFBD Tameshigiri
-    date: '2025-03-30'
+    date: "2025-03-30"
     location: Mountain Stream Budo
 taikai:
   - name: Tri State Tai Kai
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Fort Lee, NJ
     wins: []

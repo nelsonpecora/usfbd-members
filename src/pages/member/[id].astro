@@ -2,12 +2,13 @@
 import "../../styles/member.css";
 import Layout from "../../layouts/Layout.astro";
 import Logo from "../../components/Logo.astro";
-import getMembers, { type Member } from "../../loaders/members";
-import dojos from '../../loaders/dojos';
-import getJPRank from '../../utils/jp-rank'
-import { isEligibleToTest } from '../../utils/testing-eligibility'
+import type { Member } from "../../utils/member-types";
+import getMembers from "../../loaders/members";
+import dojos from "../../loaders/dojos";
+import getJPRank from "../../utils/jp-rank";
+import { isEligibleToTest } from "../../utils/testing-eligibility";
 import { formatFuzzyDate, parseFuzzyDate } from "../../utils/fuzzy-dates";
-import formatTaikaiWin from '../../utils/format-taikai'
+import formatTaikaiWin from "../../utils/format-taikai";
 
 export function getStaticPaths() {
   const members = getMembers();
@@ -24,7 +25,7 @@ const desc = `Member details for ${title}`;
 // Member info
 const jpRank = getJPRank(member.currentRank);
 const isEligible = isEligibleToTest(member);
-const joinDate = !!member.joined && parseFuzzyDate(member.joined)
+const joinDate = !!member.joined && parseFuzzyDate(member.joined);
 const fuzzyJoinDate = !!joinDate && formatFuzzyDate(joinDate);
 const dojoLink = dojos[member.dojo];
 const dojoText = !dojoLink && member.dojo;
@@ -37,130 +38,236 @@ const noDojo = !dojoLink && !member.dojo;
 
     <section class="loading show">Loading...</section>
 
-  <section class="logged-out">
-    <h1>Please <a href="/">log in</a></h1>
-  </section>
-
-  <section class="logged-in">
-    <h1 class="member-name">{member.name}</h1>
-
-    <section class="member-section">
-      <h2>Your Info <span class="jp" lang="jp">自己情報</span></h2>
-      <table class="table-2 no-header">
-        <tr>
-          <td>Member Number <span class="jp" lang="jp">発行番号</span></td>
-          <td>{member.id}</td>
-        </tr>
-        <tr>
-          <td>Name <span class="jp" lang="jp">氏名</span></td>
-          <td>{member.name}</td>
-        </tr>
-        <tr>
-          <td>Current Rank <span class="jp" lang="jp">段位称号</span></td>
-          <td class="current-rank">
-            {member.currentRank} <span class="jp" lang="jp">{jpRank}</span>
-            {isEligible && <span class="eligible">Eligible for next rank! Talk to your sensei</span>}
-          </td>
-        </tr>
-        <tr>
-          <td>Joined <span class="jp" lang="jp">発行年月日</span></td>
-          <td>
-            {fuzzyJoinDate ? fuzzyJoinDate : <span class="no-data" lang="jp">不詳の年月日</span>}
-          </td>
-        </tr>
-        <tr>
-          <td>Dojo <span class="jp" lang="jp">所属</span></td>
-          <td>
-            {dojoLink && <a href={dojoLink} target="_blank">{member.dojo}</a>}
-            {dojoText && dojoText}
-            {noDojo && <span class="no-data" lang="jp">無名の所</span>}
-            </td>
-        </tr>
-        <tr>
-          <td>Active <span class="jp" lang="jp">成員</span></td>
-          <td>
-            {member.isActive ? <span class="active-member">Yes</span> : <span class="inactive-member">No <a class="dues" href="https://www.usbattodo.com/membership" target="_blank">(pay dues here)</a></span>}
-            </td>
-        </tr>
-      </table>
+    <section class="logged-out">
+      <h1>Please <a href="/">log in</a></h1>
     </section>
 
-    <section class="member-section">
-      <h2>Rank History <span class="jp" lang="jp">審査合格記録</span></h2>
-      <table class="table-2">
-        <tr>
-          <th>Rank <span class="jp" lang="jp">段位</span></th>
-          <th>Date <span class="jp" lang="jp">年月日</span></th>
-        </tr>
-        {member.ranks.map((rank) => (
-            <tr>
-            <td>{rank.name} <span class="jp" lang="jp">{getJPRank(rank.name)}</span></td>
-            <td>
-                {rank.date ? formatFuzzyDate(parseFuzzyDate(rank.date)) : <span class="no-data" lang="jp">不詳の年月日</span>}
+    <section class="logged-in">
+      <h1 class="member-name">{member.name}</h1>
+
+      <section class="member-section">
+        <h2>Your Info <span class="jp" lang="jp">自己情報</span></h2>
+        <table class="table-2 no-header">
+          <tr>
+            <td>Member Number <span class="jp" lang="jp">発行番号</span></td>
+            <td>{member.id}</td>
+          </tr>
+          <tr>
+            <td>Name <span class="jp" lang="jp">氏名</span></td>
+            <td>{member.name}</td>
+          </tr>
+          <tr>
+            <td>Current Rank <span class="jp" lang="jp">段位称号</span></td>
+            <td class="current-rank">
+              {member.currentRank}
+              <span class="jp" lang="jp">{jpRank}</span>
+              {
+                isEligible && (
+                  <span class="eligible">
+                    Eligible for next rank! Talk to your sensei
+                  </span>
+                )
+              }
             </td>
           </tr>
-        ))}
-      </table>
-    </section>
-
-    <section class="member-section">
-      <h2>Seminar History <span class="jp" lang="jp">講習会受講記録</span></h2>
-      <table class="table-4">
-        <tr>
-          <th>Seminar <span class="jp" lang="jp">講習</span></th>
-          <th>Date <span class="jp" lang="jp">年月日</span></th>
-          <th>Location <span class="jp" lang="jp">場所</span></th>
-          <th>Instructor <span class="jp" lang="jp">先生</span></th>
-        </tr>
-        {member.seminars.map((seminar) => (
-            <tr>
-            <td>{seminar.name}</td>
+          <tr>
+            <td>Joined <span class="jp" lang="jp">発行年月日</span></td>
             <td>
-                {seminar.date ? formatFuzzyDate(parseFuzzyDate(seminar.date)) : <span class="no-data" lang="jp">不詳の年月日</span>}
-            </td>
-            <td>
-                {seminar.location ? seminar.location : <span class="no-data" lang="jp">無名の所</span>}
-            </td>
-            <td>
-                {seminar.instructor ? seminar.instructor : <span class="no-data" lang="jp">無名の先生</span>}
+              {
+                fuzzyJoinDate ? (
+                  fuzzyJoinDate
+                ) : (
+                  <span class="no-data" lang="jp">
+                    不詳の年月日
+                  </span>
+                )
+              }
             </td>
           </tr>
-        ))}
-      </table>
-    </section>
-
-    <section class="member-section">
-      <h2>Taikai History <span class="jp" lang="jp">大会会受講記録</span></h2>
-      <table class="table-4">
-        <tr>
-          <th>Name <span class="jp" lang="jp">大会</span></th>
-          <th>Date <span class="jp" lang="jp">年月日</span></th>
-          <th>Location <span class="jp" lang="jp">場所</span></th>
-          <th>Wins <span class="jp" lang="jp">勝利</span></th>
-        </tr>
-        {member.taikai.map((t) => (
-<tr>
-            <td>{t.name}</td>
+          <tr>
+            <td>Dojo <span class="jp" lang="jp">所属</span></td>
             <td>
-                {t.date ? formatFuzzyDate(parseFuzzyDate(t.date)) : <span class="no-data" lang="jp">不詳の年月日</span>}
-            </td>
-            <td>
-                {t.location ? t.location : <span class="no-data" lang="jp">無名の所</span>}
-            </td>
-            <td>
-                {t.wins.length ? formatTaikaiWin(t.wins) : <span class="no-data" lang="jp">全敗</span>}
+              {
+                dojoLink && (
+                  <a href={dojoLink} target="_blank">
+                    {member.dojo}
+                  </a>
+                )
+              }
+              {dojoText && dojoText}
+              {
+                noDojo && (
+                  <span class="no-data" lang="jp">
+                    無名の所
+                  </span>
+                )
+              }
             </td>
           </tr>
-        ))}
-      </table>
-    </section>
+          <tr>
+            <td>Active <span class="jp" lang="jp">成員</span></td>
+            <td>
+              {
+                member.isActive ? (
+                  <span class="active-member">Yes</span>
+                ) : (
+                  <span class="inactive-member">
+                    No{" "}
+                    <a
+                      class="dues"
+                      href="https://www.usbattodo.com/membership"
+                      target="_blank"
+                    >
+                      (pay dues here)
+                    </a>
+                  </span>
+                )
+              }
+            </td>
+          </tr>
+        </table>
+      </section>
 
-    <section class="feedback">
-      See anything missing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGN4R41Q5AUwHjtIaZSOkP76FifkXFFxFWwqjzZV9xi1tFhA/viewform?usp=header" target="_blank">Get in touch!</a>
-      <span class="jp jp-regular">間違えたものを見れば、<a href="https://docs.google.com/forms/d/e/1FAIpQLSfGN4R41Q5AUwHjtIaZSOkP76FifkXFFxFWwqjzZV9xi1tFhA/viewform?usp=header" target="_blank">フィードバックくれていただけませんか。</a></span>
-    </section>
+      <section class="member-section">
+        <h2>Rank History <span class="jp" lang="jp">審査合格記録</span></h2>
+        <table class="table-2">
+          <tr>
+            <th>Rank <span class="jp" lang="jp">段位</span></th>
+            <th>Date <span class="jp" lang="jp">年月日</span></th>
+          </tr>
+          {
+            member.ranks.map((rank) => (
+              <tr>
+                <td>
+                  {rank.name}{" "}
+                  <span class="jp" lang="jp">
+                    {getJPRank(rank.name)}
+                  </span>
+                </td>
+                <td>
+                  {rank.date ? (
+                    formatFuzzyDate(parseFuzzyDate(rank.date))
+                  ) : (
+                    <span class="no-data" lang="jp">
+                      不詳の年月日
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))
+          }
+        </table>
+      </section>
 
-    <button id="logout-btn" class="large-button" type="button">Log Out</button>
-  </section>
+      <section class="member-section">
+        <h2>
+          Seminar History <span class="jp" lang="jp">講習会受講記録</span>
+        </h2>
+        <table class="table-4">
+          <tr>
+            <th>Seminar <span class="jp" lang="jp">講習</span></th>
+            <th>Date <span class="jp" lang="jp">年月日</span></th>
+            <th>Location <span class="jp" lang="jp">場所</span></th>
+            <th>Instructor <span class="jp" lang="jp">先生</span></th>
+          </tr>
+          {
+            member.seminars.map((seminar) => (
+              <tr>
+                <td>{seminar.name}</td>
+                <td>
+                  {seminar.date ? (
+                    formatFuzzyDate(parseFuzzyDate(seminar.date))
+                  ) : (
+                    <span class="no-data" lang="jp">
+                      不詳の年月日
+                    </span>
+                  )}
+                </td>
+                <td>
+                  {seminar.location ? (
+                    seminar.location
+                  ) : (
+                    <span class="no-data" lang="jp">
+                      無名の所
+                    </span>
+                  )}
+                </td>
+                <td>
+                  {seminar.instructor ? (
+                    seminar.instructor
+                  ) : (
+                    <span class="no-data" lang="jp">
+                      無名の先生
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))
+          }
+        </table>
+      </section>
+
+      <section class="member-section">
+        <h2>Taikai History <span class="jp" lang="jp">大会会受講記録</span></h2>
+        <table class="table-4">
+          <tr>
+            <th>Name <span class="jp" lang="jp">大会</span></th>
+            <th>Date <span class="jp" lang="jp">年月日</span></th>
+            <th>Location <span class="jp" lang="jp">場所</span></th>
+            <th>Wins <span class="jp" lang="jp">勝利</span></th>
+          </tr>
+          {
+            member.taikai.map((t) => (
+              <tr>
+                <td>{t.name}</td>
+                <td>
+                  {t.date ? (
+                    formatFuzzyDate(parseFuzzyDate(t.date))
+                  ) : (
+                    <span class="no-data" lang="jp">
+                      不詳の年月日
+                    </span>
+                  )}
+                </td>
+                <td>
+                  {t.location ? (
+                    t.location
+                  ) : (
+                    <span class="no-data" lang="jp">
+                      無名の所
+                    </span>
+                  )}
+                </td>
+                <td>
+                  {t.wins.length ? (
+                    formatTaikaiWin(t.wins)
+                  ) : (
+                    <span class="no-data" lang="jp">
+                      全敗
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))
+          }
+        </table>
+      </section>
+
+      <section class="feedback">
+        See anything missing? <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfGN4R41Q5AUwHjtIaZSOkP76FifkXFFxFWwqjzZV9xi1tFhA/viewform?usp=header"
+          target="_blank">Get in touch!</a
+        >
+        <span class="jp jp-regular"
+          >間違えたものを見れば、<a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfGN4R41Q5AUwHjtIaZSOkP76FifkXFFxFWwqjzZV9xi1tFhA/viewform?usp=header"
+            target="_blank">フィードバックくれていただけませんか。</a
+          ></span
+        >
+      </section>
+
+      <button id="logout-btn" class="large-button" type="button">Log Out</button
+      >
+    </section>
   </main>
 </Layout>

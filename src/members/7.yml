@@ -1,55 +1,55 @@
-id: '7'
+id: "7"
 firstName: Ivan
 lastName: Guerra
-joined: '2011-02-01'
+joined: "2011-02-01"
 dojo: Genbukan
 manualCurrentRank: Shodan
 ranks:
   - name: Nidan
-    date: '2014-11-15'
+    date: "2014-11-15"
   - name: Sandan
-    date: '2021-01-10'
+    date: "2021-01-10"
   - name: Yondan
-    date: '2024-06-02'
+    date: "2024-06-02"
 isActive: true
 seminars:
   - name: Basic Tameshigiri
-    date: '2019-10-19'
+    date: "2019-10-19"
     location: Tri State Tai Kai
     instructor: Mike Femal
   - name: Advanced Tameshigiri
-    date: '2019-10-19'
+    date: "2019-10-19"
     location: Tri State Tai Kai
     instructor: Bob Elder
   - name: Ryushin Shouchi Ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Valient Yeung
   - name: Edo Yagyu Shinkage-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Paul Manogue
   - name: Daito-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Rodrigo King
   - name: Gekken / Bokken Techniques
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Sang Kim
   - name: USFBD Seitei Kata
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Matt Odell
   - name: USFBD Kata
-    date: '2025-03-30'
+    date: "2025-03-30"
     location: Mountain Stream Budo
   - name: USFBD Tameshigiri
-    date: '2025-03-30'
+    date: "2025-03-30"
     location: Mountain Stream Budo
 taikai:
   - name: Tri State Tai Kai
-    date: '2019-10-20'
+    date: "2019-10-20"
     location: Fort Lee, NJ
     wins:
       - place: 1
@@ -57,6 +57,6 @@ taikai:
       - place: 3
         name: Shodan & Nidan kata
   - name: Tri State Tai Kai
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Fort Lee, NJ
     wins: []

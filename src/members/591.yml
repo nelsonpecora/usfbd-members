@@ -1,33 +1,33 @@
-id: '591'
+id: "591"
 firstName: Allen
 lastName: Ramirez
-joined: '2018-08-08'
+joined: "2018-08-08"
 dojo: Zentokan
 ranks:
   - name: Shodan
-    date: '2021-11-18'
+    date: "2021-11-18"
 isActive: false
 seminars:
   - name: Shoden kata
-    date: '2018-07-31'
+    date: "2018-07-31"
     location: Mountain Stream Budo
     instructor: Mike Femal
   - name: Chuden kata
-    date: '2018-08-01'
+    date: "2018-08-01"
     location: Mountain Stream Budo
     instructor: Mike Femal
   - name: Tameshigiri
-    date: '2018-08-02'
+    date: "2018-08-02"
     location: Mountain Stream Budo
     instructor: Mike Femal
   - name: Chuden kata
-    date: '2021-11-19'
+    date: "2021-11-19"
     location: Zentokan
   - name: Advanced tameshigiri
-    date: '2021-11-19'
+    date: "2021-11-19"
     location: Zentokan
 taikai:
   - name: Tri State Tai Kai
-    date: '2019-10-20'
+    date: "2019-10-20"
     location: Fort Lee, NJ
     wins: []

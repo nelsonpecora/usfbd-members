@@ -1,28 +1,28 @@
-id: '19'
+id: "19"
 firstName: John
 lastName: Matthews
-joined: '2004-11-25'
+joined: "2004-11-25"
 dojo: Bamboo Dojo
 manualCurrentRank: Sandan
 ranks:
   - name: Yondan
-    date: '2017-11-19'
+    date: "2017-11-19"
 isActive: true
 seminars:
   - name: Toyama-ryu Kata
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Noah Mitchell
   - name: Nakamura-ryu
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: David Drawdy
   - name: Advanced Cutting
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Adam Taylor
   - name: USFBD Seitei Kata
-    date: '2023-06-10'
+    date: "2023-06-10"
     location: Tri State Tai Kai
     instructor: Matt Odell
 taikai: []
