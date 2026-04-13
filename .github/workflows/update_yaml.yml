@@ -37,9 +37,10 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          cache: "yarn"
+          node-version-file: package.json
+          cache: yarn
       - name: Install Dependencies
-        run: yarn --frozen-lockfile
+        run: yarn install --frozen-lockfile
       - name: Generate Member YAML
         run: "yarn generate:info"
       - name: Build Site
