@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 import { isDate } from "date-fns";
 
@@ -16,7 +15,7 @@ function sortDate(a: DateSortable, b: DateSortable): number {
   return bDate > aDate ? 1 : -1;
 }
 
-const memberDataDir = path.join(fileURLToPath(new URL(".", import.meta.url)), "../members");
+const memberDataDir = path.join(process.cwd(), "src/members");
 
 export default function getMembers(): Member[] {
   const members = fs.readdirSync(memberDataDir);

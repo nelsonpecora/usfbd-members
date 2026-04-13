@@ -48,13 +48,13 @@ jobs:
           cache: "yarn"
       - name: Install Dependencies
         run: yarn --frozen-lockfile
-      - name: Build Eleventy Site
+      - name: Build Site
         run: yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload exported static site
-          path: "./build/"
+          path: "./dist/"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
