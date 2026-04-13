@@ -1,35 +1,35 @@
-id: "647"
+id: '647'
 firstName: Miguel Erick
 lastName: Mejia Reyes
-joined: "2022-01-27"
+joined: '2022-01-27'
 dojo: Byakkokan
 ranks:
   - name: Shodan
-    date: "2023-01-28"
+    date: '2023-01-28'
   - name: Nidan
-    date: "2025-03-30"
+    date: '2025-03-30'
 isActive: false
 seminars:
   - name: Shoden Kata
-    date: "2023-01-28"
+    date: '2023-01-28'
     location: Zentokan
     instructor: Masaki Kurihara
   - name: Basic Tameshigiri
-    date: "2023-01-28"
+    date: '2023-01-28'
     location: Zentokan
     instructor: Masaki Kurihara
   - name: USFBD Kata
-    date: "2025-03-30"
+    date: '2025-03-30'
     location: Mountain Stream Budo
   - name: USFBD Tameshigiri
-    date: "2025-03-30"
+    date: '2025-03-30'
     location: Mountain Stream Budo
   - name: Shoden Kata
-    date: "2026-02-01"
+    date: '2026-02-01'
     location: Zentokan
     instructor: Anthony Deen / Nelson Pecora
   - name: NR Seitei Kata
-    date: "2026-02-01"
+    date: '2026-02-01'
     location: Zentokan
     instructor: Michael Shane
 taikai: []

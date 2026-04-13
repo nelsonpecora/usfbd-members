@@ -1,23 +1,23 @@
-id: "480"
+id: '480'
 firstName: David
 lastName: Ahn
-joined: "2014-06-06"
+joined: '2014-06-06'
 dojo: Byakkokan
 ranks:
   - name: Shodan
-    date: "2018-02-24"
+    date: '2018-02-24'
 isActive: false
 seminars:
   - name: Shoden kata
-    date: "2018-02-24"
+    date: '2018-02-24'
     location: Zentokan
     instructor: John Matthews
   - name: Chuden kata
-    date: "2018-02-24"
+    date: '2018-02-24'
     location: Zentokan
     instructor: John Matthews
   - name: Tameshigiri
-    date: "2018-02-24"
+    date: '2018-02-24'
     location: Zentokan
     instructor: John Matthews
 taikai: []

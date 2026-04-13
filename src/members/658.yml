@@ -1,19 +1,19 @@
-id: "658"
+id: '658'
 firstName: Dylan
 lastName: Vaughan
-joined: "2022-12-21"
+joined: '2022-12-21'
 dojo: Byakkokan
 ranks:
   - name: Shodan
-    date: "2023-01-28"
+    date: '2023-01-28'
 isActive: false
 seminars:
   - name: Shoden Kata
-    date: "2023-01-28"
+    date: '2023-01-28'
     location: Zentokan
     instructor: Masaki Kurihara
   - name: Basic Tameshigiri
-    date: "2023-01-28"
+    date: '2023-01-28'
     location: Zentokan
     instructor: Masaki Kurihara
 taikai: []

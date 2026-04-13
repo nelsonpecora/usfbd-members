@@ -1,4 +1,4 @@
-import type { Member } from "./members";
+import type { Member } from "../utils/member-types";
 
 import hash from "../utils/hash";
 import sanitize from "../utils/sanitize";

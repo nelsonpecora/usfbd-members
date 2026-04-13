@@ -1,25 +1,25 @@
-id: "730"
+id: '730'
 firstName: Demaine
 lastName: Francis
-joined: "2025-02-27"
+joined: '2025-02-27'
 dojo: Byakkokan
 ranks:
   - name: Shodan
-    date: "2026-02-01"
+    date: '2026-02-01'
 isActive: false
 seminars:
   - name: USFBD Kata
-    date: "2025-03-30"
+    date: '2025-03-30'
     location: Mountain Stream Budo
   - name: USFBD Tameshigiri
-    date: "2025-03-30"
+    date: '2025-03-30'
     location: Mountain Stream Budo
   - name: Shoden Kata
-    date: "2026-02-01"
+    date: '2026-02-01'
     location: Zentokan
     instructor: Anthony Deen / Nelson Pecora
   - name: USFBD Tameshigiri
-    date: "2026-02-01"
+    date: '2026-02-01'
     location: Zentokan
     instructor: Noah Mitchell / Russell Gordon
 taikai: []

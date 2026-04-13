@@ -4,59 +4,7 @@ import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 import { isDate } from "date-fns";
 
-import type { TaikaiWin } from "../utils/format-taikai";
-
-type Rank = {
-  name: string;
-  date: string | null;
-};
-
-type Seminar = {
-  name: string;
-  date: string;
-  location?: string;
-  instructor?: string;
-};
-
-type Taikai = {
-  name: string;
-  date: string | null;
-  location?: string;
-  wins: TaikaiWin[];
-};
-
-export type Member = {
-  id: string;
-  firstName: string;
-  lastName: string;
-  name: string;
-  dojo: string;
-  currentRank: string;
-  joined: string | null;
-  isActive: boolean;
-  manualCurrentRank?: string;
-  ranks: Rank[];
-  seminars: Seminar[];
-  taikai: Taikai[];
-};
-
-type RawMemberData = {
-  id: string;
-  firstName: string;
-  lastName: string;
-  joined: string | null;
-  dojo: string;
-  isActive: boolean;
-  ranks?: Rank[];
-  manualCurrentRank?: string;
-  seminars?: Seminar[];
-  taikai?: Array<{
-    name: string;
-    date: string | null;
-    location?: string;
-    wins?: TaikaiWin[];
-  }>;
-};
+import type { Member, RawMemberData, Rank, Taikai } from "../utils/member-types";
 
 type DateSortable = { date: string | Date | null };
 

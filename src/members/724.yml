@@ -1,25 +1,25 @@
-id: "724"
+id: '724'
 firstName: Herman
 lastName: Fang
-joined: "2024-10-30"
+joined: '2024-10-30'
 dojo: Zentokan
 ranks: []
 isActive: true
 seminars:
   - name: Shoden Kata
-    date: "2024-11-09"
+    date: '2024-11-09'
     location: Zentokan
     instructor: Zach Biesanz
   - name: Gekken / Bokken Drills
-    date: "2024-11-09"
+    date: '2024-11-09'
     location: Zentokan
     instructor: Zach Biesanz / Rob Raimondi
   - name: Shoden Kata
-    date: "2026-02-01"
+    date: '2026-02-01'
     location: Zentokan
     instructor: Anthony Deen / Nelson Pecora
   - name: USFBD Tameshigiri
-    date: "2026-02-01"
+    date: '2026-02-01'
     location: Zentokan
     instructor: Noah Mitchell / Russell Gordon
 taikai: []

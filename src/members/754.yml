@@ -1,9 +1,9 @@
-id: "754"
+id: '754'
 firstName: Dmitrii
 lastName: Piatchits
-joined: "2025-02-01"
+joined: '2025-02-01'
 dojo: Byakkokan
 ranks:
   - name: Shodan
-    date: "2026-02-01"
+    date: '2026-02-01'
 isActive: true

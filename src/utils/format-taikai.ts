@@ -1,7 +1,4 @@
-export type TaikaiWin = {
-  place?: number;
-  name: string;
-};
+import type { TaikaiWin } from "./member-types";
 
 export default function formatTaikaiWin(val: TaikaiWin[]) {
   return val

@@ -18,7 +18,7 @@
     "lint": "oxlint --fix .",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
-    "clean:members": "rimraf --glob src/data/members/*",
+    "clean:members": "rimraf --glob src/members/*",
     "generate:info": "tsx cli-scripts/fetch-member-info.ts"
   },
   "dependencies": {

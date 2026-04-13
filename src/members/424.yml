@@ -1,4 +1,4 @@
-id: "424"
+id: '424'
 firstName: David
 lastName: Roth
 joined: null
@@ -6,7 +6,7 @@ dojo: Bamboo Dojo
 manualCurrentRank: Shodan
 ranks:
   - name: Shodan
-    date: "2014-07-19"
+    date: '2014-07-19'
   - name: Nidan
-    date: "2019-04-03"
+    date: '2019-04-03'
 isActive: false

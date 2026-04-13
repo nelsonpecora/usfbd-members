@@ -1,4 +1,4 @@
-id: "12"
+id: '12'
 firstName: Michael
 lastName: Femal
 joined: null
@@ -6,7 +6,7 @@ dojo: Konjaku Kioi
 manualCurrentRank: Yondan
 ranks:
   - name: Godan
-    date: "2017-11-19"
+    date: '2017-11-19'
 isActive: false
 seminars: []
 taikai: []

@@ -1,27 +1,27 @@
-id: "686"
+id: '686'
 firstName: Julian
 lastName: Ghadimi
-joined: "2023-02-19"
+joined: '2023-02-19'
 dojo: Genbukan
 ranks:
   - name: Shodan
-    date: "2024-02-25"
+    date: '2024-02-25'
 isActive: false
 seminars:
   - name: Shoden Kata
-    date: "2023-02-19"
+    date: '2023-02-19'
     location: Genbukan
     instructor: Russell Gordon
   - name: Shoden Kata
-    date: "2024-02-25"
+    date: '2024-02-25'
     location: Genbukan
   - name: Chuden Kata
-    date: "2024-02-25"
+    date: '2024-02-25'
     location: Genbukan
   - name: USFBD Kata
-    date: "2025-03-30"
+    date: '2025-03-30'
     location: Mountain Stream Budo
   - name: USFBD Tameshigiri
-    date: "2025-03-30"
+    date: '2025-03-30'
     location: Mountain Stream Budo
 taikai: []

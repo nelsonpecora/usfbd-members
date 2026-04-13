@@ -1,4 +1,4 @@
-id: "236"
+id: '236'
 firstName: Ron
 lastName: Duponte
 joined: null
@@ -6,5 +6,5 @@ dojo: Byakkokan
 manualCurrentRank: Sandan
 ranks:
   - name: Sandan
-    date: "2012-06-02"
+    date: '2012-06-02'
 isActive: false

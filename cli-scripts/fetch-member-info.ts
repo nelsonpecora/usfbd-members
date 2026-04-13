@@ -2,12 +2,13 @@ import type {
   GoogleSpreadsheetRow,
   GoogleSpreadsheet as GoogleSpreadsheetType,
 } from "google-spreadsheet";
-import type { Rank, TaikaiWin } from "../src/scripts/types";
+import type { Rank, TaikaiWin } from "../src/utils/member-types";
 
-require("dotenv").config();
+import "dotenv/config";
 
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 import { parse, parseISO, isAfter, format } from "date-fns";
 import { toZonedTime } from "date-fns-tz";
@@ -15,6 +16,8 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
 import pluralize from "pluralize";
 
+// Types used when fetching data from Google sheets.
+// These get parsed and formatted as RawMemberData when saving YAML files.
 type SeminarEntry = {
   name: string | null;
   date: string | null;
@@ -60,6 +63,8 @@ type MissingId = {
   lastName?: string;
   dojo?: string | null;
 };
+
+const ROOT = path.join(fileURLToPath(new URL(".", import.meta.url)), "..");
 
 function makeAuth() {
   return new JWT({
@@ -554,7 +559,7 @@ async function main(): Promise<void> {
   const memberSpreadsheet = await loadMemberSpreadsheet();
   const seminarSpreadsheet = await loadSeminarSpreadsheet();
 
-  // Get basic info from the 'USFBD Member List.xlsx' spreadsheet.
+  // Get basic info from the 'USFBD Master Member List' spreadsheet.
   const { basicInfo, missingIds } = await getBasicInfo(memberSpreadsheet);
 
   // Get seminar and taikai info from the 'Seminar/Testing History' spreadsheet.
@@ -567,10 +572,7 @@ async function main(): Promise<void> {
     const memberYaml = yaml.dump(combinedInfo);
 
     try {
-      fs.writeFileSync(
-        path.join(__dirname, "..", "src", "data", "members", `${id}.yml`),
-        memberYaml,
-      );
+      fs.writeFileSync(path.join(ROOT, "src", "members", `${id}.yml`), memberYaml);
     } catch (e) {
       console.error(`Error writing yaml for member ${id}: ${(e as Error).message}`);
       process.exit(1);
@@ -584,7 +586,7 @@ async function main(): Promise<void> {
     missingFile += `${id || ""},${firstName || ""},${lastName || ""},${dojo || ""}\n`;
   });
 
-  fs.writeFileSync(path.join(__dirname, "..", "missing_ids.csv"), missingFile);
+  fs.writeFileSync(path.join(ROOT, "missing_ids.csv"), missingFile);
 
   const memberCount = Object.keys(basicInfo).length;
   const missingIdsCount = Object.keys(missingIds).length;

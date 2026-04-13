@@ -1,28 +1,28 @@
-id: "120"
+id: '120'
 firstName: Stephen
 lastName: Peck
-joined: "2005-07-16"
+joined: '2005-07-16'
 dojo: Konjaku Kioi
 manualCurrentRank: Nidan
 ranks:
   - name: Sandan
-    date: "2014-11-15"
+    date: '2014-11-15'
 isActive: false
 seminars:
   - name: Advanced Cutting
-    date: "2023-06-10"
+    date: '2023-06-10'
     location: Tri State Tai Kai
     instructor: Adam Taylor
   - name: Nakamura-ryu
-    date: "2023-06-10"
+    date: '2023-06-10'
     location: Tri State Tai Kai
     instructor: David Drawdy
   - name: Gekken / Bokken Techniques
-    date: "2023-06-10"
+    date: '2023-06-10'
     location: Tri State Tai Kai
     instructor: Sang Kim
   - name: USFBD Seitei Kata
-    date: "2023-06-10"
+    date: '2023-06-10'
     location: Tri State Tai Kai
     instructor: Matt Odell
 taikai: []

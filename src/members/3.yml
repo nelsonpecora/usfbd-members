@@ -1,7 +1,7 @@
-id: "3"
+id: '3'
 firstName: Tom
 lastName: Smyth
-joined: "2004-11-19"
+joined: '2004-11-19'
 dojo: Seibukan
 manualCurrentRank: Godan
 ranks: []

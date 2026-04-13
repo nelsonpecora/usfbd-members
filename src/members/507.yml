@@ -1,29 +1,29 @@
-id: "507"
+id: '507'
 firstName: Keith
 lastName: Weed
-joined: "2015-11-17"
+joined: '2015-11-17'
 dojo: Mountain Stream Budo
 ranks:
   - name: Shodan
-    date: "2018-07-23"
+    date: '2018-07-23'
   - name: Nidan
-    date: "2021-01-10"
+    date: '2021-01-10'
 isActive: false
 seminars:
   - name: Shoden kata
-    date: "2018-07-24"
+    date: '2018-07-24'
     location: Mountain Stream Budo
     instructor: Mike Femal
   - name: Chuden kata
-    date: "2018-07-25"
+    date: '2018-07-25'
     location: Mountain Stream Budo
     instructor: Mike Femal
   - name: Tameshigiri
-    date: "2018-07-26"
+    date: '2018-07-26'
     location: Mountain Stream Budo
     instructor: Mike Femal
 taikai:
   - name: Tri State Tai Kai
-    date: "2019-10-20"
+    date: '2019-10-20'
     location: Fort Lee, NJ
     wins: []
