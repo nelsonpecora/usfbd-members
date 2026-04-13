@@ -1,5 +1,5 @@
 body:has(.member-page) {
-  background-image: url("./../img/rice-paper.png");
+  background-image: url("../assets/rice-paper.png");
 }
 
 .member-page {
@@ -46,8 +46,8 @@ th {
   width: 50%;
 }
 
-.table-4 th:nth-of-type(n+3),
-.table-4 td:nth-of-type(n+3) {
+.table-4 th:nth-of-type(n + 3),
+.table-4 td:nth-of-type(n + 3) {
   display: none;
 }
 
@@ -125,6 +125,10 @@ h2 .jp {
   margin: 20px auto 40px;
 }
 
+.taikai-wins td {
+  vertical-align: top;
+}
+
 @media screen and (min-width: 768px) {
   h2 .jp {
     display: inline-block;
@@ -148,8 +152,8 @@ h2 .jp {
     width: 25%;
   }
 
-  .table-4 th:nth-of-type(n+3),
-  .table-4 td:nth-of-type(n+3) {
+  .table-4 th:nth-of-type(n + 3),
+  .table-4 td:nth-of-type(n + 3) {
     display: table-cell;
   }
 }
@@ -179,7 +183,6 @@ h2 .jp {
 }
 
 @media print {
-
   /* Two column layout for printing */
   .member-page .logged-in {
     align-items: flex-start;

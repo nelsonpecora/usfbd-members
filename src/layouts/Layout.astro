@@ -1,0 +1,70 @@
+---
+import "../styles/reset.css";
+import "../styles/global.css";
+import { getHashes } from "../loaders/hashes";
+
+const {
+  title = "Members",
+  desc = "Member Portal for the US Federation of Battodo",
+} = Astro.props;
+const siteName = "US Federation of Battodo";
+const siteUrl = "https://members.usbattodo.com";
+const siteLogo =
+  "http://static1.squarespace.com/static/5a502616f14aa1f1cef463d0/t/5a5027e89140b76bbf72bd16/1515202538090/logo_black.png?format=1500w";
+const siteFavicon =
+  "https://images.squarespace-cdn.com/content/v1/5a502616f14aa1f1cef463d0/1516143421771-U3POAL1DO95GQWOF9SQ7/favicon.ico";
+
+const pageTitle = `${title} | ${siteName}`;
+const hashes = JSON.stringify(await getHashes());
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href={siteFavicon} />
+    <link rel="canonical" href={siteUrl} />
+    <meta property="og:site_name" content="USFBD" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={desc} />
+    <meta property="og:image" content={siteLogo} />
+    <meta property="og:image:width" content="214" />
+    <meta property="og:image:height" content="156" />
+    <meta itemprop="name" content={siteName} />
+    <meta itemprop="url" content={siteUrl} />
+    <meta itemprop="description" content={desc} />
+    <meta itemprop="thumbnailUrl" content={siteLogo} />
+    <link rel="image_src" href={siteLogo} />
+    <meta itemprop="image" content={siteLogo} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:image" content={siteLogo} />
+    <meta name="twitter:url" content="https://www.usbattodo.com" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content={desc} />
+    <meta name="description" content={desc} />
+    <link rel="preconnect" href="https://images.squarespace-cdn.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    /><link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@200;400&family=Nunito+Sans:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-hashes={hashes}>
+    <slot />
+
+    <script is:inline>
+      window.hashes = JSON.parse(document.body.getAttribute("data-hashes"));
+    </script>
+    <script src="../scripts/main.ts"></script>
+  </body>
+</html>

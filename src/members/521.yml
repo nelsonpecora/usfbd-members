@@ -1,0 +1,111 @@
+id: "521"
+firstName: Anthony
+lastName: Deen
+joined: "2016-06-30"
+dojo: Zentokan
+ranks:
+  - name: Shodan
+    date: "2018-02-24"
+  - name: Nidan
+    date: "2021-01-10"
+  - name: Sandan
+    date: "2023-01-28"
+isActive: true
+seminars:
+  - name: Shoden kata
+    date: "2018-02-24"
+    location: Zentokan
+    instructor: John Matthews
+  - name: Chuden kata
+    date: "2018-02-24"
+    location: Zentokan
+    instructor: John Matthews
+  - name: Tameshigiri
+    date: "2018-02-24"
+    location: Zentokan
+    instructor: John Matthews
+  - name: Shoden kata
+    date: "2018-07-24"
+    location: Mountain Stream Budo
+    instructor: Mike Femal
+  - name: Chuden kata
+    date: "2018-07-25"
+    location: Mountain Stream Budo
+    instructor: Mike Femal
+  - name: Tameshigiri
+    date: "2018-07-26"
+    location: Mountain Stream Budo
+    instructor: Mike Femal
+  - name: Chuden Kata
+    date: "2023-01-28"
+    location: Zentokan
+    instructor: Matthew Odell
+  - name: Advanced Tameshigiri
+    date: "2023-01-28"
+    location: Zentokan
+    instructor: Russell Gordon
+  - name: Judging (sandan and above in USFBD, ZNTIR, etc)
+    date: "2023-01-28"
+    location: Zentokan
+    instructor: Sang Kim
+  - name: Chuden Kata
+    date: "2023-02-19"
+    location: Genbukan
+    instructor: Sang Kim
+  - name: Basic Tameshigiri
+    date: "2023-02-19"
+    location: Genbukan
+    instructor: Masaki Kurihara
+  - name: Kendo
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Masaki Kurihara
+  - name: Edo Yagyu Shinkage-ryu
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Paul Manogue
+  - name: Nakamura-ryu
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Muso Jikiden Eishin-ryu
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Erik Johnstone
+  - name: Shoden Kata
+    date: "2024-02-25"
+    location: Genbukan
+  - name: Chuden Kata
+    date: "2024-02-25"
+    location: Genbukan
+  - name: Chuden Kata
+    date: "2024-11-09"
+    location: Zentokan
+    instructor: Tim Clear
+  - name: Gekken / Bokken Drills
+    date: "2024-11-09"
+    location: Zentokan
+    instructor: Zach Biesanz / Rob Raimondi
+  - name: USFBD Kata
+    date: "2025-03-30"
+    location: Mountain Stream Budo
+  - name: USFBD Tameshigiri
+    date: "2025-03-30"
+    location: Mountain Stream Budo
+  - name: NR Seitei Kata
+    date: "2026-02-01"
+    location: Zentokan
+    instructor: Michael Shane
+taikai:
+  - name: East Coast Tai Kai
+    date: "2018-08-01"
+    location: Palm Bay, FL
+    wins: []
+  - name: Tri State Tai Kai
+    date: "2019-10-20"
+    location: Fort Lee, NJ
+    wins: []
+  - name: Tri State Tai Kai
+    date: "2023-06-10"
+    location: Fort Lee, NJ
+    wins: []

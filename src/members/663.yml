@@ -1,0 +1,50 @@
+id: "663"
+firstName: Jerome
+lastName: Brand
+joined: "2023-01-08"
+dojo: Zentokan
+ranks:
+  - name: Shodan
+    date: "2024-11-09"
+isActive: true
+seminars:
+  - name: Shoden Kata
+    date: "2023-01-28"
+    location: Zentokan
+    instructor: Masaki Kurihara
+  - name: Basic Tameshigiri
+    date: "2023-01-28"
+    location: Zentokan
+    instructor: Masaki Kurihara
+  - name: Intro to Cutting / Basics
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+  - name: Toyama-ryu Kata
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Noah Mitchell
+  - name: Nakamura-ryu
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: David Drawdy
+  - name: Gekken / Bokken Techniques
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Sang Kim
+  - name: USFBD Seitei Kata
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Matt Odell
+  - name: Shoden Kata
+    date: "2024-11-09"
+    location: Zentokan
+    instructor: Zach Biesanz
+  - name: Gekken / Bokken Drills
+    date: "2024-11-09"
+    location: Zentokan
+    instructor: Zach Biesanz / Rob Raimondi
+taikai:
+  - name: Tri State Tai Kai
+    date: "2023-06-10"
+    location: Fort Lee, NJ
+    wins: []

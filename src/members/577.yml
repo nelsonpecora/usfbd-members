@@ -1,0 +1,25 @@
+id: "577"
+firstName: Ziyu
+lastName: Guo
+joined: "2018-02-23"
+dojo: Byakkokan
+ranks: []
+isActive: false
+seminars:
+  - name: Shoden kata
+    date: "2018-02-24"
+    location: Zentokan
+    instructor: John Matthews
+  - name: Tameshigiri
+    date: "2018-02-24"
+    location: Zentokan
+    instructor: John Matthews
+  - name: Basic Tameshigiri
+    date: "2019-10-19"
+    location: Tri State Tai Kai
+    instructor: Bob Elder
+  - name: Basic Tameshigiri
+    date: "2019-10-19"
+    location: Tri State Tai Kai
+    instructor: Mike Femal
+taikai: []

@@ -1,0 +1,33 @@
+id: "572"
+firstName: Brian
+lastName: Lee
+joined: "2018-02-07"
+dojo: Zentokan
+ranks: []
+isActive: false
+seminars:
+  - name: Shoden kata
+    date: "2018-02-24"
+    location: Zentokan
+    instructor: John Matthews
+  - name: Chuden kata
+    date: "2018-02-24"
+    location: Zentokan
+    instructor: John Matthews
+  - name: Tameshigiri
+    date: "2018-02-24"
+    location: Zentokan
+    instructor: John Matthews
+  - name: Shoden kata
+    date: "2018-07-24"
+    location: Mountain Stream Budo
+    instructor: Mike Femal
+  - name: Chuden kata
+    date: "2018-07-25"
+    location: Mountain Stream Budo
+    instructor: Mike Femal
+  - name: Tameshigiri
+    date: "2018-07-26"
+    location: Mountain Stream Budo
+    instructor: Mike Femal
+taikai: []

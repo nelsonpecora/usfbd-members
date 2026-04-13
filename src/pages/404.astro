@@ -1,0 +1,16 @@
+---
+import "../styles/404.css";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import sevenSamuraiImg from "../assets/seven-samurai.png";
+---
+
+<Layout title="404">
+  <main class="not-found-page">
+    <a href="/">
+      <Image src={sevenSamuraiImg} alt="Seven Samurai" />
+    </a>
+    <h1>404 Not Found</h1>
+    <a href="/">Go back to the main page.</a>
+  </main>
+</Layout>

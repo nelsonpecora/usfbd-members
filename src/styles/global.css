@@ -1,6 +1,6 @@
 :root {
-  --en-font: 'Nunito Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  --jp-font: 'M PLUS 1', cursive;
+  --en-font: "Nunito Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  --jp-font: "M PLUS 1", cursive;
   --bg-color: rgba(239, 239, 239, 0.5);
   --text-color: #111;
   --jp-text-color: #aaa;
@@ -19,7 +19,9 @@ h1 {
   font-size: 3.052rem;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-weight: 700;
 }
 
@@ -58,7 +60,9 @@ input {
   letter-spacing: 2px;
   padding: 20px 30px;
   text-transform: uppercase;
-  transition: 100ms background-color linear, 100ms color linear;
+  transition:
+    100ms background-color linear,
+    100ms color linear;
 }
 
 .large-button:hover {

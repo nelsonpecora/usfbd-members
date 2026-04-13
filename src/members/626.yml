@@ -1,0 +1,47 @@
+id: "626"
+firstName: Yufeng
+lastName: Wang
+joined: "2021-01-21"
+dojo: Byakkokan
+ranks:
+  - name: Shodan
+    date: "2023-01-28"
+  - name: Nidan
+    date: "2024-02-25"
+isActive: false
+seminars:
+  - name: Shoden Kata
+    date: "2023-01-28"
+    location: Zentokan
+    instructor: Masaki Kurihara
+  - name: Basic Tameshigiri
+    date: "2023-01-28"
+    location: Zentokan
+    instructor: Masaki Kurihara
+  - name: Kendo
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Masaki Kurihara
+  - name: Edo Yagyu Shinkage-ryu
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Paul Manogue
+  - name: Daito-ryu
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Rodrigo King
+  - name: Muso Jikiden Eishin-ryu
+    date: "2023-06-10"
+    location: Tri State Tai Kai
+    instructor: Erik Johnstone
+  - name: Shoden Kata
+    date: "2024-02-25"
+    location: Genbukan
+  - name: Chuden Kata
+    date: "2024-02-25"
+    location: Genbukan
+taikai:
+  - name: Tri State Tai Kai
+    date: "2023-06-10"
+    location: Fort Lee, NJ
+    wins: []
