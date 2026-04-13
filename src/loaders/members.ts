@@ -109,7 +109,6 @@ export default function getMembers(): Member[] {
       // Computed fields
       name: `${data.firstName} ${data.lastName}`,
       currentRank,
-      isActive: false, // set by hashes.js consumer
       // Reverse ranks, seminars, taikai
       ranks: sortedRanks,
       seminars: data.seminars?.sort(sortDate) || [],
