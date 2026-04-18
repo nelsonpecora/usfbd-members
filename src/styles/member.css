@@ -114,10 +114,8 @@ h2 .jp {
   width: 90%;
 }
 
-.no-data {
-  color: var(--jp-text-color);
-  font-family: var(--jp-font);
-  font-weight: 400;
+.add-form-link {
+  margin: 10px auto;
 }
 
 #logout-btn {
