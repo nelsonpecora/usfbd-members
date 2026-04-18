@@ -118,6 +118,13 @@ h2 .jp {
   margin: 10px auto;
 }
 
+.no-data {
+  color: var(--jp-text-color);
+  font-family: var(--jp-font);
+  font-weight: 400;
+  position: relative;
+}
+
 #logout-btn {
   display: block;
   margin: 20px auto 40px;
