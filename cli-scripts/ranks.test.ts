@@ -159,31 +159,31 @@ describe("mergeInfo", () => {
     expect(result.ranks[0].date).toBe("2015-01-01");
   });
 
-  it("appends additional seminars to existing seminars, sorted most recent first", () => {
+  it("appends additional seminars to existing seminars, sorted oldest first", () => {
     const seminarInfo = {
       "1": {
-        seminars: [{ name: "Workshop A", date: "2016-01-01" }],
+        seminars: [{ name: "Workshop B", date: "2017-06-01" }],
         taikai: [],
         testing: [],
       },
     };
     const additionalSeminarInfo = {
-      "1": [{ name: "Workshop B", date: "2017-06-01" }],
+      "1": [{ name: "Workshop A", date: "2016-01-01" }],
     };
 
     const result = mergeInfo("1", { ...baseMember }, seminarInfo, additionalSeminarInfo, {});
     expect(result.seminars).toEqual([
-      { name: "Workshop B", date: "2017-06-01" },
       { name: "Workshop A", date: "2016-01-01" },
+      { name: "Workshop B", date: "2017-06-01" },
     ]);
   });
 
-  it("sorts seminars from seminarInfo most recent first", () => {
+  it("sorts seminars from seminarInfo oldest first", () => {
     const seminarInfo = {
       "1": {
         seminars: [
-          { name: "Workshop A", date: "2016-01-01" },
           { name: "Workshop C", date: "2019-03-01" },
+          { name: "Workshop A", date: "2016-01-01" },
           { name: "Workshop B", date: "2017-06-01" },
         ],
         taikai: [],
@@ -193,9 +193,9 @@ describe("mergeInfo", () => {
 
     const result = mergeInfo("1", { ...baseMember }, seminarInfo, {}, {});
     expect(result.seminars!.map((s) => s.name)).toEqual([
-      "Workshop C",
-      "Workshop B",
       "Workshop A",
+      "Workshop B",
+      "Workshop C",
     ]);
   });
 
@@ -211,29 +211,29 @@ describe("mergeInfo", () => {
     expect(result.seminars).toEqual([{ name: "Workshop A", date: "2016-01-01" }]);
   });
 
-  it("merges additional taikai into existing taikai, sorted most recent first", () => {
+  it("merges additional taikai into existing taikai, sorted oldest first", () => {
     const seminarInfo = {
       "1": {
         seminars: [],
-        taikai: [{ name: "Nationals 2020", date: "2020-06-01", wins: [] }],
+        taikai: [{ name: "Regional 2021", date: "2021-09-01", wins: [] }],
         testing: [],
       },
     };
     const additionalTaikaiInfo = {
-      "1": [{ name: "Regional 2021", date: "2021-09-01", wins: [] }],
+      "1": [{ name: "Nationals 2020", date: "2020-06-01", wins: [] }],
     };
 
     const result = mergeInfo("1", { ...baseMember }, seminarInfo, {}, additionalTaikaiInfo);
-    expect(result.taikai!.map((t) => t.name)).toEqual(["Regional 2021", "Nationals 2020"]);
+    expect(result.taikai!.map((t) => t.name)).toEqual(["Nationals 2020", "Regional 2021"]);
   });
 
-  it("sorts taikai from seminarInfo most recent first", () => {
+  it("sorts taikai from seminarInfo oldest first", () => {
     const seminarInfo = {
       "1": {
         seminars: [],
         taikai: [
-          { name: "Nationals 2020", date: "2020-06-01", wins: [] },
           { name: "Regional 2022", date: "2022-03-01", wins: [] },
+          { name: "Nationals 2020", date: "2020-06-01", wins: [] },
           { name: "Spring 2019", date: "2019-04-01", wins: [] },
         ],
         testing: [],
@@ -242,9 +242,9 @@ describe("mergeInfo", () => {
 
     const result = mergeInfo("1", { ...baseMember }, seminarInfo, {}, {});
     expect(result.taikai!.map((t) => t.name)).toEqual([
-      "Regional 2022",
-      "Nationals 2020",
       "Spring 2019",
+      "Nationals 2020",
+      "Regional 2022",
     ]);
   });
 

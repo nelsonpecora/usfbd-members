@@ -160,7 +160,7 @@ export function mergeInfo(
     member.seminars = [...member.seminars, ...memberAdditionalSeminarInfo];
   }
   member.seminars = member.seminars.sort((a, b) =>
-    (b.date ?? "").localeCompare(a.date ?? ""),
+    (a.date ?? "").localeCompare(b.date ?? ""),
   );
 
   if (memberAdditionalTaikaiInfo) {
@@ -170,7 +170,7 @@ export function mergeInfo(
     );
   }
   member.taikai = member.taikai.sort((a, b) =>
-    (b.date ?? "").localeCompare(a.date ?? ""),
+    (a.date ?? "").localeCompare(b.date ?? ""),
   );
 
   // Find any rank tests that are missing from the member data and add them

@@ -45,7 +45,7 @@ export async function main(): Promise<void> {
       additionalTaikaiInfo,
     );
 
-    const memberYaml = yaml.dump(combinedInfo);
+    const memberYaml = yaml.dump(combinedInfo, { quotingType: '"' });
 
     try {
       fs.writeFileSync(
