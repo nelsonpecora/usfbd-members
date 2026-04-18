@@ -59,14 +59,7 @@ export function getCurrentRank(rankNo: string | null): string | null {
   }
 }
 
-export function getRanks({
-  shodan,
-  nidan,
-  sandan,
-  yondan,
-  godan,
-  rokudan,
-}: RankInputs): Rank[] {
+export function getRanks({ shodan, nidan, sandan, yondan, godan, rokudan }: RankInputs): Rank[] {
   const ranks: Rank[] = [];
 
   if (shodan) {
@@ -96,13 +89,7 @@ export function getRanks({
   return ranks;
 }
 
-export function parseTest({
-  date,
-  note,
-}: {
-  date: string | null;
-  note: string | null;
-}): TestEntry {
+export function parseTest({ date, note }: { date: string | null; note: string | null }): TestEntry {
   return {
     name: note,
     date,
@@ -159,19 +146,12 @@ export function mergeInfo(
   if (memberAdditionalSeminarInfo) {
     member.seminars = [...member.seminars, ...memberAdditionalSeminarInfo];
   }
-  member.seminars = member.seminars.sort((a, b) =>
-    (a.date ?? "").localeCompare(b.date ?? ""),
-  );
+  member.seminars = member.seminars.sort((a, b) => (a.date ?? "").localeCompare(b.date ?? ""));
 
   if (memberAdditionalTaikaiInfo) {
-    member.taikai = deduplicateTaikai(
-      member.taikai,
-      memberAdditionalTaikaiInfo,
-    );
+    member.taikai = deduplicateTaikai(member.taikai, memberAdditionalTaikaiInfo);
   }
-  member.taikai = member.taikai.sort((a, b) =>
-    (a.date ?? "").localeCompare(b.date ?? ""),
-  );
+  member.taikai = member.taikai.sort((a, b) => (a.date ?? "").localeCompare(b.date ?? ""));
 
   // Find any rank tests that are missing from the member data and add them
   testing.forEach((test) => {
@@ -184,9 +164,7 @@ export function mergeInfo(
       const rankDate = parseISO(existingRank.date as string);
       const testDate = parseISO(test.date!);
 
-      existingRank.date = isAfter(rankDate, testDate)
-        ? test.date
-        : existingRank.date;
+      existingRank.date = isAfter(rankDate, testDate) ? test.date : existingRank.date;
     }
   });
 

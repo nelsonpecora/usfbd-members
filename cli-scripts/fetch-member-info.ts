@@ -29,12 +29,8 @@ export async function main(): Promise<void> {
 
   const { basicInfo, missingIds } = await getBasicInfo(memberSpreadsheet);
   const seminarInfo = await getSeminarInfo(seminarSpreadsheet);
-  const additionalSeminarInfo = await getAdditionalSeminarInfo(
-    seminarSubmissionSpreadsheet,
-  );
-  const additionalTaikaiInfo = await getAdditionalTaikaiInfo(
-    taikaiSubmissionSpreadsheet,
-  );
+  const additionalSeminarInfo = await getAdditionalSeminarInfo(seminarSubmissionSpreadsheet);
+  const additionalTaikaiInfo = await getAdditionalTaikaiInfo(taikaiSubmissionSpreadsheet);
 
   Object.entries(basicInfo).forEach(([id, member]) => {
     const combinedInfo = mergeInfo(
@@ -48,14 +44,9 @@ export async function main(): Promise<void> {
     const memberYaml = yaml.dump(combinedInfo, { quotingType: '"' });
 
     try {
-      fs.writeFileSync(
-        path.join(ROOT, "src", "members", `${id}.yml`),
-        memberYaml,
-      );
+      fs.writeFileSync(path.join(ROOT, "src", "members", `${id}.yml`), memberYaml);
     } catch (e) {
-      console.error(
-        `Error writing yaml for member ${id}: ${(e as Error).message}`,
-      );
+      console.error(`Error writing yaml for member ${id}: ${(e as Error).message}`);
       process.exit(1);
     }
   });
@@ -71,9 +62,7 @@ export async function main(): Promise<void> {
   const memberCount = Object.keys(basicInfo).length;
   const missingIdsCount = Object.keys(missingIds).length;
 
-  console.log(
-    `Generated yaml for ${memberCount} ${pluralize("member", memberCount)}`,
-  );
+  console.log(`Generated yaml for ${memberCount} ${pluralize("member", memberCount)}`);
   console.log(
     `Generated missing_ids.csv for ${missingIdsCount} ${pluralize("member", missingIdsCount)}`,
   );

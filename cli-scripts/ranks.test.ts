@@ -28,7 +28,14 @@ describe("getCurrentRank", () => {
 describe("getRanks", () => {
   it("returns empty array when all null", () => {
     expect(
-      getRanks({ shodan: null, nidan: null, sandan: null, yondan: null, godan: null, rokudan: null }),
+      getRanks({
+        shodan: null,
+        nidan: null,
+        sandan: null,
+        yondan: null,
+        godan: null,
+        rokudan: null,
+      }),
     ).toEqual([]);
   });
 
@@ -192,11 +199,7 @@ describe("mergeInfo", () => {
     };
 
     const result = mergeInfo("1", { ...baseMember }, seminarInfo, {}, {});
-    expect(result.seminars!.map((s) => s.name)).toEqual([
-      "Workshop A",
-      "Workshop B",
-      "Workshop C",
-    ]);
+    expect(result.seminars!.map((s) => s.name)).toEqual(["Workshop A", "Workshop B", "Workshop C"]);
   });
 
   it("ignores additionalSeminarInfo for other member ids", () => {
@@ -252,12 +255,16 @@ describe("mergeInfo", () => {
     const seminarInfo = {
       "1": {
         seminars: [],
-        taikai: [{ name: "Nationals 2020", date: "2020-06-01", wins: [{ place: 1, name: "Kata" }] }],
+        taikai: [
+          { name: "Nationals 2020", date: "2020-06-01", wins: [{ place: 1, name: "Kata" }] },
+        ],
         testing: [],
       },
     };
     const additionalTaikaiInfo = {
-      "1": [{ name: "Nationals 2020", date: "2020-06-01", wins: [{ place: 2, name: "Tameshigiri" }] }],
+      "1": [
+        { name: "Nationals 2020", date: "2020-06-01", wins: [{ place: 2, name: "Tameshigiri" }] },
+      ],
     };
 
     const result = mergeInfo("1", { ...baseMember }, seminarInfo, {}, additionalTaikaiInfo);
@@ -310,8 +317,12 @@ describe("deduplicateTaikai", () => {
   });
 
   it("merges wins from duplicate entries, sorted by place", () => {
-    const taikai = [{ name: "Nationals 2022", date: "2022-06-01", wins: [{ place: 2, name: "Tameshigiri" }] }];
-    const additional = [{ name: "Nationals 2022", date: "2022-06-01", wins: [{ place: 1, name: "Kata" }] }];
+    const taikai = [
+      { name: "Nationals 2022", date: "2022-06-01", wins: [{ place: 2, name: "Tameshigiri" }] },
+    ];
+    const additional = [
+      { name: "Nationals 2022", date: "2022-06-01", wins: [{ place: 1, name: "Kata" }] },
+    ];
     const result = deduplicateTaikai(taikai, additional);
     expect(result[0].wins).toEqual([
       { place: 1, name: "Kata" },
@@ -324,7 +335,11 @@ describe("deduplicateTaikai", () => {
       {
         name: "Nationals 2022",
         date: "2022-06-01",
-        wins: [{ place: 3, name: "Kihon" }, { place: 1, name: "Kata" }, { place: 2, name: "Tameshigiri" }],
+        wins: [
+          { place: 3, name: "Kihon" },
+          { place: 1, name: "Kata" },
+          { place: 2, name: "Tameshigiri" },
+        ],
       },
     ];
     const result = deduplicateTaikai(taikai, []);

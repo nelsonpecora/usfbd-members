@@ -198,7 +198,10 @@ describe("getBasicInfo", () => {
 
     const { missingIds } = await getBasicInfo(doc as any);
     expect(missingIds).toHaveLength(1);
-    expect(missingIds[0]).toMatchObject({ firstName: "Ghost", lastName: "Person" });
+    expect(missingIds[0]).toMatchObject({
+      firstName: "Ghost",
+      lastName: "Person",
+    });
   });
 
   it("adds to missingIds when last name is absent", async () => {
@@ -313,7 +316,10 @@ describe("getSeminarInfo", () => {
   it("parses passing test rows", async () => {
     const info = await getSeminarInfo(mockSeminarDoc as any);
     expect(info["999"].testing).toHaveLength(1);
-    expect(info["999"].testing[0]).toEqual({ name: "Shodan", date: "2015-03-20" });
+    expect(info["999"].testing[0]).toEqual({
+      name: "Shodan",
+      date: "2015-03-20",
+    });
   });
 
   it("ignores failing test rows", async () => {
@@ -339,7 +345,11 @@ describe("getSeminarInfo", () => {
   });
 
   it("skips rows with missing or invalid member number", async () => {
-    const noIdRow = makeRow({ "Member Number": "#N/A", Action: "Seminar Class", Date: "1/1/2020" });
+    const noIdRow = makeRow({
+      "Member Number": "#N/A",
+      Action: "Seminar Class",
+      Date: "1/1/2020",
+    });
     const doc = makeDoc({ Sheet1: makeSheet([noIdRow]) });
     const info = await getSeminarInfo(doc as any);
     expect(Object.keys(info)).toHaveLength(0);
@@ -364,7 +374,9 @@ describe("getAdditionalSeminarInfo", () => {
   }
 
   it("parses a confirmed seminar row", async () => {
-    const doc = makeDoc({ "Form Responses 1": makeSheet([makeAdditionalSeminarRow()]) });
+    const doc = makeDoc({
+      "Form Responses 1": makeSheet([makeAdditionalSeminarRow()]),
+    });
     const info = await getAdditionalSeminarInfo(doc as any);
 
     expect(info["999"]).toHaveLength(1);
@@ -428,7 +440,9 @@ describe("getAdditionalTaikaiInfo", () => {
   }
 
   it("parses a confirmed taikai row with a win", async () => {
-    const doc = makeDoc({ "Form Responses 1": makeSheet([makeAdditionalTaikaiRow()]) });
+    const doc = makeDoc({
+      "Form Responses 1": makeSheet([makeAdditionalTaikaiRow()]),
+    });
     const info = await getAdditionalTaikaiInfo(doc as any);
 
     expect(info["999"]).toHaveLength(1);
@@ -455,8 +469,14 @@ describe("getAdditionalTaikaiInfo", () => {
   });
 
   it("merges multiple rows for the same taikai into one entry", async () => {
-    const row1 = makeAdditionalTaikaiRow({ "What was the event?": "Open Division", "How did you place?": "1st Place" });
-    const row2 = makeAdditionalTaikaiRow({ "What was the event?": "Kata Division", "How did you place?": "2nd Place" });
+    const row1 = makeAdditionalTaikaiRow({
+      "What was the event?": "Open Division",
+      "How did you place?": "1st Place",
+    });
+    const row2 = makeAdditionalTaikaiRow({
+      "What was the event?": "Kata Division",
+      "How did you place?": "2nd Place",
+    });
     const doc = makeDoc({ "Form Responses 1": makeSheet([row1, row2]) });
     const info = await getAdditionalTaikaiInfo(doc as any);
 
@@ -468,8 +488,14 @@ describe("getAdditionalTaikaiInfo", () => {
   });
 
   it("creates separate entries for different taikai", async () => {
-    const row1 = makeAdditionalTaikaiRow({ "Taikai Name": "Spring Cup", "Taikai Date": "5/10/2023" });
-    const row2 = makeAdditionalTaikaiRow({ "Taikai Name": "Fall Cup", "Taikai Date": "10/15/2023" });
+    const row1 = makeAdditionalTaikaiRow({
+      "Taikai Name": "Spring Cup",
+      "Taikai Date": "5/10/2023",
+    });
+    const row2 = makeAdditionalTaikaiRow({
+      "Taikai Name": "Fall Cup",
+      "Taikai Date": "10/15/2023",
+    });
     const doc = makeDoc({ "Form Responses 1": makeSheet([row1, row2]) });
     const info = await getAdditionalTaikaiInfo(doc as any);
 

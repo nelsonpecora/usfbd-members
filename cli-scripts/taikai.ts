@@ -39,16 +39,7 @@ export function parseTaikaiWin(win: string): TaikaiWin {
 
 export function parseAndMergeTaikai(
   acc: TaikaiEntry[],
-  {
-    event,
-    date,
-    taikaiLocation,
-    taikaiYear,
-    win1,
-    win2,
-    win3,
-    win4,
-  }: RawTaikaiEntry,
+  { event, date, taikaiLocation, taikaiYear, win1, win2, win3, win4 }: RawTaikaiEntry,
 ): TaikaiEntry[] {
   const existingTaikai = acc.find((t) => {
     if (t.name !== event) return false;
@@ -100,13 +91,7 @@ export function parseAdditionalTaikaiWin(
 
 export function parseAndMergeAdditionalTaikai(
   acc: TaikaiEntry[],
-  {
-    event,
-    date,
-    taikaiLocation,
-    taikaiEvent,
-    taikaiPlace,
-  }: RawAdditionalTaikaiEntry,
+  { event, date, taikaiLocation, taikaiEvent, taikaiPlace }: RawAdditionalTaikaiEntry,
 ): TaikaiEntry[] {
   if (!event || !date) return acc;
 
@@ -119,9 +104,7 @@ export function parseAndMergeAdditionalTaikai(
     }
 
     if (taikaiEvent || taikaiPlace) {
-      existingTaikai.wins.push(
-        parseAdditionalTaikaiWin(taikaiEvent, taikaiPlace),
-      );
+      existingTaikai.wins.push(parseAdditionalTaikaiWin(taikaiEvent, taikaiPlace));
     }
   } else {
     acc.push({
@@ -132,9 +115,7 @@ export function parseAndMergeAdditionalTaikai(
     });
 
     if (taikaiEvent || taikaiPlace) {
-      acc[acc.length - 1].wins.push(
-        parseAdditionalTaikaiWin(taikaiEvent, taikaiPlace),
-      );
+      acc[acc.length - 1].wins.push(parseAdditionalTaikaiWin(taikaiEvent, taikaiPlace));
     }
   }
 

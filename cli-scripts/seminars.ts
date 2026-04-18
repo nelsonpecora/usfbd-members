@@ -13,12 +13,7 @@ export type SeminarEntry = {
   instructor?: string;
 };
 
-export function parseSeminar({
-  event,
-  date,
-  note,
-  instructor,
-}: RawSeminarEntry): SeminarEntry {
+export function parseSeminar({ event, date, note, instructor }: RawSeminarEntry): SeminarEntry {
   return {
     name: note,
     date,
