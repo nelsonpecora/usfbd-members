@@ -74,7 +74,7 @@ function makeAuth() {
   });
 }
 
-function getCell(
+export function getCell(
   row: GoogleSpreadsheetRow,
   cellName: string | number,
   fallback: string | null = null,
@@ -84,7 +84,7 @@ function getCell(
   return rawCell ? rawCell.trim() : fallback;
 }
 
-function parseDate(date: string | null): string | null {
+export function parseDate(date: string | null): string | null {
   if (!date) {
     return null;
   }
@@ -105,7 +105,7 @@ function parseDate(date: string | null): string | null {
   return format(toZonedTime(parsed, "UTC"), "yyyy-MM-dd");
 }
 
-function getCurrentRank(rankNo: string | null): string | null {
+export function getCurrentRank(rankNo: string | null): string | null {
   switch (rankNo) {
     case "0":
       return null;
@@ -135,7 +135,7 @@ type RankInputs = {
   rokudan: string | null;
 };
 
-function getRanks({ shodan, nidan, sandan, yondan, godan, rokudan }: RankInputs): Rank[] {
+export function getRanks({ shodan, nidan, sandan, yondan, godan, rokudan }: RankInputs): Rank[] {
   const ranks: Rank[] = [];
 
   if (shodan) {
@@ -165,7 +165,7 @@ function getRanks({ shodan, nidan, sandan, yondan, godan, rokudan }: RankInputs)
   return ranks;
 }
 
-async function getBasicInfo(doc: GoogleSpreadsheetType): Promise<{
+export async function getBasicInfo(doc: GoogleSpreadsheetType): Promise<{
   basicInfo: Record<string, BasicMember>;
   missingIds: MissingId[];
 }> {
@@ -316,7 +316,7 @@ async function getBasicInfo(doc: GoogleSpreadsheetType): Promise<{
   };
 }
 
-function parseSeminar({
+export function parseSeminar({
   event,
   date,
   note,
@@ -335,7 +335,7 @@ function parseSeminar({
   };
 }
 
-function parseTaikaiWin(win: string): TaikaiWin {
+export function parseTaikaiWin(win: string): TaikaiWin {
   const [place, name] = win.split(":");
 
   return {
@@ -344,7 +344,7 @@ function parseTaikaiWin(win: string): TaikaiWin {
   };
 }
 
-function parseAndMergeTaikai(
+export function parseAndMergeTaikai(
   acc: TaikaiEntry[],
   {
     event,
@@ -398,14 +398,14 @@ function parseAndMergeTaikai(
   return acc;
 }
 
-function parseTest({ date, note }: { date: string | null; note: string | null }): TestEntry {
+export function parseTest({ date, note }: { date: string | null; note: string | null }): TestEntry {
   return {
     name: note,
     date,
   };
 }
 
-async function getSeminarInfo(
+export async function getSeminarInfo(
   doc: GoogleSpreadsheetType,
 ): Promise<Record<string, MemberSeminarInfo>> {
   const sheet = doc.sheetsByTitle["Sheet1"];
@@ -517,7 +517,7 @@ async function loadSeminarSpreadsheet(): Promise<GoogleSpreadsheetType> {
   return seminarSpreadsheet!;
 }
 
-function mergeInfo(
+export function mergeInfo(
   id: string,
   member: BasicMember,
   seminarInfo: Record<string, MemberSeminarInfo>,
@@ -554,7 +554,7 @@ function mergeInfo(
   return member;
 }
 
-async function main(): Promise<void> {
+export async function main(): Promise<void> {
   console.log("Fetching member data...");
   const memberSpreadsheet = await loadMemberSpreadsheet();
   const seminarSpreadsheet = await loadSeminarSpreadsheet();
@@ -597,4 +597,6 @@ async function main(): Promise<void> {
   );
 }
 
-main();
+if (fileURLToPath(import.meta.url) === process.argv[1]) {
+  main();
+}

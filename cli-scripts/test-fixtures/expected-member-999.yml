@@ -1,0 +1,25 @@
+id: "999"
+firstName: Test
+lastName: Member
+joined: "2010-05-15"
+dojo: Test Dojo
+ranks:
+  - name: Shodan
+    date: "2015-03-20"
+  - name: Nidan
+    date: "2018-06-15"
+isActive: true
+seminars:
+  - name: Spring Seminar
+    date: "2016-04-10"
+    location: East Dojo
+    instructor: Smith Sensei
+taikai:
+  - name: National Championship
+    date: "2017-11-12"
+    location: West Dojo
+    wins:
+      - place: 1
+        name: Open Division
+      - place: 2
+        name: Kata Division
