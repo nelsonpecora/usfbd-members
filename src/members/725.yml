@@ -8,14 +8,6 @@ ranks:
     date: "2024-11-09"
 isActive: false
 seminars:
-  - name: Chuden Kata
-    date: "2024-11-09"
-    location: Zentokan
-    instructor: Tim Clear
-  - name: Gekken / Bokken Drills
-    date: "2024-11-09"
-    location: Zentokan
-    instructor: Zach Biesanz / Rob Raimondi
   - name: Shoden Kata
     date: "2024-03-11"
     location: Seibu Ryu San Jose
@@ -24,4 +16,12 @@ seminars:
     date: "2024-03-13"
     location: Seibu Ryu San Jose
     instructor: Nelson Pecora
+  - name: Chuden Kata
+    date: "2024-11-09"
+    location: Zentokan
+    instructor: Tim Clear
+  - name: Gekken / Bokken Drills
+    date: "2024-11-09"
+    location: Zentokan
+    instructor: Zach Biesanz / Rob Raimondi
 taikai: []

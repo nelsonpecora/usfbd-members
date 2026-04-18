@@ -28,6 +28,16 @@ const isEligible = isEligibleToTest(member);
 const dojoLink = dojos[member.dojo];
 const dojoText = !dojoLink && member.dojo;
 const noDojo = !dojoLink && !member.dojo;
+const numSeminars = member.seminars.length;
+const numTaikai = member.taikai.length;
+const numTaikaiWins = member.taikai.reduce(
+  (acc, taikai) => acc + taikai.wins.length,
+  0,
+);
+
+// Pre-filled form urls to submit additional seminars and taikai
+const seminarFormUrl = `https://docs.google.com/forms/d/e/1FAIpQLSfmAdije3ltssK6dv2k-Pf-uhglJ2iIAleoHXAPa-ntGn_lbg/viewform?usp=pp_url&entry.788340300=${member.id}`;
+const taikaiFormUrl = `https://docs.google.com/forms/d/e/1FAIpQLSfvcxpwSUIQDBUUG38QapRuq79PhDCXxpWWlHuu8koK76mpxw/viewform?usp=pp_url&entry.1719746622=${member.id}`;
 
 const toFuzzyDate = (val: Date | string) => {
   const d = parseFuzzyDate(val);
@@ -170,6 +180,15 @@ const toFuzzyDate = (val: Date | string) => {
           Seminar History <span class="jp" lang="jp">講習会受講記録</span>
         </h2>
 
+        <p class="add-form-link">
+          You have attended <strong>{numSeminars}</strong> seminar{
+            numSeminars !== 1 ? "s" : ""
+          } at USFBD events. Missing any seminars? <a
+            href={seminarFormUrl}
+            target="_blank">Add them here!</a
+          >
+        </p>
+
         <table class="table-4">
           <tr>
             <th>Seminar <span class="jp" lang="jp">講習</span></th>
@@ -217,6 +236,16 @@ const toFuzzyDate = (val: Date | string) => {
       <section class="member-section">
         <h2>Taikai History <span class="jp" lang="jp">大会会受講記録</span></h2>
 
+        <p class="add-form-link">
+          You have attended <strong>{numTaikai}</strong> taikai, winning <strong
+            >{numTaikaiWins}</strong
+          > medal{numTaikaiWins !== 1 ? "s" : ""}{
+            numTaikaiWins === 0 ? " (yet!)" : ""
+          }. Missing any taikai? <a href={taikaiFormUrl} target="_blank"
+            >Add them here!</a
+          >
+        </p>
+
         <table class="table-4">
           <tr>
             <th>Name <span class="jp" lang="jp">大会</span></th>
@@ -262,14 +291,14 @@ const toFuzzyDate = (val: Date | string) => {
       </section>
 
       <section class="feedback">
-        See anything missing? <a
+        See anything else missing? <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSfGN4R41Q5AUwHjtIaZSOkP76FifkXFFxFWwqjzZV9xi1tFhA/viewform?usp=header"
           target="_blank">Get in touch!</a
         >
         <span class="jp jp-regular"
-          >間違えたものを見れば、<a
+          >他に不足している点があれば、<a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfGN4R41Q5AUwHjtIaZSOkP76FifkXFFxFWwqjzZV9xi1tFhA/viewform?usp=header"
-            target="_blank">フィードバックくれていただけませんか。</a
+            target="_blank">ぜひフィードバックをお寄せください。</a
           ></span
         >
       </section>
