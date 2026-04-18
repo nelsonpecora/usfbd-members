@@ -98,6 +98,10 @@ seminars:
     date: "2026-02-01"
     location: Zentokan
     instructor: Michael Shane
+  - name: Zentokan
+    date: "2026-02-01"
+    location: USFBD Shoden Kata
+    instructor: Nelson Pecora
 taikai:
   - name: East Coast Tai Kai
     date: "2018-08-01"
@@ -121,11 +125,13 @@ taikai:
         name: Kumitachi
       - place: 3
         name: Nidan-Sandan Kata
-  - name: Tri State Tai Kai
-    date: "2023-06-10"
-    location: Fort Lee, NJ
-    wins: []
   - name: 48th ZNTIR Taikai
     date: "2025-05-18"
     location: Machida, Japan
     wins: []
+  - name: 1st IBF US Taikai
+    date: "2026-03-29"
+    location: Las Vegas
+    wins:
+      - name: 3-4 Dan Open Kata
+        place: 2
