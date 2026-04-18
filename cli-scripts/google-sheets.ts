@@ -9,8 +9,12 @@ import { JWT } from "google-auth-library";
 import { parseDate } from "./dates";
 import { getCurrentRank, getRanks } from "./ranks";
 import type { BasicMember, MemberSeminarInfo } from "./ranks";
-import { parseSeminar } from "./seminars";
-import { parseAndMergeTaikai } from "./taikai";
+import { parseSeminar, type SeminarEntry } from "./seminars";
+import {
+  parseAndMergeTaikai,
+  parseAndMergeAdditionalTaikai,
+  type TaikaiEntry,
+} from "./taikai";
 import { parseTest } from "./ranks";
 
 export type MissingId = {
@@ -135,7 +139,9 @@ export async function getBasicInfo(doc: GoogleSpreadsheetType): Promise<{
         acc[id] = year !== null;
         return acc;
       } catch (e) {
-        console.error(`Error parsing activity for member "${id}": ${(e as Error).message}`);
+        console.error(
+          `Error parsing activity for member "${id}": ${(e as Error).message}`,
+        );
         process.exit(1);
         return acc;
       }
@@ -177,58 +183,167 @@ export async function getSeminarInfo(
   const sheet = doc.sheetsByTitle["Sheet1"];
   const rows = await sheet.getRows();
 
-  const info = rows.reduce((acc: Record<string, MemberSeminarInfo>, row: GoogleSpreadsheetRow) => {
-    const id = getCell(row, "Member Number");
+  const info = rows.reduce(
+    (acc: Record<string, MemberSeminarInfo>, row: GoogleSpreadsheetRow) => {
+      const id = getCell(row, "Member Number");
 
-    if (!id || id === "#N/A") {
-      return acc;
-    }
+      if (!id || id === "#N/A") {
+        return acc;
+      }
 
-    try {
-      const event = getCell(row, "Event");
-      const rawDate = getCell(row, "Date");
-      const type = getCell(row, "Action");
-      const note = getCell(row, "Notes");
-      const instructor = getCell(row, "Instructors");
-      const isPassingTest = getCell(row, "Testing Pass/Fail", "")!.toLowerCase() === "yes";
-      const taikaiLocation = getCell(row, "Taikai Location");
-      const taikaiYear = getCell(row, "Year");
-      const win1 = getCell(row, "Taikai Win1");
-      const win2 = getCell(row, "Taikai Win2");
-      const win3 = getCell(row, "Taikai Win3");
-      const win4 = getCell(row, "Taikai Win4");
-      const date = parseDate(rawDate);
+      try {
+        const event = getCell(row, "Event");
+        const rawDate = getCell(row, "Date");
+        const type = getCell(row, "Action");
+        const note = getCell(row, "Notes");
+        const instructor = getCell(row, "Instructors");
+        const isPassingTest =
+          getCell(row, "Testing Pass/Fail", "")!.toLowerCase() === "yes";
+        const taikaiLocation = getCell(row, "Taikai Location");
+        const taikaiYear = getCell(row, "Year");
+        const win1 = getCell(row, "Taikai Win1");
+        const win2 = getCell(row, "Taikai Win2");
+        const win3 = getCell(row, "Taikai Win3");
+        const win4 = getCell(row, "Taikai Win4");
+        const date = parseDate(rawDate);
 
-      acc[id] = acc[id] || {
-        seminars: [],
-        taikai: [],
-        testing: [],
-      };
+        acc[id] = acc[id] || {
+          seminars: [],
+          taikai: [],
+          testing: [],
+        };
 
-      if (type === "Seminar Class") {
-        acc[id].seminars.push(parseSeminar({ event, date, note, instructor }));
-      } else if (type === "Tournament") {
-        acc[id].taikai = parseAndMergeTaikai(acc[id].taikai, {
+        if (type === "Seminar Class") {
+          acc[id].seminars.push(
+            parseSeminar({ event, date, note, instructor }),
+          );
+        } else if (type === "Tournament") {
+          acc[id].taikai = parseAndMergeTaikai(acc[id].taikai, {
+            event,
+            date,
+            taikaiLocation,
+            taikaiYear,
+            win1,
+            win2,
+            win3,
+            win4,
+          });
+        } else if (type === "Testing" && isPassingTest) {
+          acc[id].testing.push(parseTest({ date, note }));
+        }
+
+        return acc;
+      } catch (e) {
+        console.error(
+          `Error parsing seminar data for member ${id}: ${(e as Error).message}`,
+        );
+        process.exit(1);
+        return acc;
+      }
+    },
+    {},
+  );
+
+  return info;
+}
+
+export async function getAdditionalSeminarInfo(
+  doc: GoogleSpreadsheetType,
+): Promise<Record<string, SeminarEntry[]>> {
+  const sheet = doc.sheetsByTitle["Form Responses 1"];
+  const rows = await sheet.getRows();
+
+  const info = rows.reduce(
+    (acc: Record<string, SeminarEntry[]>, row: GoogleSpreadsheetRow) => {
+      // Ignore any rows that have not been confirmed by the USFBD
+      const confirmed = getCell(row, "Confirmed by USFBD");
+      if (confirmed !== "TRUE") {
+        return acc;
+      }
+
+      // Ignore any empty rows without a USFBD Member ID
+      const id = getCell(row, "USFBD Member ID");
+
+      if (!id) {
+        return acc;
+      }
+
+      try {
+        const event = getCell(row, "Seminar Name");
+        const rawDate = getCell(row, "Seminar Date");
+        const location = getCell(row, "Seminar Location (usually dojo name)");
+        const instructor = getCell(row, "Seminar Instructor");
+        const date = parseDate(rawDate);
+
+        acc[id] = acc[id] || [];
+
+        acc[id].push(parseSeminar({ event, date, note: location, instructor }));
+
+        return acc;
+      } catch (e) {
+        console.error(
+          `Error parsing seminar data for member ${id}: ${(e as Error).message}`,
+        );
+        process.exit(1);
+        return acc;
+      }
+    },
+    {},
+  );
+
+  return info;
+}
+
+export async function getAdditionalTaikaiInfo(
+  doc: GoogleSpreadsheetType,
+): Promise<Record<string, TaikaiEntry[]>> {
+  const sheet = doc.sheetsByTitle["Form Responses 1"];
+  const rows = await sheet.getRows();
+
+  const info = rows.reduce(
+    (acc: Record<string, TaikaiEntry[]>, row: GoogleSpreadsheetRow) => {
+      // Ignore any rows that have not been confirmed by the USFBD
+      const confirmed = getCell(row, "Confirmed by USFBD");
+      if (confirmed !== "TRUE") {
+        return acc;
+      }
+
+      // Ignore any empty rows without a USFBD Member ID
+      const id = getCell(row, "USFBD Member ID");
+
+      if (!id) {
+        return acc;
+      }
+
+      try {
+        const event = getCell(row, "Taikai Name");
+        const rawDate = getCell(row, "Taikai Date");
+        const taikaiLocation = getCell(row, "Taikai Location");
+        const taikaiEvent = getCell(row, "What was the event?");
+        const taikaiPlace = getCell(row, "How did you place?");
+        const date = parseDate(rawDate);
+
+        acc[id] = acc[id] || [];
+
+        acc[id] = parseAndMergeAdditionalTaikai(acc[id], {
           event,
           date,
           taikaiLocation,
-          taikaiYear,
-          win1,
-          win2,
-          win3,
-          win4,
+          taikaiEvent,
+          taikaiPlace,
         });
-      } else if (type === "Testing" && isPassingTest) {
-        acc[id].testing.push(parseTest({ date, note }));
-      }
 
-      return acc;
-    } catch (e) {
-      console.error(`Error parsing seminar data for member ${id}: ${(e as Error).message}`);
-      process.exit(1);
-      return acc;
-    }
-  }, {});
+        return acc;
+      } catch (e) {
+        console.error(
+          `Error parsing taikai data for member ${id}: ${(e as Error).message}`,
+        );
+        process.exit(1);
+        return acc;
+      }
+    },
+    {},
+  );
 
   return info;
 }
@@ -244,7 +359,9 @@ export async function loadMemberSpreadsheet(): Promise<GoogleSpreadsheetType> {
     );
     await memberSpreadsheet.loadInfo();
   } catch (e) {
-    console.error(`Error accessing member spreadsheet: ${(e as Error).message}`);
+    console.error(
+      `Error accessing member spreadsheet: ${(e as Error).message}`,
+    );
     process.exit(1);
   }
 
@@ -262,9 +379,51 @@ export async function loadSeminarSpreadsheet(): Promise<GoogleSpreadsheetType> {
     );
     await seminarSpreadsheet.loadInfo();
   } catch (e) {
-    console.error(`Error accessing seminar spreadsheet: ${(e as Error).message}`);
+    console.error(
+      `Error accessing seminar spreadsheet: ${(e as Error).message}`,
+    );
     process.exit(1);
   }
 
   return seminarSpreadsheet!;
+}
+
+// https://docs.google.com/spreadsheets/d/1IYnmim70tAS-EElV6kpKO-TqDTrOA5Ngz3RD6hsa5R0/edit?usp=sharing
+export async function loadSeminarSubmissionSpreadsheet(): Promise<GoogleSpreadsheetType> {
+  let seminarSubmissionSpreadsheet: GoogleSpreadsheetType;
+
+  try {
+    seminarSubmissionSpreadsheet = new GoogleSpreadsheet(
+      "1IYnmim70tAS-EElV6kpKO-TqDTrOA5Ngz3RD6hsa5R0",
+      makeAuth(),
+    );
+    await seminarSubmissionSpreadsheet.loadInfo();
+  } catch (e) {
+    console.error(
+      `Error accessing seminar submission spreadsheet: ${(e as Error).message}`,
+    );
+    process.exit(1);
+  }
+
+  return seminarSubmissionSpreadsheet!;
+}
+
+// https://docs.google.com/spreadsheets/d/1tFS50eilueZRANeeZizy08es4_yXxKkcQDeG6UOkefU/edit?usp=sharing
+export async function loadTaikaiSubmissionSpreadsheet(): Promise<GoogleSpreadsheetType> {
+  let taikaiSubmissionSpreadsheet: GoogleSpreadsheetType;
+
+  try {
+    taikaiSubmissionSpreadsheet = new GoogleSpreadsheet(
+      "1tFS50eilueZRANeeZizy08es4_yXxKkcQDeG6UOkefU",
+      makeAuth(),
+    );
+    await taikaiSubmissionSpreadsheet.loadInfo();
+  } catch (e) {
+    console.error(
+      `Error accessing taikai submission spreadsheet: ${(e as Error).message}`,
+    );
+    process.exit(1);
+  }
+
+  return taikaiSubmissionSpreadsheet!;
 }

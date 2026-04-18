@@ -109,12 +109,42 @@ export function parseTest({
   };
 }
 
+export function deduplicateTaikai(
+  taikai: TaikaiEntry[],
+  additionalTaikaiInfo: TaikaiEntry[],
+): TaikaiEntry[] {
+  const merged = new Map<string, TaikaiEntry>();
+
+  for (const entry of [...taikai, ...additionalTaikaiInfo]) {
+    const existing = merged.get(entry.name);
+
+    if (existing) {
+      const existingWinNames = new Set(existing.wins.map((w) => w.name));
+      const newWins = entry.wins.filter((w) => !existingWinNames.has(w.name));
+      existing.wins = [...existing.wins, ...newWins].sort(
+        (a, b) => (a.place ?? Infinity) - (b.place ?? Infinity),
+      );
+    } else {
+      merged.set(entry.name, {
+        ...entry,
+        wins: [...entry.wins].sort((a, b) => (a.place ?? Infinity) - (b.place ?? Infinity)),
+      });
+    }
+  }
+
+  return Array.from(merged.values());
+}
+
 export function mergeInfo(
   id: string,
   member: BasicMember,
   seminarInfo: Record<string, MemberSeminarInfo>,
+  additionalSeminarInfo: Record<string, SeminarEntry[]>,
+  additionalTaikaiInfo: Record<string, TaikaiEntry[]>,
 ): BasicMember {
   const memberSeminarInfo = seminarInfo[id];
+  const memberAdditionalSeminarInfo = additionalSeminarInfo[id];
+  const memberAdditionalTaikaiInfo = additionalTaikaiInfo[id];
 
   if (!memberSeminarInfo) {
     return member;
@@ -124,6 +154,24 @@ export function mergeInfo(
 
   member.seminars = seminars;
   member.taikai = taikai;
+
+  // If the member has submitted additional seminar or taikai info, merge it into the member data
+  if (memberAdditionalSeminarInfo) {
+    member.seminars = [...member.seminars, ...memberAdditionalSeminarInfo];
+  }
+  member.seminars = member.seminars.sort((a, b) =>
+    (b.date ?? "").localeCompare(a.date ?? ""),
+  );
+
+  if (memberAdditionalTaikaiInfo) {
+    member.taikai = deduplicateTaikai(
+      member.taikai,
+      memberAdditionalTaikaiInfo,
+    );
+  }
+  member.taikai = member.taikai.sort((a, b) =>
+    (b.date ?? "").localeCompare(a.date ?? ""),
+  );
 
   // Find any rank tests that are missing from the member data and add them
   testing.forEach((test) => {

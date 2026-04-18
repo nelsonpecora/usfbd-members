@@ -12,6 +12,15 @@ type RawTaikaiEntry = {
   win4: string | null;
 };
 
+/** Additional taikai entry as parsed from the Taikai Submission spreadsheet */
+type RawAdditionalTaikaiEntry = {
+  event: string | null;
+  date: string | null;
+  taikaiLocation: string | null;
+  taikaiEvent: string | null;
+  taikaiPlace: string | null;
+};
+
 export type TaikaiEntry = {
   name: string;
   date: string | null;
@@ -66,6 +75,67 @@ export function parseAndMergeTaikai(
       ...(taikaiLocation && { location: taikaiLocation }),
       wins,
     });
+  }
+
+  return acc;
+}
+
+export function parseTaikaiPlace(val: string | null): number | undefined {
+  if (!val) return;
+
+  const place = parseInt(val.trim(), 10);
+
+  return isNaN(place) ? undefined : place;
+}
+
+export function parseAdditionalTaikaiWin(
+  taikaiEvent: string | null,
+  taikaiPlace: string | null,
+): TaikaiWin {
+  const name = taikaiEvent?.trim() || "Competition";
+  const place = parseTaikaiPlace(taikaiPlace);
+
+  return { name, place };
+}
+
+export function parseAndMergeAdditionalTaikai(
+  acc: TaikaiEntry[],
+  {
+    event,
+    date,
+    taikaiLocation,
+    taikaiEvent,
+    taikaiPlace,
+  }: RawAdditionalTaikaiEntry,
+): TaikaiEntry[] {
+  if (!event || !date) return acc;
+
+  const existingTaikai = acc.find((t) => t.name === event);
+
+  // Fill in any missing info about the taikai itself
+  if (existingTaikai) {
+    if (taikaiLocation && !existingTaikai.location) {
+      existingTaikai.location = taikaiLocation;
+    }
+
+    if (taikaiEvent || taikaiPlace) {
+      existingTaikai.wins.push(
+        parseAdditionalTaikaiWin(taikaiEvent, taikaiPlace),
+      );
+    }
+  } else {
+    acc.push({
+      name: event,
+      date,
+      ...(taikaiLocation && { location: taikaiLocation }),
+      wins: [],
+    });
+
+    if (taikaiEvent || taikaiPlace) {
+      acc[acc.length - 1].wins.push(
+        parseAdditionalTaikaiWin(taikaiEvent, taikaiPlace),
+      );
+    }
   }
 
   return acc;

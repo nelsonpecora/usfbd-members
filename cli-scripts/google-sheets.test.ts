@@ -1,5 +1,11 @@
 import type { GoogleSpreadsheetRow } from "google-spreadsheet";
-import { getCell, getBasicInfo, getSeminarInfo } from "./google-sheets";
+import {
+  getCell,
+  getBasicInfo,
+  getSeminarInfo,
+  getAdditionalSeminarInfo,
+  getAdditionalTaikaiInfo,
+} from "./google-sheets";
 
 function makeRow(data: Record<string, string | undefined>): GoogleSpreadsheetRow {
   return { get: (key: string) => data[key] } as unknown as GoogleSpreadsheetRow;
@@ -337,5 +343,148 @@ describe("getSeminarInfo", () => {
     const doc = makeDoc({ Sheet1: makeSheet([noIdRow]) });
     const info = await getSeminarInfo(doc as any);
     expect(Object.keys(info)).toHaveLength(0);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// getAdditionalSeminarInfo
+// ---------------------------------------------------------------------------
+
+describe("getAdditionalSeminarInfo", () => {
+  function makeAdditionalSeminarRow(overrides: Record<string, string | undefined> = {}) {
+    return makeRow({
+      "Confirmed by USFBD": "TRUE",
+      "USFBD Member ID": "999",
+      "Seminar Name": "National Seminar",
+      "Seminar Date": "6/1/2023",
+      "Seminar Location (usually dojo name)": "Spring Workshop",
+      "Seminar Instructor": "Hanshi Jones",
+      ...overrides,
+    });
+  }
+
+  it("parses a confirmed seminar row", async () => {
+    const doc = makeDoc({ "Form Responses 1": makeSheet([makeAdditionalSeminarRow()]) });
+    const info = await getAdditionalSeminarInfo(doc as any);
+
+    expect(info["999"]).toHaveLength(1);
+    expect(info["999"][0]).toEqual({
+      name: "Spring Workshop",
+      date: "2023-06-01",
+      location: "National Seminar",
+      instructor: "Hanshi Jones",
+    });
+  });
+
+  it("skips unconfirmed rows", async () => {
+    const row = makeAdditionalSeminarRow({ "Confirmed by USFBD": "FALSE" });
+    const doc = makeDoc({ "Form Responses 1": makeSheet([row]) });
+    const info = await getAdditionalSeminarInfo(doc as any);
+    expect(Object.keys(info)).toHaveLength(0);
+  });
+
+  it("skips rows with no USFBD Member ID", async () => {
+    const row = makeAdditionalSeminarRow({ "USFBD Member ID": undefined });
+    const doc = makeDoc({ "Form Responses 1": makeSheet([row]) });
+    const info = await getAdditionalSeminarInfo(doc as any);
+    expect(Object.keys(info)).toHaveLength(0);
+  });
+
+  it("accumulates multiple seminars for the same member", async () => {
+    const row1 = makeAdditionalSeminarRow({ "Seminar Name": "Seminar A" });
+    const row2 = makeAdditionalSeminarRow({ "Seminar Name": "Seminar B" });
+    const doc = makeDoc({ "Form Responses 1": makeSheet([row1, row2]) });
+    const info = await getAdditionalSeminarInfo(doc as any);
+
+    expect(info["999"]).toHaveLength(2);
+    expect(info["999"].map((s) => s.location)).toEqual(["Seminar A", "Seminar B"]);
+  });
+
+  it("omits instructor when not provided", async () => {
+    const row = makeAdditionalSeminarRow({ "Seminar Instructor": undefined });
+    const doc = makeDoc({ "Form Responses 1": makeSheet([row]) });
+    const info = await getAdditionalSeminarInfo(doc as any);
+
+    expect(info["999"][0]).not.toHaveProperty("instructor");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// getAdditionalTaikaiInfo
+// ---------------------------------------------------------------------------
+
+describe("getAdditionalTaikaiInfo", () => {
+  function makeAdditionalTaikaiRow(overrides: Record<string, string | undefined> = {}) {
+    return makeRow({
+      "Confirmed by USFBD": "TRUE",
+      "USFBD Member ID": "999",
+      "Taikai Name": "Spring Cup",
+      "Taikai Date": "5/10/2023",
+      "Taikai Location": "West Dojo",
+      "What was the event?": "Open Division",
+      "How did you place?": "1st Place",
+      ...overrides,
+    });
+  }
+
+  it("parses a confirmed taikai row with a win", async () => {
+    const doc = makeDoc({ "Form Responses 1": makeSheet([makeAdditionalTaikaiRow()]) });
+    const info = await getAdditionalTaikaiInfo(doc as any);
+
+    expect(info["999"]).toHaveLength(1);
+    expect(info["999"][0]).toEqual({
+      name: "Spring Cup",
+      date: "2023-05-10",
+      location: "West Dojo",
+      wins: [{ place: 1, name: "Open Division" }],
+    });
+  });
+
+  it("skips unconfirmed rows", async () => {
+    const row = makeAdditionalTaikaiRow({ "Confirmed by USFBD": "FALSE" });
+    const doc = makeDoc({ "Form Responses 1": makeSheet([row]) });
+    const info = await getAdditionalTaikaiInfo(doc as any);
+    expect(Object.keys(info)).toHaveLength(0);
+  });
+
+  it("skips rows with no USFBD Member ID", async () => {
+    const row = makeAdditionalTaikaiRow({ "USFBD Member ID": undefined });
+    const doc = makeDoc({ "Form Responses 1": makeSheet([row]) });
+    const info = await getAdditionalTaikaiInfo(doc as any);
+    expect(Object.keys(info)).toHaveLength(0);
+  });
+
+  it("merges multiple rows for the same taikai into one entry", async () => {
+    const row1 = makeAdditionalTaikaiRow({ "What was the event?": "Open Division", "How did you place?": "1st Place" });
+    const row2 = makeAdditionalTaikaiRow({ "What was the event?": "Kata Division", "How did you place?": "2nd Place" });
+    const doc = makeDoc({ "Form Responses 1": makeSheet([row1, row2]) });
+    const info = await getAdditionalTaikaiInfo(doc as any);
+
+    expect(info["999"]).toHaveLength(1);
+    expect(info["999"][0].wins).toEqual([
+      { place: 1, name: "Open Division" },
+      { place: 2, name: "Kata Division" },
+    ]);
+  });
+
+  it("creates separate entries for different taikai", async () => {
+    const row1 = makeAdditionalTaikaiRow({ "Taikai Name": "Spring Cup", "Taikai Date": "5/10/2023" });
+    const row2 = makeAdditionalTaikaiRow({ "Taikai Name": "Fall Cup", "Taikai Date": "10/15/2023" });
+    const doc = makeDoc({ "Form Responses 1": makeSheet([row1, row2]) });
+    const info = await getAdditionalTaikaiInfo(doc as any);
+
+    expect(info["999"]).toHaveLength(2);
+    expect(info["999"].map((t) => t.name)).toEqual(["Spring Cup", "Fall Cup"]);
+  });
+
+  it("creates an entry with no wins when event and place are absent", async () => {
+    const row = makeAdditionalTaikaiRow({
+      "What was the event?": undefined,
+      "How did you place?": undefined,
+    });
+    const doc = makeDoc({ "Form Responses 1": makeSheet([row]) });
+    const info = await getAdditionalTaikaiInfo(doc as any);
+
+    expect(info["999"][0].wins).toHaveLength(0);
   });
 });

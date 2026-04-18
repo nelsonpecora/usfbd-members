@@ -120,6 +120,14 @@ const mockSeminarDoc = makeDoc({
   Sheet1: makeSheet([seminarRow, tournamentRow, testingRow]),
 });
 
+const mockSeminarSubmissionDoc = makeDoc({
+  "Form Responses 1": makeSheet([]),
+});
+
+const mockTaikaiSubmissionDoc = makeDoc({
+  "Form Responses 1": makeSheet([]),
+});
+
 // ---------------------------------------------------------------------------
 // Full pipeline
 // ---------------------------------------------------------------------------
@@ -128,7 +136,7 @@ describe("full pipeline", () => {
   it("generates YAML output matching the expected-member-999 fixture", async () => {
     const { basicInfo } = await getBasicInfo(mockMemberDoc as any);
     const seminarInfo = await getSeminarInfo(mockSeminarDoc as any);
-    const combined = mergeInfo("999", basicInfo["999"], seminarInfo);
+    const combined = mergeInfo("999", basicInfo["999"], seminarInfo, {}, {});
     const parsed = yaml.load(yaml.dump(combined));
 
     const expected = yaml.load(
@@ -149,8 +157,12 @@ describe("main", () => {
       this: Record<string, unknown>,
       id: string,
     ) {
-      const isMemberSheet = id === "1adUo2bdlwqEGoPT3zGYxkD7HsHTRPGTITFRLGkJlVoo";
-      Object.assign(this, isMemberSheet ? mockMemberDoc : mockSeminarDoc);
+      const docById: Record<string, ReturnType<typeof makeDoc>> = {
+        "1adUo2bdlwqEGoPT3zGYxkD7HsHTRPGTITFRLGkJlVoo": mockMemberDoc,
+        "1IYnmim70tAS-EElV6kpKO-TqDTrOA5Ngz3RD6hsa5R0": mockSeminarSubmissionDoc,
+        "1tFS50eilueZRANeeZizy08es4_yXxKkcQDeG6UOkefU": mockTaikaiSubmissionDoc,
+      };
+      Object.assign(this, docById[id] ?? mockSeminarDoc);
     } as any);
     vi.mocked(fs.writeFileSync).mockReset();
   });
