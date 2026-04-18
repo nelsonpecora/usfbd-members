@@ -239,9 +239,10 @@ const toFuzzyDate = (val: Date | string) => {
         <p class="add-form-link">
           You have attended <strong>{numTaikai}</strong> taikai, winning <strong
             >{numTaikaiWins}</strong
-          > medal{numTaikaiWins !== 1 ? "s" : ""}. Missing any taikai? <a
-            href={taikaiFormUrl}
-            target="_blank">Add them here!</a
+          > medal{numTaikaiWins !== 1 ? "s" : ""}{
+            numTaikaiWins === 0 ? " (yet!)" : ""
+          }. Missing any taikai? <a href={taikaiFormUrl} target="_blank"
+            >Add them here!</a
           >
         </p>
 
