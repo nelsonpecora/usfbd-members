@@ -71,3 +71,9 @@ taikai:
     date: "2023-06-10"
     location: Fort Lee, NJ
     wins: []
+  - name: East Coast Iaido Tai Kai
+    date: "2024-03-10"
+    location: Weehawken, NJ
+    wins:
+      - name: Upper Mudansha
+        place: 3

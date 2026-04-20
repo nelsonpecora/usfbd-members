@@ -272,6 +272,29 @@ describe("mergeInfo", () => {
     expect(result.taikai![0].wins).toHaveLength(2);
   });
 
+  it("does not deduplicate taikai of the same name if dates are different", () => {
+    const seminarInfo = {
+      "1": {
+        seminars: [],
+        taikai: [
+          { name: "Tri State Taikai", date: "2020-06-01", wins: [{ place: 1, name: "Kata" }] },
+        ],
+        testing: [],
+      },
+    };
+    const additionalTaikaiInfo = {
+      "1": [
+        { name: "Tri State Taikai", date: "2021-06-01", wins: [{ place: 2, name: "Tameshigiri" }] },
+      ],
+    };
+
+    const result = mergeInfo("1", { ...baseMember }, seminarInfo, {}, additionalTaikaiInfo);
+    expect(result.taikai).toEqual([
+      { name: "Tri State Taikai", date: "2020-06-01", wins: [{ place: 1, name: "Kata" }] },
+      { name: "Tri State Taikai", date: "2021-06-01", wins: [{ place: 2, name: "Tameshigiri" }] },
+    ]);
+  });
+
   it("ignores additionalTaikaiInfo for other member ids", () => {
     const seminarInfo = {
       "1": {
