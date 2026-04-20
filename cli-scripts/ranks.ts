@@ -103,16 +103,19 @@ export function deduplicateTaikai(
   const merged = new Map<string, TaikaiEntry>();
 
   for (const entry of [...taikai, ...additionalTaikaiInfo]) {
-    const existing = merged.get(entry.name);
+    const existing = merged.get(`${entry.name}|${entry.date}`);
 
-    if (existing) {
+    // Only deduplicate if the name AND date are the same
+    if (existing && existing.date === entry.date) {
+      // Wins are deduplicated by name (assumes you cannot win multiple times for the same event,
+      // e.g. 1st place and 2nd place for Nidan tameshigiri)
       const existingWinNames = new Set(existing.wins.map((w) => w.name));
       const newWins = entry.wins.filter((w) => !existingWinNames.has(w.name));
       existing.wins = [...existing.wins, ...newWins].sort(
         (a, b) => (a.place ?? Infinity) - (b.place ?? Infinity),
       );
     } else {
-      merged.set(entry.name, {
+      merged.set(`${entry.name}|${entry.date}`, {
         ...entry,
         wins: [...entry.wins].sort((a, b) => (a.place ?? Infinity) - (b.place ?? Infinity)),
       });
